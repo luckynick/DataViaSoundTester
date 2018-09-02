@@ -1,8 +1,8 @@
 package com.luckynick.behaviours;
 
-public class ChooseProfile extends ProgramBehaviour {
+public class RunTest extends ProgramBehaviour {
     @Override
     public void performProgramTasks() {
-
+        System.out.println("Running test");
     }
 }

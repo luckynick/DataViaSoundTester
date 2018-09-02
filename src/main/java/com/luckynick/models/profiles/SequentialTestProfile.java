@@ -3,25 +3,21 @@ package com.luckynick.models.profiles;
 import com.luckynick.Utils;
 import com.luckynick.enums.DistanceUnit;
 import com.luckynick.models.Device;
-import com.luckynick.models.SerializableModel;
+import com.luckynick.models.IOClassHandling;
+import com.luckynick.models.ManageableField;
 
-import java.io.File;
-
+@IOClassHandling(dataStorage = Utils.DataStorage.SEQUENTIAL)
 public class SequentialTestProfile extends Profile {
     protected Device controller;
     protected Device peer1;
     protected Device peer2;
 
-    @Configurable
+    @ManageableField(required = true)
     protected int distanceBetweenPeers;
-    @Configurable
-    protected DistanceUnit distanceUnitName = DistanceUnit.CENTIMETER;
+    @ManageableField
+    protected DistanceUnit distanceUnitName = DistanceUnit.Centimeter;
 
     //TODO
-    //@Configurable
+    //@ManageableField
     protected SingleTestProfile[] testsToPerform;
-
-    public SequentialTestProfile() {
-        appendSubfolderToFileRoot("sequential");
-    }
 }

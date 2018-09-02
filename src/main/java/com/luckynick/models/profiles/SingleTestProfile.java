@@ -4,22 +4,19 @@ import com.luckynick.Utils;
 import com.luckynick.enums.SoundConsumptionUnit;
 import com.luckynick.enums.SoundProductionUnit;
 import com.luckynick.models.Device;
-import com.luckynick.models.SerializableModel;
+import com.luckynick.models.IOClassHandling;
+import com.luckynick.models.ManageableField;
 
-import java.io.File;
-
+@IOClassHandling(dataStorage = Utils.DataStorage.SINGLE)
 public class SingleTestProfile extends Profile {
 
     protected Device sender;
     protected Device receiver;
-    @Configurable
-    protected SoundProductionUnit soundProductionUnit;
-    @Configurable
-    protected SoundConsumptionUnit soundConsumptionUnit;
-    @Configurable
-    protected int loudnessLevel;
 
-    public SingleTestProfile() {
-        appendSubfolderToFileRoot("single");
-    }
+    @ManageableField
+    protected SoundProductionUnit soundProductionUnit = SoundProductionUnit.LOUD_SPEAKERS;
+    @ManageableField
+    protected SoundConsumptionUnit soundConsumptionUnit = SoundConsumptionUnit.MICROPHONE;
+    @ManageableField
+    protected int loudnessLevel = 100;
 }

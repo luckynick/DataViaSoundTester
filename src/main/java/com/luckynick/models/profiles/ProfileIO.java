@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 public class ProfileIO<T extends Profile> extends ModelIO<T> {
 
     public ProfileIO(String path, Class classOfModel) {
-        super(path, classOfModel);
+        super(classOfModel);
     }
 
 }

@@ -1,27 +1,33 @@
 package com.luckynick.models;
 
 import com.luckynick.Utils;
-import com.luckynick.models.profiles.Configurable;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Collections;
 
-public abstract class SerializableModel implements Serializable {
+@IOClassHandling(dataStorage = Utils.DataStorage.MODELS)
+public abstract class SerializableModel {
 
     public String nameOfModelClass = this.getClass().getSimpleName();
+    @IOFieldHandling(serialize = false)
     protected String filenamePrefix = nameOfModelClass;
+    @ManageableField(editable = false)
     public String filename= filenamePrefix + Utils.JSON_EXTENSION;
-    public String fileRoot =  Utils.formPathString("data", "models");
+    @IOFieldHandling(serialize = false)
+    public String fileRoot = this.getClass().getDeclaredAnnotation(IOClassHandling.class).dataStorage().toString();
     public String wholePath = fileRoot + filename;
 
-    public void appendSubfolderToFileRoot(String subfolder) {
-        fileRoot = Utils.formPathString(fileRoot, subfolder);
+    public void setFilename(String filename) {
+        this.filename = filename;
         wholePath = fileRoot + filename;
+    }
+
+    public void appendSubfolderToFileRoot(String ... subfolders) {
+        for (String folder: subfolders) {
+            appendSubfolderToFileRoot(folder);
+        }
     }
 
     public Object getValue(String fieldName) {
@@ -40,17 +46,17 @@ public abstract class SerializableModel implements Serializable {
         return resolveSwingComponent(getFieldForName(field));
     }
 
-    public String[] getAllowedFieldNamesArray() {
-        Field[] fields = this.getClass().getDeclaredFields();
+    public String[] getConfigurableFieldNames() {
+        Field[] fields = getFieldsArray();
         ArrayList<String> result = new ArrayList<>();
         for (int i = 0; i < fields.length; i++) {
-            if(fields[i].getAnnotation(Configurable.class) != null) result.add(fields[i].getName());
+            if(fields[i].getAnnotation(ManageableField.class) != null) result.add(fields[i].getName());
         }
         return result.toArray(new String[0]);
     }
 
     private String[] getFieldNamesArray() {
-        Field[] fields = this.getClass().getDeclaredFields();
+        Field[] fields = getFieldsArray();
         String[] result = new String[fields.length];
         for (int i = 0; i < result.length; i++) {
             result[i] = fields[i].getName();
@@ -59,7 +65,37 @@ public abstract class SerializableModel implements Serializable {
     }
 
     public Field[] getFieldsArray() {
-        return this.getClass().getDeclaredFields();
+
+        Field[] inheritedFields = getClass().getFields();
+        Field[] ownFields = getClass().getDeclaredFields();
+        Field[] allFields = new Field[inheritedFields.length+ownFields.length];
+        int i_all = 0;
+        for(int i = 0; i < inheritedFields.length; i++) {
+            allFields[i_all++] = inheritedFields[i];
+        }
+        for(int i = 0; i < ownFields.length; i++) {
+            allFields[i_all++] = ownFields[i];
+        }
+        return allFields;
+    }
+
+    public boolean allRequiredFieldsAreSet() {
+        for(Field f : getFieldsArray()) {
+            if(isFieldRequired(f) && !isFieldSet(f)) return false;
+        }
+        return true;
+    }
+
+    public boolean isFieldRequired(Field field) {
+        ManageableField a = field.getAnnotation(ManageableField.class);
+        return a != null ? a.required() : false;
+    }
+
+    private boolean isFieldSet(Field field) {
+        Object value = getValueFromField(field);
+        if(value == null) return false;
+        if(Utils.isReflectedAsNumber(field.getType()) && (int) value == -1) return false;
+        return true;
     }
 
 
@@ -67,13 +103,32 @@ public abstract class SerializableModel implements Serializable {
     private Component resolveSwingComponent(Field field) {
         Component result = new JTextField("", 30);
         Object value = getValueFromField(field);
-        //TODO
-        //result = new JTextField((value != null ? value.toString() : "*empty*"), 30);
-        JTextField textField = new JTextField((value != null ? getValueFromField(field).toString() : "*empty*"), 30);
-        textField.setActionCommand(field.getName());
-        textField.setName(field.getName());
+        boolean editable = field.getAnnotation(ManageableField.class).editable();
 
-        result = textField;
+        if(field.getType().isEnum()) {
+            String selectedEnum = null;
+            int selectedIndex = -1;
+            if(value != null) {
+                selectedEnum = value.toString();
+            }
+            Enum[] e = (Enum[])field.getType().getEnumConstants();
+            String[] enumNames = new String[e.length];
+            for(int i = 0; i < e.length; i++) {
+                enumNames[i] = e[i].toString();
+                if(enumNames[i].equals(selectedEnum)) selectedIndex = i;
+            }
+            JComboBox<String> enumList = new JComboBox<>(enumNames);
+            enumList.setSelectedIndex(selectedIndex);
+            result = enumList;
+        }
+        else {
+            JTextField textField = new JTextField((value != null ? getValueFromField(field).toString() : "*empty*"), 30);
+            result = textField;
+        }
+        String componentName = field.getName();
+        //if(isFieldRequired(field)) componentName = "* " + componentName; //TODO
+        result.setName(componentName);
+        result.setEnabled(editable);
         return result;
     }
 
@@ -98,18 +153,43 @@ public abstract class SerializableModel implements Serializable {
     }
 
     private void setValueInField(Field field, Component value) {
-        System.out.println("setValueInField component: " + value.getClass().getSimpleName());
         if(value instanceof JTextField) {
-            setValueInField(field, ((JTextField) value).getText());
+            String textInField = ((JTextField) value).getText();
+            setValueInField(field, parseTextField(field, textInField));
         }
-        else throw new NotImplementedException(); //TODO
+        else if(value instanceof JComboBox) {
+            String selectedItem = (String) ((JComboBox) value).getSelectedItem();
+            setValueInField(field, selectedItem != null ?
+                    Enum.valueOf((Class<Enum>) field.getType(), selectedItem) : null);
+        }
+    }
+
+    private Object parseTextField(Field field, String textInField) {
+        if(textInField == null || "".equals(textInField)) return null;
+        Object toSet = textInField;
+        String fieldTypeName = field.getType().getSimpleName();
+        try {
+            if("int".equals(fieldTypeName)) toSet = Integer.parseInt(textInField);
+            else if("double".equals(fieldTypeName)) toSet = (double) Integer.parseInt(textInField);
+        } catch (NumberFormatException e) {
+            System.out.println(textInField + " not integer");
+            try {
+                if("int".equals(fieldTypeName)) toSet = (int) Double.parseDouble(textInField);
+                else if("double".equals(fieldTypeName)) toSet = Double.parseDouble(textInField);
+            } catch (NumberFormatException ex) {
+                System.out.println(textInField + " not double");
+            }
+        }
+        return toSet;
     }
 
     private void setValueInField(Field field, Object value) {
-        System.out.println("Field name: " + field.getName() + ", type: " + field.getAnnotatedType().getType().getTypeName());
         field.setAccessible(true);
         try {
-            field.set(this, value);
+            if(Utils.isReflectedAsNumber(field.getType()) && value == null)
+                field.set(this, -1);
+            else
+                field.set(this, value);
         }
         catch (IllegalAccessException e) {
             e.printStackTrace();

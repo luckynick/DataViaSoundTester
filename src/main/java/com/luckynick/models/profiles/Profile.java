@@ -7,11 +7,9 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Profile extends SerializableModel {
+public abstract class Profile extends SerializableModel {
 
     public Profile() {
-        filenamePrefix = "profile";
-        filename = filenamePrefix + '_' + new SimpleDateFormat("ddMMyy_HHmmss").format(new Date()) + Utils.JSON_EXTENSION;
-        appendSubfolderToFileRoot("profiles");
+        setFilename("profile_" + Utils.getDateStringForFileName() + Utils.JSON_EXTENSION);
     }
 }

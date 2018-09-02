@@ -1,8 +1,8 @@
-package com.luckynick.behaviours.createProfiles;
+package com.luckynick.behaviours.createProfile;
 
-import com.luckynick.models.profiles.ProfileIO;
+import com.luckynick.models.ModelIO;
 import com.luckynick.behaviours.ProgramBehaviour;
-import com.luckynick.models.ModelManager;
+import com.luckynick.models.ModelEditor;
 import com.luckynick.models.profiles.Profile;
 
 import java.io.IOException;
@@ -12,8 +12,7 @@ public abstract class ProfileCreationBehaviour<T extends Profile> extends Progra
     private String profile_path;
 
     T profileToManipulate;
-
-    private ProfileIO<T> profileIO;
+    ModelIO<T> modelIO;
 
     public ProfileCreationBehaviour(Class<T> classOfModel) {
         try {
@@ -22,14 +21,15 @@ public abstract class ProfileCreationBehaviour<T extends Profile> extends Progra
         catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
-        profileIO = new ProfileIO<T>(profileToManipulate.wholePath, classOfModel);
+        modelIO = new ModelIO<T>(classOfModel);
     }
 
     @Override
     public void performProgramTasks() {
         try {
-            T editedProfile = ModelManager.<T>requireEditedModel(profileToManipulate);
-            if(editedProfile != null) profileIO.serialize(editedProfile);
+
+            T editedProfile = ModelEditor.<T>requireEditedModel(profileToManipulate, modelIO);
+            if(editedProfile != null) modelIO.serialize(editedProfile);
         }
         catch (IOException e) {
             e.printStackTrace();

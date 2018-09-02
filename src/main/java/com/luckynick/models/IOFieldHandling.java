@@ -1,4 +1,4 @@
-package com.luckynick.models.profiles;
+package com.luckynick.models;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface Configurable {
-    //TODO
+public @interface IOFieldHandling {
+    public boolean serialize() default true;
+    public boolean updateOnLoad() default false;
 }
