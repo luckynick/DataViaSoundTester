@@ -21,15 +21,22 @@ public class DeviceAdditionBehaviour extends ProgramBehaviour {
 
     @Override
     public void performProgramTasks() {
-        NetworkService service = new NetworkService();
-        service.connectWifi();
-        if(!service.isWifiConnected()) {
-            System.out.println("Failed to establish WIFI connection. Abort.");
-            return;
+        NetworkService serviceOut = new NetworkService();
+        try (NetworkService service = serviceOut) {
+            service.connectWifi();
+            if(!service.isWifiConnected()) {
+                System.out.println("Failed to establish WIFI connection. Abort.");
+                return;
+            }
+            System.out.println("WIFI connected: " + service.isWifiConnected());
+
+            for(String ip : service.requireParticipantsIPs()){
+                System.out.println("Local IP: " + ip);
+            }
+            
+            waitConsoleInput();
         }
-        System.out.println("WIFI connected: " + service.isWifiConnected());
-        service.finalize();
-        System.out.println("WIFI connected: " + service.isWifiConnected());
+        System.out.println("WIFI connected: " + serviceOut.isWifiConnected());
 
         /*try {
             //TODO: Scatter devices from network
@@ -41,5 +48,14 @@ public class DeviceAdditionBehaviour extends ProgramBehaviour {
         catch (IOException e) {
             e.printStackTrace();
         }*/
+    }
+
+    void waitConsoleInput() {
+        try {
+            System.in.read();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

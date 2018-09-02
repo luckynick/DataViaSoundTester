@@ -4,18 +4,30 @@ import com.luckynick.Utils;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.*;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class NetworkService {
+/**
+ * 192.168.***.***
+ * Strategy:
+ * 1. Find hotspot host
+ * 2. Ask for IPs which are connected to hotspot
+ * 3. Establish separate connections with each IP
+ */
+public class NetworkService implements Closeable {
 
     public static final int COMMUNICATION_PORT = 8080;
-    public static final int WAIT_AFTER_LAST_COMMAND = 500;
-    public static final int COMMAND_PERSISTANCE_ATTEMPTS = 20;
     public static final boolean THIS_IS_WIFI_HOTSPOT = false;
     public static final String SSID = "Heh_mobile", PASSWORD = "123456798";
+    public static final String WIFI_SUBNET = "192.168";
     public static final String configFolder = Utils.DataStorage.CONFIG.toString();
     public static final String wifiProfilePath = Utils.formPathString(configFolder, SSID + ".xml");
 
@@ -37,7 +49,7 @@ public class NetworkService {
                     "Netsh WLAN delete profile name=\""+SSID+"\"",
                     "Netsh WLAN add profile filename=\""+wifiProfile.getAbsolutePath()+"\"",
             };
-            executeCommandsPersistEach(commands);
+            OSExecutables.executeCommandsPersistEach(commands);
         }
     }
 
@@ -46,11 +58,11 @@ public class NetworkService {
         String[] commands = new String[] { //TODO: refresh list of WIFIs
                 "netsh wlan connect name=" + SSID,
         };
-        if(executeCommandsPersistEach(commands)) {
+        if(OSExecutables.persistCommand(commands)) {
             while(!isWifiConnected()) {
                 Utils.Log("Still waiting for WIFI to connect.");
                 try {
-                    Thread.sleep(WAIT_AFTER_LAST_COMMAND);
+                    Thread.sleep(OSExecutables.WAIT_TIME_AFTER_FAIL);
                 }
                 catch (InterruptedException e) {
                     e.printStackTrace();
@@ -64,11 +76,11 @@ public class NetworkService {
         String[] commands = new String[] { //TODO: refresh list of WIFIs
                 "netsh wlan disconnect",
         };
-        if(executeCommandsPersistEach(commands)) {
+        if(OSExecutables.executeCommandsPersistEach(commands)) {
             while(isWifiConnected()) {
                 Utils.Log("Still waiting for WIFI to disconnect.");
                 try {
-                    Thread.sleep(WAIT_AFTER_LAST_COMMAND);
+                    Thread.sleep(OSExecutables.WAIT_TIME_AFTER_FAIL);
                 }
                 catch (InterruptedException e) {
                     e.printStackTrace();
@@ -77,92 +89,104 @@ public class NetworkService {
         }
     }
 
+    public List<String> requireParticipantsIPs() {
+        //networkInterfaceScan();
+        //checkHosts();
 
-    /**
-     * Only last command is persisted.
-     * @param commands
-     */
-    private boolean executeCommandsPersistLast(String[] commands) {
-        if(commands.length == 0) throw new IllegalArgumentException("No commands provided for execution.");
-        for(int i = 0; i < commands.length - 1; i++) {
-            executeCommand(commands[i]);
+        List<String> subnetIPs = new ArrayList<>();
+        for(String s : arpScan()) {
+            if(s.startsWith(WIFI_SUBNET)) subnetIPs.add(s);
         }
-        return persistCommand(commands[commands.length - 1], COMMAND_PERSISTANCE_ATTEMPTS);
+
+        return subnetIPs;
     }
 
-    /**
-     * Only last command is persisted.
-     * @param commands
-     */
-    private boolean executeCommandsPersistEach(String[] commands) {
-        if(commands.length == 0) throw new IllegalArgumentException("No commands provided for execution.");
-        boolean success;
-        for(int i = 0; i < commands.length; i++) {
-            success = persistCommand(commands[i], COMMAND_PERSISTANCE_ATTEMPTS);
-            if(!success) return false;
-        }
-        return true;
-    }
-
-    private int executeCommand(String command) {
-        int exitCode = -1;
+    public void networkInterfaceScan() {
+        Enumeration nis = null;
         try {
-            exitCode = Runtime.getRuntime().exec(command).waitFor();
-        }
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        Utils.Log("[code " + exitCode + "] " + command);
-        return exitCode;
-    }
+            nis = NetworkInterface.getNetworkInterfaces();
+            while(nis.hasMoreElements())
+            {
+                NetworkInterface ni = (NetworkInterface) nis.nextElement();
+                Enumeration ias = ni.getInetAddresses();
+                while (ias.hasMoreElements())
+                {
+                    InetAddress ia = (InetAddress) ias.nextElement();
+                    System.out.println(ia.getHostAddress());
+                }
 
-    private String executeCommandReturnString(String command) {
-        String result = null;
-        try {
-            Process process = Runtime.getRuntime().exec(command);
-            if(process.waitFor() != 0) return result;
-            Scanner scn = new Scanner(new InputStreamReader(process.getInputStream()));
-            result = "";
-            while(scn.hasNext()) {
-                result += scn.next();
             }
         }
-        catch (InterruptedException e) {
+        catch (SocketException e) {
             e.printStackTrace();
         }
-        catch (IOException e) {
-            e.printStackTrace();
+    }
+
+    private void checkHosts() {
+        int timeout=100;
+        List<Integer> thirdBytes = findThirdByte();
+        for (int i=0;i<thirdBytes.size();i++){
+            for (int j=1;j<255;j++){
+                String host = WIFI_SUBNET + '.' + thirdBytes.get(i) + '.' + j;
+                try {
+                    System.out.println("Check " + host);
+                    if (InetAddress.getByName(host).isReachable(timeout)){
+                        System.out.println(host + " is reachable");
+                    }
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-        Utils.Log("[command with string] " + command);
+    }
+
+    /**
+     * Eventually first element is IP address of this device.
+     * @return
+     */
+    private List<String> arpScan() {
+        List<String> result = new ArrayList<>();
+
+        // Create operating system process from arpe.bat file command
+        String out = OSExecutables.executeCommandReturnString("arp -a");
+        // A compiled representation of a regular expression
+        Pattern pattern =
+                Pattern.compile(".*\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\b");
+		/* An engine that performs match operations on a character sequence by interpreting a Pattern */
+        Matcher match = pattern.matcher(out);
+        String prev="",pLoc;
+        if(!(match.find()))        // In case no IP address Found in out
+            return result;
+        else
+        {
+            while(match.find())
+            {
+                pLoc = match.group();	// Returns the IP of other hosts
+                result.add(pLoc);
+            }
+        }
         return result;
     }
 
-    private boolean persistCommand(String command, int attempts) {
-        Utils.Log("Persisting command ("+attempts+" attempts):");
-        int exitCode;
-        do {
-            exitCode = executeCommand(command);
-            attempts--;
-            if(exitCode != 0) {
-                if(attempts < 1) return false;
-                try {
-                    Thread.sleep(WAIT_AFTER_LAST_COMMAND);
-                }
-                catch (InterruptedException e) {
-                    e.printStackTrace();
+
+    private List<Integer> findThirdByte() {
+        List<Integer> values = new ArrayList<>();
+        int timeout=100;
+        for (int i=1;i<255;i++){
+            String host = WIFI_SUBNET + '.' + i + '.' + 1;
+            try {
+                System.out.println("Check "+host);
+                if (InetAddress.getByName(host).isReachable(timeout)){
+                    System.out.println(host + " is reachable");
+                    values.add(i);
                 }
             }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        while (exitCode != 0);
-        return true;
-    }
-
-    public List<String> requireParticipantsIPs(int numOfParticipantsToWait) {
-        //TODO
-        return new ArrayList<>();
+        return values;
     }
 
     private Socket connect(String ip) {
@@ -171,7 +195,7 @@ public class NetworkService {
         return null;
     }
 
-    public void finalize() {
+    public void close() {
         disconnectWifi();
     }
 
@@ -181,8 +205,9 @@ public class NetworkService {
         String[] commands = new String[] {
                 "cmd /C netsh wlan show interfaces | Findstr /c:\"Signal\" && Echo Online || Echo Offline",
         };
-        String result = executeCommandReturnString(commands[0]);
+        String result = OSExecutables.executeCommandReturnString(commands[0]);
         if(result.contains("Online")) connected = true;
+        Utils.Log("Wifi connected: "+connected);
         return connected;
     }
 }

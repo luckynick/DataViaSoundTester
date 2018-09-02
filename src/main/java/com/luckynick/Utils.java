@@ -13,10 +13,10 @@ public class Utils {
     public static final boolean DEBUG_MODE = false;
     public static final String JSON_EXTENSION = ".json";
     public static final String PATH_SEPARATOR = File.separator;
-    public static final String DATA_STORAGE = Utils.formPathString("data", "models");
+    public static final String LOG_TAG = "[ LOGGER ] ";
 
     public static void Log(String consoleLog) {
-        if(DEBUG_MODE) System.out.println(consoleLog);
+        if(DEBUG_MODE) System.out.println(LOG_TAG + consoleLog);
     }
 
     private final static Set<Class<?>> NUMBER_REFLECTED_PRIMITIVES;
