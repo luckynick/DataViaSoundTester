@@ -1,4 +1,4 @@
-package com.luckynick.models;
+package com.luckynick.shared;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

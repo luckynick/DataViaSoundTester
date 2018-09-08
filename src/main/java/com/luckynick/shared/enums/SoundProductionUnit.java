@@ -1,4 +1,4 @@
-package com.luckynick.enums;
+package com.luckynick.shared.enums;
 
 public enum SoundProductionUnit {
     LOUD_SPEAKERS,

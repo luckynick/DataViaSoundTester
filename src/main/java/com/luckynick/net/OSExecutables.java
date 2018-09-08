@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class OSExecutables {
 
-    public static final int WAIT_TIME_AFTER_FAIL = 1000;
-    public static final int COMMAND_PERSISTENCE_ATTEMPTS = 10;
+    public static final int WAIT_TIME_AFTER_FAIL = 2000;
+    public static final int COMMAND_PERSISTENCE_ATTEMPTS = 50; //10
 
     /**
      * Only last command is persisted.
@@ -25,10 +25,29 @@ public class OSExecutables {
         return true;
     }
 
+    private static Process startCmdProcess(String command) {
+        try {
+            return Runtime.getRuntime().exec(command);
+            /*ProcessBuilder builder = new ProcessBuilder();
+            String[] args = command.split(" ");
+            String[] toPass = new String[args.length + 1];
+            toPass[0] = "cmd.exe";
+            for(int i = 1; i < toPass.length; i++) {
+                toPass[i] = args[i-1];
+            }
+            builder.command(toPass);
+            return builder.start();*/
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public static String executeCommandReturnString(String command) {
         String result = null;
         try {
-            Process process = Runtime.getRuntime().exec(command);
+            Process process = startCmdProcess(command);
             if(process.waitFor() != 0) return result;
             Scanner scn = new Scanner(new InputStreamReader(process.getInputStream()));
             result = "";
@@ -37,9 +56,6 @@ public class OSExecutables {
             }
         }
         catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e) {
             e.printStackTrace();
         }
         Utils.Log("[command with string return] " + command);
@@ -95,15 +111,12 @@ public class OSExecutables {
         return true;
     }
 
-    private static int executeCommand(String command) {
+    public static int executeCommand(String command) {
         int exitCode = -1;
         try {
-            exitCode = Runtime.getRuntime().exec(command).waitFor();
+            exitCode = startCmdProcess(command).waitFor();
         }
         catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e) {
             e.printStackTrace();
         }
         Utils.Log("[code " + exitCode + "] " + command);

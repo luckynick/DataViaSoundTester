@@ -1,8 +1,5 @@
 package com.luckynick.models.results;
 
-import com.luckynick.Utils;
-import com.luckynick.models.IOClassHandling;
-
 public class SingleTestResult extends TestResult {
 
     private SessionSummary senderSessionSummary;

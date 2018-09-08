@@ -1,13 +1,14 @@
 package com.luckynick.models.results;
 
 import com.luckynick.Utils;
+import com.luckynick.shared.SharedUtils;
 
 @Deprecated
 public class SingleTestResultBuilder extends TestResultBuilder<SingleTestResult> {
 
     public SingleTestResultBuilder() {
         super(SingleTestResult.class, new Object[] {
-                Utils.getDateStringForFileName()
+                SharedUtils.getDateStringForFileName()
         });
     }
 

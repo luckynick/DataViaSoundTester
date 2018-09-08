@@ -1,16 +1,16 @@
 package com.luckynick.models.results;
 
-import com.luckynick.Utils;
 import com.luckynick.models.Device;
 import com.luckynick.models.SerializableModel;
-import com.luckynick.models.IOClassHandling;
+import com.luckynick.shared.IOClassHandling;
+import com.luckynick.shared.SharedUtils;
 
 import java.util.Date;
 
 /**
  * Not serialized independently, but inside of test result
  */
-@IOClassHandling(sendViaNetwork = true, dataStorage = Utils.DataStorage.NONE)
+@IOClassHandling(sendViaNetwork = true, dataStorage = SharedUtils.DataStorage.NONE)
 class SessionSummary extends SerializableModel {
 
      Device dataSource;

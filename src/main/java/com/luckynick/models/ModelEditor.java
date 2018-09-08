@@ -104,7 +104,7 @@ public class ModelEditor<T extends SerializableModel> extends CustomJFrame imple
                     refreshView();
                     return;
                 }
-                ModelIO<T> newModelIO = new ModelIO<>(modelIO.classOfModel);
+                ModelIO<T> newModelIO = new ModelIO<>(modelIO.getClassOfModel(), latestFile);
                 try {
                     editableModel = newModelIO.deserialize();
                 }

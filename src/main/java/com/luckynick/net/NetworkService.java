@@ -1,6 +1,7 @@
 package com.luckynick.net;
 
 import com.luckynick.Utils;
+import com.luckynick.shared.SharedUtils;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.*;
@@ -24,12 +25,12 @@ import java.util.regex.Pattern;
  */
 public class NetworkService implements Closeable {
 
-    public static final int COMMUNICATION_PORT = 8080;
+    public static final int COMMUNICATION_PORT = SharedUtils.COMMUNICATION_PORT;
+    public static final String SSID = SharedUtils.SSID, PASSWORD = SharedUtils.PASSWORD;
     public static final boolean THIS_IS_WIFI_HOTSPOT = false;
-    public static final String SSID = "Heh_mobile", PASSWORD = "123456798";
-    public static final String WIFI_SUBNET = "192.168";
-    public static final String configFolder = Utils.DataStorage.CONFIG.toString();
-    public static final String wifiProfilePath = Utils.formPathString(configFolder, SSID + ".xml");
+    public static final String WIFI_SUBNET = SharedUtils.WIFI_SUBNET;
+    public static final String configFolder = SharedUtils.DataStorage.CONFIG.toString();
+    public static final String wifiProfilePath = SharedUtils.formPathString(configFolder, SSID + ".xml");
 
     private List<Socket> connectionPool = new ArrayList<>();
 
@@ -57,6 +58,7 @@ public class NetworkService implements Closeable {
         System.out.println("Connecting to SSID " + SSID);
         String[] commands = new String[] { //TODO: refresh list of WIFIs
                 "netsh wlan connect name=" + SSID,
+                //"cmd /c start \"\" bat\\connect_wifi.bat " + SSID
         };
         if(OSExecutables.persistCommand(commands)) {
             while(!isWifiConnected()) {
@@ -91,7 +93,7 @@ public class NetworkService implements Closeable {
 
     public List<String> requireParticipantsIPs() {
         //networkInterfaceScan();
-        //checkHosts();
+        //iterateIPs();
 
         List<String> subnetIPs = new ArrayList<>();
         for(String s : arpScan()) {
@@ -122,7 +124,7 @@ public class NetworkService implements Closeable {
         }
     }
 
-    private void checkHosts() {
+    private void iterateIPs() {
         int timeout=100;
         List<Integer> thirdBytes = findThirdByte();
         for (int i=0;i<thirdBytes.size();i++){
@@ -139,6 +141,25 @@ public class NetworkService implements Closeable {
                 }
             }
         }
+    }
+
+    private List<Integer> findThirdByte() {
+        List<Integer> values = new ArrayList<>();
+        int timeout=100;
+        for (int i=1;i<255;i++){
+            String host = WIFI_SUBNET + '.' + i + '.' + 1;
+            try {
+                System.out.println("Check "+host);
+                if (InetAddress.getByName(host).isReachable(timeout)){
+                    System.out.println(host + " is reachable");
+                    values.add(i);
+                }
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return values;
     }
 
     /**
@@ -169,29 +190,16 @@ public class NetworkService implements Closeable {
         return result;
     }
 
-
-    private List<Integer> findThirdByte() {
-        List<Integer> values = new ArrayList<>();
-        int timeout=100;
-        for (int i=1;i<255;i++){
-            String host = WIFI_SUBNET + '.' + i + '.' + 1;
-            try {
-                System.out.println("Check "+host);
-                if (InetAddress.getByName(host).isReachable(timeout)){
-                    System.out.println(host + " is reachable");
-                    values.add(i);
-                }
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
+    public Socket connect(String ip) {
+        try {
+            Socket s = new Socket(ip, COMMUNICATION_PORT);
+            new DataInputStream(s.getInputStream());
         }
-        return values;
-    }
-
-    private Socket connect(String ip) {
-
+        catch (IOException e) {
+            e.printStackTrace();
+        }
         //connectionPool.add();
+
         return null;
     }
 

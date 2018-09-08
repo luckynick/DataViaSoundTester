@@ -1,12 +1,13 @@
 package com.luckynick.models.profiles;
 
 import com.luckynick.Utils;
-import com.luckynick.enums.DistanceUnit;
+import com.luckynick.shared.SharedUtils;
+import com.luckynick.shared.enums.DistanceUnit;
 import com.luckynick.models.Device;
-import com.luckynick.models.IOClassHandling;
+import com.luckynick.shared.IOClassHandling;
 import com.luckynick.models.ManageableField;
 
-@IOClassHandling(dataStorage = Utils.DataStorage.SEQUENTIAL)
+@IOClassHandling(dataStorage = SharedUtils.DataStorage.SEQUENTIAL)
 public class SequentialTestProfile extends Profile {
     protected Device controller;
     protected Device peer1;

@@ -1,20 +1,23 @@
 package com.luckynick.models;
 
-import com.luckynick.Utils;
+
+import com.luckynick.shared.IOClassHandling;
+import com.luckynick.shared.IOFieldHandling;
+import com.luckynick.shared.SharedUtils;
 
 import javax.swing.*;
 import java.awt.*;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-@IOClassHandling(dataStorage = Utils.DataStorage.MODELS)
+@IOClassHandling(dataStorage = SharedUtils.DataStorage.MODELS)
 public abstract class SerializableModel {
 
     public String nameOfModelClass = this.getClass().getSimpleName();
     @IOFieldHandling(serialize = false)
     protected String filenamePrefix = nameOfModelClass;
     @ManageableField(editable = false)
-    public String filename= filenamePrefix + Utils.JSON_EXTENSION;
+    public String filename= filenamePrefix + SharedUtils.JSON_EXTENSION;
     @IOFieldHandling(serialize = false)
     public String fileRoot = this.getClass().getDeclaredAnnotation(IOClassHandling.class).dataStorage().toString();
     public String wholePath = fileRoot + filename;
@@ -94,7 +97,7 @@ public abstract class SerializableModel {
     private boolean isFieldSet(Field field) {
         Object value = getValueFromField(field);
         if(value == null) return false;
-        if(Utils.isReflectedAsNumber(field.getType()) && (int) value == -1) return false;
+        if(SharedUtils.isReflectedAsNumber(field.getType()) && (int) value == -1) return false;
         return true;
     }
 
@@ -186,7 +189,7 @@ public abstract class SerializableModel {
     private void setValueInField(Field field, Object value) {
         field.setAccessible(true);
         try {
-            if(Utils.isReflectedAsNumber(field.getType()) && value == null)
+            if(SharedUtils.isReflectedAsNumber(field.getType()) && value == null)
                 field.set(this, -1);
             else
                 field.set(this, value);

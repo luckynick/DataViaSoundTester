@@ -2,8 +2,9 @@ package com.luckynick.models.results;
 
 import com.luckynick.CustomJFrame;
 import com.luckynick.Utils;
-import com.luckynick.models.IOClassHandling;
+import com.luckynick.shared.IOClassHandling;
 import com.luckynick.models.ManageableField;
+import com.luckynick.shared.SharedUtils;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.FastScatterPlot;
@@ -13,11 +14,11 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 import java.awt.*;
 
-@IOClassHandling(dataStorage = Utils.DataStorage.RESULTS)
+@IOClassHandling(dataStorage = SharedUtils.DataStorage.RESULTS)
 public class TestsReport extends TestResult {
 
     @ManageableField(editable = false)
-    String testDateString = Utils.getDateStringForFileName();
+    String testDateString = SharedUtils.getDateStringForFileName();
 
     SingleTestResult[] resultsOfTests;
 
