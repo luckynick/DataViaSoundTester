@@ -1,6 +1,5 @@
 package com.luckynick.models.profiles;
 
-import com.luckynick.Utils;
 import com.luckynick.models.SerializableModel;
 import com.luckynick.shared.SharedUtils;
 

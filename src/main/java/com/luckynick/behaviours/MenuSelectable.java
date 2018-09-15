@@ -1,6 +1,6 @@
 package com.luckynick.behaviours;
 
-import com.luckynick.PureFunctionalInterface;
+import com.luckynick.shared.PureFunctionalInterface;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

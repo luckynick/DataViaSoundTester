@@ -1,5 +1,7 @@
 package com.luckynick.shared;
 
+import com.luckynick.custom.Utils;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,13 +10,19 @@ import java.util.Set;
 
 public class SharedUtils {
 
+    public static final boolean DEBUG_MODE = true;
+
     public static final String SSID = "Heh_mobile", PASSWORD = "123456798";
-    public static final int COMMUNICATION_PORT = 8080;
+    public static final int TCP_COMMUNICATION_PORT = 4445;
+    public static final int UDP_COMMUNICATION_PORT = 4444;
     public static final String WIFI_SUBNET = "192.168";
+    public static final String CONNECTION_CLOSED = "CONNECTION_CLOSED"; //10
 
     public static final String JSON_EXTENSION = ".json";
     public static final String PATH_SEPARATOR = File.separator;
 
+    public static final int WAIT_TIME_AFTER_FAIL = 2000;
+    public static final int COMMAND_PERSISTENCE_ATTEMPTS = 20; //10
 
 
     public enum DataStorage {
@@ -81,5 +89,9 @@ public class SharedUtils {
 
     public static boolean isReflectedAsNumber(Class<?> type) {
         return Number.class.isAssignableFrom(type) || NUMBER_REFLECTED_PRIMITIVES.contains(type);
+    }
+
+    protected static void Log(String tag, String consoleLog) {
+        if(SharedUtils.DEBUG_MODE) System.out.println("["+tag + "] " + consoleLog);
     }
 }

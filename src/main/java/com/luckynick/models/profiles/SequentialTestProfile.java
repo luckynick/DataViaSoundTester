@@ -1,9 +1,8 @@
 package com.luckynick.models.profiles;
 
-import com.luckynick.Utils;
 import com.luckynick.shared.SharedUtils;
 import com.luckynick.shared.enums.DistanceUnit;
-import com.luckynick.models.Device;
+import com.luckynick.custom.Device;
 import com.luckynick.shared.IOClassHandling;
 import com.luckynick.models.ManageableField;
 

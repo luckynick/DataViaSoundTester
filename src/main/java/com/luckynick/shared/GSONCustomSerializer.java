@@ -32,12 +32,21 @@ public class GSONCustomSerializer<T> {
             .setExclusionStrategies(ioExclusionStrategy).create();
 
 
-    public void serialize(Writer writer, T object) throws IOException {
+    public void serialize(Writer writer, T object) {
         gsonIO.toJson(object, writer);
     }
 
-    public T deserialize(Reader reader) throws IOException {
+    public String serializeStr(T object) {
+        return gsonIO.toJson(object);
+    }
+
+    public T deserialize(Reader reader) {
         T result = gsonIO.fromJson(reader, classOfModel);
+        return result;
+    }
+
+    public T deserialize(String json) {
+        T result = gsonIO.fromJson(json, classOfModel);
         return result;
     }
 

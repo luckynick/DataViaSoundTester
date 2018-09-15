@@ -1,7 +1,6 @@
 package com.luckynick.models.results;
 
 import com.luckynick.CustomJFrame;
-import com.luckynick.Utils;
 import com.luckynick.shared.IOClassHandling;
 import com.luckynick.models.ManageableField;
 import com.luckynick.shared.SharedUtils;

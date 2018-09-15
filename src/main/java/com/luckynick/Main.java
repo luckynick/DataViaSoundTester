@@ -1,10 +1,7 @@
 package com.luckynick;
 
 import com.luckynick.behaviours.*;
-import com.luckynick.behaviours.createProfile.CreateSequentialProfile;
-import com.luckynick.behaviours.createProfile.CreateSingularProfile;
-import com.luckynick.behaviours.createProfile.CreateTestScenario;
-import com.luckynick.behaviours.createProfile.ProfileCreationBehaviour;
+import com.luckynick.shared.PureFunctionalInterfaceWithReturn;
 
 import java.util.Arrays;
 import java.util.HashMap;

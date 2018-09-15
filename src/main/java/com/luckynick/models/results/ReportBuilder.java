@@ -1,6 +1,6 @@
 package com.luckynick.models.results;
 
-import com.luckynick.Utils;
+import com.luckynick.custom.Utils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;

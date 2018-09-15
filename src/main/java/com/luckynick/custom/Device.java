@@ -1,5 +1,6 @@
-package com.luckynick.models;
+package com.luckynick.custom;
 
+import com.luckynick.models.SerializableModel;
 import com.luckynick.shared.IOClassHandling;
 import com.luckynick.shared.IOFieldHandling;
 import com.luckynick.shared.SharedUtils;
@@ -16,6 +17,7 @@ public class Device extends SerializableModel {
     public String model;
     public String androidVersion;
     public TestRole roleOfParticipant;
+    public boolean isHotspot = false;
 
 
     public Device() {

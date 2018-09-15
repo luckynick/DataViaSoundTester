@@ -1,29 +1,34 @@
 package com.luckynick.behaviours.addDevice;
 
-import com.luckynick.behaviours.ProgramBehaviour;
-import com.luckynick.models.Device;
-import com.luckynick.models.ModelIO;
-import com.luckynick.net.NetworkService;
-import com.luckynick.net.OSExecutables;
+import static com.luckynick.custom.Utils.*;
 
-import java.io.IOException;
+import com.luckynick.behaviours.ProgramBehaviour;
+import com.luckynick.custom.Device;
+import com.luckynick.models.ModelIO;
+import com.luckynick.net.WindowsNetworkService;
+import com.luckynick.shared.net.ConnectionManager;
+import com.luckynick.shared.SharedUtils;
+import com.luckynick.shared.net.TCPConnection;
+
+import java.net.ConnectException;
 import java.util.Scanner;
 
 public class DeviceAdditionBehaviour extends ProgramBehaviour {
 
-    Device deviceObjectToManipulate;
+    public static final String LOG_TAG = "DeviceAdditionBehaviour";
+
     ModelIO<Device> modelIO;
 
     public DeviceAdditionBehaviour() {
-        deviceObjectToManipulate = new Device();
         modelIO = new ModelIO<>(Device.class);
     }
 
     @Override
     public void performProgramTasks() {
-        NetworkService serviceOut = new NetworkService();
-        try (NetworkService service = serviceOut) {
-            waitConsoleInput("Confirm that hotspot was started [Enter]");
+        WindowsNetworkService serviceOut = new WindowsNetworkService();
+        try (ConnectionManager connectionManager = new ConnectionManager();
+             WindowsNetworkService service = serviceOut) {
+            //waitConsoleInput("Confirm that hotspot was started [Enter]");
             service.connectWifi();
             if(!service.isWifiConnected()) {
                 System.out.println("Failed to establish WIFI connection. Abort.");
@@ -31,28 +36,33 @@ public class DeviceAdditionBehaviour extends ProgramBehaviour {
             }
             System.out.println("WIFI connected: " + service.isWifiConnected());
 
-            for(String ip : service.requireParticipantsIPs()){
-                System.out.println("Local IP: " + ip);
+
+            for(int i = 0; i < 2; i++) {
+                int port = SharedUtils.TCP_COMMUNICATION_PORT + i;
+                try {
+                    TCPConnection s = service.waitForConnection(port);
+                    connectionManager.addConnection(s);
+                }
+                catch (ConnectException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    Thread.sleep(1000);
+                }
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
 
-            System.out.println("WIFI connected: " + serviceOut.isWifiConnected());
+            for(TCPConnection conn : connectionManager.getConnectionIterator()) {
+                Device resp = conn.receive(Device.class);
+                Log(LOG_TAG, "Received response from device: " + modelIO.serializeStr(resp));
+                System.out.println("Connected: " + (conn == null ? "none" : conn.getSocket().isConnected() + " " +
+                        conn.getSocket().getInetAddress().getHostAddress()));
+            }
 
-            waitConsoleInput("Smash dat button to proceed");
-            System.out.println("Oke alright");
 
-            service.connect("192.168.43.91");  //try to connect
         }
-
-        /*try {
-            //TODO: Scatter devices from network
-            ArrayList<Device> devices = new ArrayList<>();
-
-
-            modelIO.serialize(deviceObjectToManipulate);
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }*/
     }
 
     void waitConsoleInput(String info) {

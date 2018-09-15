@@ -1,6 +1,6 @@
 package com.luckynick.models.results;
 
-import com.luckynick.models.Device;
+import com.luckynick.custom.Device;
 import com.luckynick.models.SerializableModel;
 import com.luckynick.shared.IOClassHandling;
 import com.luckynick.shared.SharedUtils;

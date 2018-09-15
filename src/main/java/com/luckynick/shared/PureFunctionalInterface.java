@@ -1,4 +1,4 @@
-package com.luckynick;
+package com.luckynick.shared;
 
 public interface PureFunctionalInterface {
     /**

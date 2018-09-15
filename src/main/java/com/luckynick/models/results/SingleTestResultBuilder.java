@@ -1,6 +1,5 @@
 package com.luckynick.models.results;
 
-import com.luckynick.Utils;
 import com.luckynick.shared.SharedUtils;
 
 @Deprecated

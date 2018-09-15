@@ -1,6 +1,7 @@
 package com.luckynick.net;
 
-import com.luckynick.Utils;
+import static com.luckynick.custom.Utils.*;
+import com.luckynick.shared.SharedUtils;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,8 +9,7 @@ import java.util.Scanner;
 
 public class OSExecutables {
 
-    public static final int WAIT_TIME_AFTER_FAIL = 2000;
-    public static final int COMMAND_PERSISTENCE_ATTEMPTS = 50; //10
+    public static final String LOG_TAG = "OSExecutables";
 
     /**
      * Only last command is persisted.
@@ -58,7 +58,7 @@ public class OSExecutables {
         catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Utils.Log("[command with string return] " + command);
+        Log("command with string return", command);
         return result;
     }
 
@@ -69,7 +69,7 @@ public class OSExecutables {
      */
     public static boolean persistCommand(String[] command) {
         int attempts = COMMAND_PERSISTENCE_ATTEMPTS;
-        Utils.Log("Persisting complex command ("+attempts+" attempts)");
+        Log(LOG_TAG, "Persisting complex command ("+attempts+" attempts)");
         boolean success = true;
         for(int i = 0; i < attempts; i++) {
             success = true;
@@ -92,7 +92,7 @@ public class OSExecutables {
 
     private static boolean persistCommand(String command) {
         int attempts = COMMAND_PERSISTENCE_ATTEMPTS;
-        Utils.Log("Persisting command ("+attempts+" attempts):" + command);
+        Log(LOG_TAG, "Persisting command ("+attempts+" attempts):" + command);
         int exitCode;
         do {
             exitCode = executeCommand(command);
@@ -119,7 +119,7 @@ public class OSExecutables {
         catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Utils.Log("[code " + exitCode + "] " + command);
+        Log("code " + exitCode, command);
         return exitCode;
     }
 

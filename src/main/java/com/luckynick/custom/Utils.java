@@ -1,4 +1,4 @@
-package com.luckynick;
+package com.luckynick.custom;
 
 import com.luckynick.shared.SharedUtils;
 
@@ -10,13 +10,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Utils {
+public class Utils extends SharedUtils {
 
-    public static final boolean DEBUG_MODE = true;
-    public static final String LOG_TAG = "[ LOGGER ] ";
-
-    public static void Log(String consoleLog) {
-        if(DEBUG_MODE) System.out.println(LOG_TAG + consoleLog);
+    public static void Log(String tag, String consoleLog) {
+        SharedUtils.Log(tag, consoleLog);
     }
 
     public static <X> X[] toArray(Class<X> entryClass, List<X> listToConvert) {
