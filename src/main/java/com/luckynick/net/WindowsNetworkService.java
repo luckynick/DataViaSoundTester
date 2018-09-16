@@ -32,7 +32,7 @@ public class WindowsNetworkService extends NetworkService implements Closeable {
                     "Netsh WLAN delete profile name=\""+SSID+"\"",
                     "Netsh WLAN add profile filename=\""+wifiProfile.getAbsolutePath()+"\"",
             };
-            OSExecutables.executeCommandsPersistEach(commands);
+            OSCommander.executeCommandsPersistEach(commands);
         }
     }
 
@@ -43,7 +43,7 @@ public class WindowsNetworkService extends NetworkService implements Closeable {
                 "netsh wlan connect name=" + SSID,
                 //"cmd /c start \"\" bat\\connect_wifi.bat " + SSID
         };
-        if(OSExecutables.persistCommand(commands)) {
+        if(OSCommander.persistCommand(commands)) {
             while(!isWifiConnected()) {
                 Log(LOG_TAG, "Still waiting for WIFI to connect.");
                 try {
@@ -61,7 +61,7 @@ public class WindowsNetworkService extends NetworkService implements Closeable {
         String[] commands = new String[] { //TODO: refresh list of WIFIs
                 "netsh wlan disconnect",
         };
-        if(OSExecutables.executeCommandsPersistEach(commands)) {
+        if(OSCommander.executeCommandsPersistEach(commands)) {
             while(isWifiConnected()) {
                 Log(LOG_TAG, "Still waiting for WIFI to disconnect.");
                 try {
@@ -84,7 +84,7 @@ public class WindowsNetworkService extends NetworkService implements Closeable {
         String[] commands = new String[] {
                 "cmd /C netsh wlan show interfaces | Findstr /c:\"Signal\" && Echo Online || Echo Offline",
         };
-        String result = OSExecutables.executeCommandReturnString(commands[0]);
+        String result = OSCommander.executeCommandReturnString(commands[0]);
         if(result.contains("Online")) connected = true;
         Log(LOG_TAG, "Wifi connected: "+connected);
         return connected;
@@ -98,7 +98,7 @@ public class WindowsNetworkService extends NetworkService implements Closeable {
         List<String> result = new ArrayList<>();
 
         // Create operating system process from arpe.bat file command
-        String out = OSExecutables.executeCommandReturnString("arp -a");
+        String out = OSCommander.executeCommandReturnString("arp -a");
         // A compiled representation of a regular expression
         Pattern pattern =
                 Pattern.compile(".*\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\b");
