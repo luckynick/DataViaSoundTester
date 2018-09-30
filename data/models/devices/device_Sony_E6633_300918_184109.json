@@ -1,0 +1,13 @@
+{
+  "macAddress": "D4:38:9C:41:1C:9D",
+  "localIP": "192.168.43.162",
+  "vendor": "Sony",
+  "model": "E6633",
+  "os": "Android",
+  "osVersion": "7.1.1",
+  "roleOfParticipant": "PEER",
+  "isHotspot": false,
+  "nameOfModelClass": "Device",
+  "filename": "device_null_null_300918_184108.json",
+  "wholePath": "data/models/devices/device_Sony_E6633_300918_184109.json"
+}

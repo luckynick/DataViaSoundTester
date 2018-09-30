@@ -5,31 +5,38 @@ import static com.luckynick.custom.Utils.*;
 import com.luckynick.behaviours.ProgramBehaviour;
 import com.luckynick.custom.Device;
 import com.luckynick.models.ModelIO;
+import com.luckynick.net.ConnectionHandler;
+import com.luckynick.net.MultiThreadServer;
 import com.luckynick.net.WindowsNetworkService;
 import com.luckynick.shared.enums.PacketID;
 import com.luckynick.shared.enums.TestRole;
 import com.luckynick.shared.net.*;
 import com.luckynick.shared.SharedUtils;
 import nl.pvdberg.pnet.client.Client;
-import nl.pvdberg.pnet.event.PacketHandler;
 import nl.pvdberg.pnet.packet.Packet;
+import nl.pvdberg.pnet.packet.PacketBuilder;
 import nl.pvdberg.pnet.packet.PacketReader;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
-public class DeviceAdditionBehaviour extends ProgramBehaviour implements ClientManagerListener {
+public class DeviceAdditionBehaviour extends ProgramBehaviour implements PacketListener, ConnectionListener {
 
     public static final String LOG_TAG = "DeviceAdditionBehaviour";
 
     ModelIO<Device> modelIO;
     Thread udpBroadcastThread;
+    int tcpPort = SharedUtils.TCP_COMMUNICATION_PORT;
 
-    ClientManager connectionManager = new ClientManager();
+    //ClientManager connectionManager = new ClientManager(tcpPort);
 
     public DeviceAdditionBehaviour() {
         modelIO = new ModelIO<>(Device.class);
-        /*connectionManager.subscribePacketListener(PacketID.DEVICE, (Packet p, Client c) -> {
+
+        /*connectionManager.subscribeConnectionEvents(this);
+        connectionManager.subscribePacketListener(PacketID.DEVICE, (Packet p, Client c) -> {
             Log(LOG_TAG, "Received Device");
             PacketReader packetReader = new PacketReader(p);
             try {
@@ -39,6 +46,11 @@ public class DeviceAdditionBehaviour extends ProgramBehaviour implements ClientM
             catch (IOException e) {
                 e.printStackTrace();
             }
+
+            udpBroadcastThread.interrupt();
+            tcpPort++;
+            connectionManager.restart(tcpPort);
+            trapConnection();
         });*/
     }
 
@@ -55,46 +67,41 @@ public class DeviceAdditionBehaviour extends ProgramBehaviour implements ClientM
             }
             System.out.println("WIFI connected: " + service.isWifiConnected());
 
-            udpBroadcastThread = UDPServer.broadcastThread(
-                    TestRole.CONTROLLER + " " + SharedUtils.TCP_COMMUNICATION_PORT);
-            udpBroadcastThread.start();
+            //trapConnection();
 
-
+            MultiThreadServer server = new MultiThreadServer(SharedUtils.TCP_COMMUNICATION_PORT);
+            ConnectionHandler.subscribePacketEvents(this);
+            server.subscribeConnectionEvents(this);
+            trapConnection();
         }
     }
 
-    @Override
-    public void onConnect(Client c, int connectionsNum) {
-        Log(LOG_TAG, "Connected. Connections number: " + connectionsNum);
-
-        NetworkExecutionSequence seq = new NetworkExecutionSequence(new ClientWrapper(c));
-        String s = "";
-        seq.addCommand(PacketID.DEVICE, new PacketHandler() {
-            @Override
-            public void handlePacket(Packet p, Client c) throws IOException {
-                Log(LOG_TAG, "Received Device");
-                PacketReader packetReader = new PacketReader(p);
-                try {
-                    String json = packetReader.readString();
-                    addDevice(json);
-                }
-                catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).build().execute();
-    }
-
-    @Override
-    public void onDisconnect(Client c, int connectionsNum) {
-        Log(LOG_TAG, "Disconnected. Connections number: " + connectionsNum);
+    private void trapConnection() {
+        udpBroadcastThread = UDPServer.broadcastThread(
+                TestRole.CONTROLLER + " " + tcpPort);
+        udpBroadcastThread.start();
     }
 
     private void addDevice(String json) {
         Device obj = modelIO.deserialize(json);
         Log(LOG_TAG, "Device to add:");
         Log(LOG_TAG, json);
-        Device d = modelIO.deserialize(json);
+        addDevice(obj);
+    }
+
+    private void addDevice(Device obj) {
+        try {
+            List<File> fileList = modelIO.listFiles();
+            for(File f : fileList) {
+                Device toRemove = modelIO.deserialize(f);
+                if(obj.macAddress.equals(toRemove.macAddress)) f.delete();
+            }
+            Log(LOG_TAG, "Serializing " + obj.vendor + " on path " + obj.wholePath);
+            modelIO.serialize(obj);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -108,5 +115,58 @@ public class DeviceAdditionBehaviour extends ProgramBehaviour implements ClientM
         System.out.println("Press \"ENTER\" to continue...");
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
+    }
+
+    @Override
+    public void onRequestPacket(Client c, Packet p) {
+        Log(LOG_TAG, "onRequestPacket: " + p);
+    }
+
+    @Override
+    public void onResponsePacket(Client c, Packet p) {
+        PacketReader packetReader = new PacketReader(p);
+        try {
+            int responseType = packetReader.readInt();
+            if(responseType == PacketID.DEVICE.ordinal()) {
+                String json = packetReader.readString();
+                addDevice(json);
+            }
+            else {
+                Log(LOG_TAG, "Response doesn't contain device data.");
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void onUnexpectedPacket(Client c, Packet p) {
+        Log(LOG_TAG, "onUnexpectedPacket: " + p);
+
+    }
+
+    @Override
+    public void onConnect(Client c) {
+        Log(LOG_TAG, "onConnect: " + c.getInetAddress().getHostAddress());
+
+        sendPullRequest(c, PacketID.DEVICE); //require device info from remote phone
+    }
+
+    @Override
+    public void onDisconnect(Client c) {
+        Log(LOG_TAG, "onDisconnect: " + c.getInetAddress().getHostAddress());
+
+    }
+
+    public static void sendPullRequest(Client c, PacketID requiredResponse) {
+        c.send(createRequestPacket().withInt(requiredResponse.ordinal()).build());
+    }
+
+    public static PacketBuilder createRequestPacket() {
+        PacketBuilder pb = new PacketBuilder(Packet.PacketType.Request);
+        pb.withID((short)PacketID.REQUEST.ordinal());
+        return pb;
     }
 }

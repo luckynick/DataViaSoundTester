@@ -1,0 +1,13 @@
+{
+  "macAddress": "48:88:CA:F2:03:5E",
+  "localIP": "192.168.43.1",
+  "vendor": "LENOVO",
+  "model": "Lenovo A1000",
+  "os": "Android",
+  "osVersion": "5.0",
+  "roleOfParticipant": "PEER",
+  "isHotspot": true,
+  "nameOfModelClass": "Device",
+  "filename": "device_null_null_300918_184106.json",
+  "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_300918_192226.json"
+}

@@ -5,9 +5,16 @@ import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.luckynick.shared.GSONCustomSerializer;
+import com.luckynick.shared.IOClassHandling;
 import com.luckynick.shared.IOFieldHandling;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<T> {
 
@@ -46,6 +53,7 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
 
 
     public void serialize(T object) throws IOException {
+        File file = new File(object.wholePath);
         file.createNewFile();
         if(file == null) throw new IllegalStateException("Model file doesn't exist.");
         FileWriter fileWriter = new FileWriter(file, false);
@@ -53,10 +61,17 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
         close(fileWriter);
     }
 
-    //TODO: recursively read
     public T deserialize() throws IOException {
         if(file == null || !file.exists()) throw new IllegalStateException("Model file doesn't exist.");
         FileReader fileReader = new FileReader(file);
+        T result = deserialize(fileReader);
+        close(fileReader);
+        return result;
+    }
+
+    public T deserialize(File f) throws IOException {
+        if(f == null || !f.exists()) throw new IllegalStateException("Model file doesn't exist.");
+        FileReader fileReader = new FileReader(f);
         T result = deserialize(fileReader);
         close(fileReader);
         return result;
@@ -74,5 +89,22 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
 
     public boolean exists() {
         return this.file.exists();
+    }
+
+
+
+    public List<File> listFiles() {
+        String dir = this.classOfModel.getDeclaredAnnotation(IOClassHandling.class).dataStorage().getDirPath();
+        ArrayList<File> list = new ArrayList<>();
+        if(dir == null) return list;
+        try (Stream<Path> paths = Files.walk(Paths.get(dir))) {
+            paths
+                    .filter(Files::isRegularFile)
+                    .forEach((p) -> {list.add(p.toFile());});
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }
