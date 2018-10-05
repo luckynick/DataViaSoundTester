@@ -1,17 +1,19 @@
-package com.luckynick.behaviours.addDevice;
-
-import static com.luckynick.custom.Utils.*;
+package com.luckynick.behaviours.runTest;
 
 import com.luckynick.behaviours.ProgramBehaviour;
 import com.luckynick.custom.Device;
 import com.luckynick.models.ModelIO;
+import com.luckynick.models.ModelSelector;
+import com.luckynick.models.profiles.SequentialTestProfile;
 import com.luckynick.net.ConnectionHandler;
 import com.luckynick.net.MultiThreadServer;
 import com.luckynick.net.WindowsNetworkService;
+import com.luckynick.shared.SharedUtils;
 import com.luckynick.shared.enums.PacketID;
 import com.luckynick.shared.enums.TestRole;
-import com.luckynick.shared.net.*;
-import com.luckynick.shared.SharedUtils;
+import com.luckynick.shared.net.ConnectionListener;
+import com.luckynick.shared.net.PacketListener;
+import com.luckynick.shared.net.UDPServer;
 import nl.pvdberg.pnet.client.Client;
 import nl.pvdberg.pnet.packet.Packet;
 import nl.pvdberg.pnet.packet.PacketBuilder;
@@ -19,23 +21,33 @@ import nl.pvdberg.pnet.packet.PacketReader;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class DeviceAdditionBehaviour extends ProgramBehaviour implements PacketListener, ConnectionListener {
+import static com.luckynick.custom.Utils.Log;
+
+public class TestPreparationBehaviour extends ProgramBehaviour implements PacketListener, ConnectionListener {
 
     public static final String LOG_TAG = "TestPreparationBehaviour";
 
-    ModelIO<Device> modelIO;
     Thread udpBroadcastThread;
     int tcpPort = SharedUtils.TCP_COMMUNICATION_PORT;
 
-    public DeviceAdditionBehaviour() {
-        modelIO = new ModelIO<>(Device.class);
-    }
+    ModelIO<Device> deviceModelIO = new ModelIO<>(Device.class);
+    ModelIO<SequentialTestProfile> profileModelIO = new ModelIO<>(SequentialTestProfile.class);
+
+    List<Device> connectedDevices = new ArrayList<>();
+    List<Device> allowedDevices = ModelSelector.requireSelection(deviceModelIO, true);
+    private final int REQUIRED_DEVICES_AMT = 2;
 
     @Override
     public void performProgramTasks() {
+        if(allowedDevices == null) {
+            System.out.println("Tests were terminated.");
+            return;
+        }
+
+
 
         WindowsNetworkService serviceOut = new WindowsNetworkService();
         try (WindowsNetworkService service = serviceOut) {
@@ -61,27 +73,23 @@ public class DeviceAdditionBehaviour extends ProgramBehaviour implements PacketL
     }
 
     private void addDevice(String json) {
-        Device obj = modelIO.deserialize(json);
-        obj.setFilename();
-        Log(LOG_TAG, "Device to add:");
-        Log(LOG_TAG, json);
+        Device obj = deviceModelIO.deserialize(json);
         addDevice(obj);
     }
 
     private void addDevice(Device obj) {
-        try {
-            List<File> fileList = modelIO.listFiles();
-            for(File f : fileList) {
-                Device toRemove = modelIO.deserialize(f);
-                if(obj.macAddress.equals(toRemove.macAddress)) f.delete();
+        for(Device stored : allowedDevices) {
+            if(obj.macAddress.equals(stored.macAddress)) {
+                connectedDevices.add(obj);
+                if(connectedDevices.size() == REQUIRED_DEVICES_AMT) {
+                    //SequentialTestProfile
+                    new PerformTests(null).performProgramTasks();
+                }
+                return;
             }
-            Log(LOG_TAG, "Serializing " + obj.vendor + " on path " + obj.wholePath);
-            modelIO.serialize(obj);
-        }
-        catch (IOException e) {
-            e.printStackTrace();
         }
     }
+
 
     @Override
     public void onRequestPacket(Client c, Packet p) {
@@ -95,7 +103,7 @@ public class DeviceAdditionBehaviour extends ProgramBehaviour implements PacketL
             int responseType = packetReader.readInt();
             if(responseType == PacketID.DEVICE.ordinal()) {
                 String json = packetReader.readString();
-                addDevice(json);
+                //TODO: handle response
             }
             else {
                 Log(LOG_TAG, "Response doesn't contain device data.");
@@ -110,7 +118,6 @@ public class DeviceAdditionBehaviour extends ProgramBehaviour implements PacketL
     @Override
     public void onUnexpectedPacket(Client c, Packet p) {
         Log(LOG_TAG, "onUnexpectedPacket: " + p);
-
     }
 
     @Override
@@ -123,7 +130,7 @@ public class DeviceAdditionBehaviour extends ProgramBehaviour implements PacketL
     @Override
     public void onDisconnect(Client c) {
         Log(LOG_TAG, "onDisconnect: " + c.getInetAddress().getHostAddress());
-
+        throw new IllegalStateException("Device was disconnected.");
     }
 
     public static void sendPullRequest(Client c, PacketID requiredResponse) {

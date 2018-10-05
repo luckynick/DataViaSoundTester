@@ -6,10 +6,15 @@ import com.luckynick.custom.Device;
 import com.luckynick.shared.IOClassHandling;
 import com.luckynick.models.ManageableField;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @IOClassHandling(dataStorage = SharedUtils.DataStorage.SEQUENTIAL)
 public class SequentialTestProfile extends Profile {
     protected Device controller;
+    @ManageableField(required = true)
     protected Device peer1;
+    @ManageableField(required = true)
     protected Device peer2;
 
     @ManageableField(required = true)
@@ -18,6 +23,6 @@ public class SequentialTestProfile extends Profile {
     protected DistanceUnit distanceUnitName = DistanceUnit.Centimeter;
 
     //TODO
-    //@ManageableField
-    protected SingleTestProfile[] testsToPerform;
+    @ManageableField(required = true)
+    public List<SingleTestProfile> testsToPerform = new ArrayList<>();
 }

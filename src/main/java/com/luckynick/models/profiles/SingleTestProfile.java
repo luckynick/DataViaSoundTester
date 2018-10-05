@@ -10,13 +10,13 @@ import com.luckynick.models.ManageableField;
 @IOClassHandling(dataStorage = SharedUtils.DataStorage.SINGLE)
 public class SingleTestProfile extends Profile {
 
-    protected Device sender;
-    protected Device receiver;
-
     @ManageableField
     protected SoundProductionUnit soundProductionUnit = SoundProductionUnit.LOUD_SPEAKERS;
     @ManageableField
     protected SoundConsumptionUnit soundConsumptionUnit = SoundConsumptionUnit.MICROPHONE;
     @ManageableField
     protected int loudnessLevel = 100;
+
+    @ManageableField(required = true)
+    Dictionary dictionary;
 }
