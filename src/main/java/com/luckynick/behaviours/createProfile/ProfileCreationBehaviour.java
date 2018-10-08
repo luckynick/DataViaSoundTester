@@ -28,7 +28,7 @@ public abstract class ProfileCreationBehaviour<T extends Profile> extends Progra
     public void performProgramTasks() {
         try {
 
-            T editedProfile = ModelEditor.<T>requireEditedModel(profileToManipulate, modelIO);
+            T editedProfile = ModelEditor.requireEditedModel(profileToManipulate, modelIO);
             if(editedProfile != null) modelIO.serialize(editedProfile);
         }
         catch (IOException e) {

@@ -7,9 +7,12 @@ import java.awt.event.WindowEvent;
 public abstract class CustomJFrame extends JFrame implements Runnable {
 
     Thread thisThread;
+    Thread callThread;
+    Object lock = new Object();
 
     public CustomJFrame(String title) {
         super(title);
+        callThread = Thread.currentThread();
         configureWindow();
     }
 
@@ -56,10 +59,10 @@ public abstract class CustomJFrame extends JFrame implements Runnable {
 
     @Override
     public void run() {
-        synchronized (this) {
+        synchronized (lock) {
             try {
                 thisThread = Thread.currentThread();
-                wait();
+                lock.wait();
             }
             catch (InterruptedException e) {
                 System.out.println(thisThread.getName() + " was stopped.");

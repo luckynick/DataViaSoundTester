@@ -11,16 +11,16 @@ import java.util.List;
 
 @IOClassHandling(dataStorage = SharedUtils.DataStorage.SEQUENTIAL)
 public class SequentialTestProfile extends Profile {
-    protected Device controller;
+    public Device controller;
     @ManageableField(required = true)
-    protected Device peer1;
+    public Device peer1;
     @ManageableField(required = true)
-    protected Device peer2;
+    public Device peer2;
 
     @ManageableField(required = true)
-    protected int distanceBetweenPeers;
+    public int distanceBetweenPeers;
     @ManageableField
-    protected DistanceUnit distanceUnitName = DistanceUnit.Centimeter;
+    public DistanceUnit distanceUnitName = DistanceUnit.Centimeter;
 
     //TODO
     @ManageableField(required = true)

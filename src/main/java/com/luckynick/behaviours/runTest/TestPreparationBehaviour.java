@@ -18,6 +18,7 @@ import nl.pvdberg.pnet.client.Client;
 import nl.pvdberg.pnet.packet.Packet;
 import nl.pvdberg.pnet.packet.PacketBuilder;
 import nl.pvdberg.pnet.packet.PacketReader;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
 import java.io.IOException;
@@ -47,7 +48,22 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
             return;
         }
 
+        {///TODO: rm
+            ModelIO<SequentialTestProfile> profileIO = new ModelIO<>(SequentialTestProfile.class);
+            List<SequentialTestProfile> selection = ModelSelector.requireSelection(profileIO, false);
+            if(selection == null) {
+                throw new NotImplementedException();
+            }
+            SequentialTestProfile testProfile = selection.get(0);
+            testProfile.peer1 = connectedDevices.get(0);
+            testProfile.peer2 = connectedDevices.get(1);
+            new PerformTests(testProfile).performProgramTasks();
+        }
 
+        System.out.println(allowedDevices.size() + " returned selection");
+        for(Device v : allowedDevices) {
+            System.out.println("mac " +v.macAddress);
+        }
 
         WindowsNetworkService serviceOut = new WindowsNetworkService();
         try (WindowsNetworkService service = serviceOut) {
@@ -82,8 +98,16 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
             if(obj.macAddress.equals(stored.macAddress)) {
                 connectedDevices.add(obj);
                 if(connectedDevices.size() == REQUIRED_DEVICES_AMT) {
-                    //SequentialTestProfile
-                    new PerformTests(null).performProgramTasks();
+                    udpBroadcastThread.interrupt();
+                    ModelIO<SequentialTestProfile> profileIO = new ModelIO<>(SequentialTestProfile.class);
+                    List<SequentialTestProfile> selection = ModelSelector.requireSelection(profileIO, false);
+                    if(selection == null) {
+                        throw new NotImplementedException();
+                    }
+                    SequentialTestProfile testProfile = selection.get(0);
+                    testProfile.peer1 = connectedDevices.get(0);
+                    testProfile.peer2 = connectedDevices.get(1);
+                    new PerformTests(testProfile).performProgramTasks();
                 }
                 return;
             }
@@ -103,7 +127,7 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
             int responseType = packetReader.readInt();
             if(responseType == PacketID.DEVICE.ordinal()) {
                 String json = packetReader.readString();
-                //TODO: handle response
+                addDevice(json);
             }
             else {
                 Log(LOG_TAG, "Response doesn't contain device data.");

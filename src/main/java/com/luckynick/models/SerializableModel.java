@@ -1,17 +1,32 @@
 package com.luckynick.models;
 
 
+import com.luckynick.CustomJFrame;
+import com.luckynick.custom.Device;
+import com.luckynick.models.profiles.SequentialTestProfile;
+import com.luckynick.models.profiles.SingleTestProfile;
 import com.luckynick.shared.IOClassHandling;
 import com.luckynick.shared.IOFieldHandling;
 import com.luckynick.shared.SharedUtils;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.Component;
+import java.awt.event.ActionEvent;
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import static com.luckynick.custom.Utils.Log;
 
 @IOClassHandling(dataStorage = SharedUtils.DataStorage.MODELS)
 public abstract class SerializableModel {
+
+    public static final String LOG_TAG = "SerializableModel";
+
+    public static final String EMPTY_LABEL = "*empty*";
 
     public String nameOfModelClass = this.getClass().getSimpleName();
     @IOFieldHandling(serialize = false)
@@ -31,6 +46,10 @@ public abstract class SerializableModel {
         for (String folder: subfolders) {
             appendSubfolderToFileRoot(folder);
         }
+    }
+    @Override
+    public String toString() {
+        return filename;
     }
 
     public Object getValue(String fieldName) {
@@ -58,28 +77,18 @@ public abstract class SerializableModel {
         return result.toArray(new String[0]);
     }
 
-    private String[] getFieldNamesArray() {
-        Field[] fields = getFieldsArray();
-        String[] result = new String[fields.length];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = fields[i].getName();
-        }
-        return result;
-    }
-
     public Field[] getFieldsArray() {
 
         Field[] inheritedFields = getClass().getFields();
         Field[] ownFields = getClass().getDeclaredFields();
-        Field[] allFields = new Field[inheritedFields.length+ownFields.length];
-        int i_all = 0;
-        for(int i = 0; i < inheritedFields.length; i++) {
-            allFields[i_all++] = inheritedFields[i];
+        ArrayList<Field> allFieldsList = new ArrayList<>();
+        for(Field f : inheritedFields) {
+            allFieldsList.add(f);
         }
-        for(int i = 0; i < ownFields.length; i++) {
-            allFields[i_all++] = ownFields[i];
+        for(Field f : ownFields) {
+            if(!allFieldsList.contains(f)) allFieldsList.add(f);
         }
-        return allFields;
+        return allFieldsList.toArray(new Field[0]);
     }
 
     public boolean allRequiredFieldsAreSet() {
@@ -101,9 +110,8 @@ public abstract class SerializableModel {
         return true;
     }
 
-
-
     private Component resolveSwingComponent(Field field) {
+        SerializableModel thisObj = this;
         Component result = new JTextField("", 30);
         Object value = getValueFromField(field);
         boolean editable = field.getAnnotation(ManageableField.class).editable();
@@ -124,9 +132,82 @@ public abstract class SerializableModel {
             enumList.setSelectedIndex(selectedIndex);
             result = enumList;
         }
-        else {
-            JTextField textField = new JTextField((value != null ? getValueFromField(field).toString() : "*empty*"), 30);
+        else if(Collection.class.isAssignableFrom(field.getType())) { //if list
+            ParameterizedType stringListType = (ParameterizedType) field.getGenericType();
+            Class<?> listGenericType = (Class<?>) stringListType.getActualTypeArguments()[0];
+
+            JButton button = new JButton();
+            String fieldTypeName = listGenericType.getSimpleName();
+
+            if("SequentialTestProfile".equals(fieldTypeName)) {
+                button.setAction(new AbstractAction("Select items") {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        new Thread(() -> {
+                            List<SequentialTestProfile> result = ModelSelector.requireSelection(new ModelIO<>(SequentialTestProfile.class),
+                                    true);
+                            Log(LOG_TAG, "Size of selection: " + result.size());
+                            try {
+                                field.set(thisObj, result);
+                            }
+                            catch (IllegalAccessException e1) {
+                                e1.printStackTrace();
+                            }
+                        }).start();
+                    }
+                });
+            }
+            else if("SingleTestProfile".equals(fieldTypeName)) {
+                button.setAction(new AbstractAction("Select items") {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        new Thread(() -> {
+                            List<SingleTestProfile> result = ModelSelector.requireSelection(new ModelIO<>(SingleTestProfile.class),
+                                    true);
+                            Log(LOG_TAG, "Size of selection: " + result.size());
+                            try {
+                                field.set(thisObj, result);
+                            }
+                            catch (IllegalAccessException e1) {
+                                e1.printStackTrace();
+                            }
+                        }).start();
+                    }
+                });
+            }
+            else throw new NotImplementedException();
+
+            result = button;
+        }
+        else if(String.class.isAssignableFrom(field.getType()) || SharedUtils.isReflectedAsNumber(field.getType())) {
+            JTextField textField = new JTextField((value != null ?
+                    getValueFromField(field).toString() : EMPTY_LABEL), 30);
             result = textField;
+        }
+        else {
+            JButton button = new JButton();
+            String fieldTypeName = field.getType().getSimpleName();
+            System.out.println("Type: " + fieldTypeName);
+            if("Device".equals(fieldTypeName)) {
+                button.setAction(new AbstractAction("Select item") {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        new Thread(() -> {
+                            List<Device> result = ModelSelector.requireSelection(new ModelIO<>(Device.class),
+                                    false);
+                            Log(LOG_TAG, "Size of selection: " + result.size());
+                            try {
+                                field.set(thisObj, result.get(0));
+                            }
+                            catch (IllegalAccessException e1) {
+                                e1.printStackTrace();
+                            }
+                        }).start();
+                    }
+                });
+            }
+            else throw new NotImplementedException();
+            result = button;
         }
         String componentName = field.getName();
         //if(isFieldRequired(field)) componentName = "* " + componentName; //TODO
@@ -175,12 +256,10 @@ public abstract class SerializableModel {
             if("int".equals(fieldTypeName)) toSet = Integer.parseInt(textInField);
             else if("double".equals(fieldTypeName)) toSet = (double) Integer.parseInt(textInField);
         } catch (NumberFormatException e) {
-            System.out.println(textInField + " not integer");
             try {
                 if("int".equals(fieldTypeName)) toSet = (int) Double.parseDouble(textInField);
                 else if("double".equals(fieldTypeName)) toSet = Double.parseDouble(textInField);
             } catch (NumberFormatException ex) {
-                System.out.println(textInField + " not double");
             }
         }
         return toSet;
@@ -189,7 +268,8 @@ public abstract class SerializableModel {
     private void setValueInField(Field field, Object value) {
         field.setAccessible(true);
         try {
-            if(SharedUtils.isReflectedAsNumber(field.getType()) && value == null)
+            if(EMPTY_LABEL.equals(value)) return;
+            else if(SharedUtils.isReflectedAsNumber(field.getType()) && value == null)
                 field.set(this, -1);
             else
                 field.set(this, value);

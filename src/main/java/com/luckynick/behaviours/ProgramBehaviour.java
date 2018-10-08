@@ -28,4 +28,8 @@ public abstract class ProgramBehaviour extends MenuSelectable {
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }
+
+    public void exit() {
+        System.exit(0);
+    }
 }

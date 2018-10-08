@@ -29,6 +29,7 @@ public class PerformTests extends ProgramBehaviour {
     public static final String LOG_TAG = "PerformTests";
 
     SequentialTestProfile profile;
+    ModelIO<SequentialTestProfile> profileIO = new ModelIO<>(SequentialTestProfile.class);
 
     public PerformTests(SequentialTestProfile profile) {
         this.profile = profile;
@@ -37,6 +38,9 @@ public class PerformTests extends ProgramBehaviour {
     @Override
     public void performProgramTasks() {
 
+        Log(LOG_TAG, "Performing test tasks. Using profile:");
+        Log(LOG_TAG, profileIO.serializeStr(profile));
 
+        exit();
     }
 }

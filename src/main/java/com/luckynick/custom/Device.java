@@ -28,4 +28,5 @@ public class Device extends SerializableModel {
         setFilename("device_" + vendor + '_' + model + '_' + SharedUtils.getDateStringForFileName()
                 + SharedUtils.JSON_EXTENSION);
     }
+
 }

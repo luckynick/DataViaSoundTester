@@ -107,4 +107,21 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
         }
         return list;
     }
+
+    public List<T> listObjects() {
+        return filesToObjects(listFiles());
+    }
+
+    public List<T> filesToObjects(List<File> files) {
+        List<T> modelObjects = new ArrayList<>();
+        for(File f : files) {
+            try {
+                modelObjects.add(deserialize(f));
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return modelObjects;
+    }
 }

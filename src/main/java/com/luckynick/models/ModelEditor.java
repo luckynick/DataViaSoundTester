@@ -10,8 +10,13 @@ import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
+
+import static com.luckynick.custom.Utils.Log;
 
 public class ModelEditor<T extends SerializableModel> extends CustomJFrame implements ActionListener, FocusListener {
+
+    public static final String LOG_TAG = "PerformTests";
 
     private T editableModel;
     private boolean serialize = false;
@@ -73,15 +78,32 @@ public class ModelEditor<T extends SerializableModel> extends CustomJFrame imple
      */
     public static <T extends SerializableModel> T requireEditedModel(T model, ModelIO<T> modelIO) {
         ModelEditor<T> manager = new ModelEditor<>(model, modelIO);
-        Thread t = new Thread(manager, "ModelEditor thread");
-        t.start();
+        SwingWorker<T, T> sw = new SwingWorker<T, T>() {
+
+            @Override
+            protected T doInBackground() throws Exception {
+                Thread t = new Thread(manager, "ModelEditor thread");
+                t.start();
+                try {
+                    t.join();
+                }
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return manager.serialize ? manager.editableModel : null;
+            }
+        };
+        sw.execute();
         try {
-            t.join();
+            return sw.get();
         }
         catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return manager.serialize ? manager.editableModel : null;
+        catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
@@ -95,6 +117,7 @@ public class ModelEditor<T extends SerializableModel> extends CustomJFrame imple
                 }
                 else
                     this.serialize = true;
+                dispose();
             }
             else if (e.getActionCommand().equals("Load")) {
                 File latestFile = Arrays.stream(new File(editableModel.fileRoot).listFiles())
@@ -116,9 +139,11 @@ public class ModelEditor<T extends SerializableModel> extends CustomJFrame imple
 
                 hardResetWindow();
 
-                return;
+                dispose();
             }
-            dispose();
+            else if (e.getActionCommand().equals("Cancel")) {
+                dispose();
+            }
         }
         else if(e.getSource() instanceof JTextField) {
             System.out.println("Field updated: " + ((JTextField) e.getSource()).getText());
@@ -135,6 +160,11 @@ public class ModelEditor<T extends SerializableModel> extends CustomJFrame imple
 
     @Override
     public void focusLost(FocusEvent e) {
-        editableModel.setValue((Component) e.getSource());
+        try {
+            editableModel.setValue((Component) e.getSource());
+        }
+        catch (IllegalArgumentException ex) {
+            ex.printStackTrace();
+        }
     }
 }
