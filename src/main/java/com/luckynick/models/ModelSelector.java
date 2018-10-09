@@ -1,38 +1,32 @@
 package com.luckynick.models;
 
 import com.luckynick.CustomJFrame;
-import com.luckynick.custom.Device;
-import com.luckynick.shared.IOClassHandling;
 import com.luckynick.shared.SharedUtils;
 
 import javax.swing.*;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import static com.luckynick.custom.Utils.Log;
+
 public class ModelSelector<T extends SerializableModel> extends CustomJFrame implements ActionListener, ListSelectionListener {
 
-    private List<T> selection = new ArrayList<>();
-    private boolean multipleSelection;
+    public static final String LOG_TAG = "ModelSelector";
+
+    //private List<T> selection = new ArrayList<>();
+    private boolean multipleSelection; //TODO: use
     JLabel nothingToLoadLabel = new JLabel("<html><font color='red'>Nothing to load!</font></html>");
-    private JList list;
-    private JScrollPane spane;
+
+    private JList rightList;
+    private JList leftList;
+    DefaultListModel<T> leftListModel = new DefaultListModel<>();
 
     private ModelIO<T> modelIO;
-    private Class<T> modelClass;
 
     public ModelSelector(ModelIO<T> modelIO) {
         this(modelIO, false);
@@ -42,7 +36,6 @@ public class ModelSelector<T extends SerializableModel> extends CustomJFrame imp
         super("Select " + modelIO.getClassOfModel().getSimpleName());
         this.multipleSelection = multipleSelection;
         this.modelIO = modelIO;
-        this.modelClass = modelIO.getClassOfModel();
 
         addElements();
         displayWindow();
@@ -51,36 +44,28 @@ public class ModelSelector<T extends SerializableModel> extends CustomJFrame imp
     @Override
     protected void addElements() {
         List<T> modelObjects = modelIO.listObjects();
-        /*String[] fileNames = new String[modelFiles.size()];
-        for(int i = 0; i < fileNames.length; i++) {
-            fileNames[i] = modelFiles.get(i).getName();
-        }
 
-        DefaultListModel<Item> listModel = new DefaultListModel<>();
-        listModel.*/
-        list = new JList(SharedUtils.toArray(modelObjects));
-        list.addListSelectionListener(this);
+        leftList = new JList(leftListModel);
 
-        spane = new JScrollPane();
-        spane.getViewport().add(list);
+        rightList = new JList(SharedUtils.toArray(modelObjects));
+        //rightList.addListSelectionListener(this);
 
-        getContentPane().add(spane);
+        JScrollPane leftSPane = new JScrollPane();
+        leftSPane.getViewport().add(leftList);
 
-        /*try {
-            for (File modelFile: modelFiles) {
-                T stored = modelIO.deserialize(modelFile);
+        JScrollPane rightSPane = new JScrollPane();
+        rightSPane.getViewport().add(rightList);
 
-                JPanel fieldPanel = new JPanel();
-                JLabel label = new JLabel(stored.filename);
-                fieldPanel.add(label);
+        JPanel selectorsPannel = new JPanel();
+        selectorsPannel.setLayout(new BoxLayout(selectorsPannel, BoxLayout.X_AXIS));
 
-                fieldPanel.setBorder(new CompoundBorder(label.getBorder(), new EmptyBorder(10,10,10,10)));
-                getContentPane().add(fieldPanel);
-            }
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }*/
+        selectorsPannel.add(leftSPane);
+        JButton selectButton = new JButton("<");
+        selectButton.addActionListener(this);
+        selectorsPannel.add(selectButton);
+        selectorsPannel.add(rightSPane);
+
+        getContentPane().add(selectorsPannel);
 
         JPanel buttonPanel = new JPanel();
         JButton saveButton = new JButton("Save");
@@ -119,7 +104,14 @@ public class ModelSelector<T extends SerializableModel> extends CustomJFrame imp
                 catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                return manager.selection;
+                //return manager.selection;
+                List<T> result = new ArrayList<>();
+                DefaultListModel<T> resultListModel = manager.leftListModel;
+                for(int i = 0; i < resultListModel.size(); i++) {
+                    result.add(manager.leftListModel.get(i));
+                }
+                Log(LOG_TAG, "Returning selection (size " + result.size() + ").");
+                return result;
             }
         };
         sw.execute();
@@ -133,15 +125,6 @@ public class ModelSelector<T extends SerializableModel> extends CustomJFrame imp
             e.printStackTrace();
         }
         return null;
-        /*Thread t = new Thread(manager, "ModelSelector thread");
-        t.start();
-        try {
-            t.join();
-        }
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return manager.selection;*/
     }
 
     @Override
@@ -151,8 +134,23 @@ public class ModelSelector<T extends SerializableModel> extends CustomJFrame imp
                 dispose();
             }
             else if(e.getActionCommand().equals("Cancel")) {
-                selection = null;
+                //selection = null;
+                leftListModel.removeAllElements();
                 dispose();
+            }
+            else if(e.getActionCommand().equals("<")) {
+                List<T> checked = rightList.getSelectedValuesList();
+                if(multipleSelection) {
+                    for(T itemToAdd : checked) {
+                        leftListModel.addElement(itemToAdd);
+                    }
+                }
+                else {
+                    leftListModel.removeAllElements();
+                    if(checked.size() > 0) {
+                        leftListModel.addElement(checked.get(0));
+                    }
+                }
             }
         }
     }
@@ -160,9 +158,14 @@ public class ModelSelector<T extends SerializableModel> extends CustomJFrame imp
     @Override
     public void valueChanged(ListSelectionEvent e) {
         if (!e.getValueIsAdjusting()) {
-            List<T> checked = list.getSelectedValuesList();
+            List<T> checked = rightList.getSelectedValuesList();
             System.out.println(checked.size() + " values selected");
-            selection = checked;
+            //selection = checked;
+
+            leftListModel.removeAllElements();
+            /*for(T obj: selection) {
+                leftListModel.addElement(obj);
+            }*/
         }
     }
 }

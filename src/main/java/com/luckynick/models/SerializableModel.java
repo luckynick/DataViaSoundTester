@@ -136,48 +136,12 @@ public abstract class SerializableModel {
             ParameterizedType stringListType = (ParameterizedType) field.getGenericType();
             Class<?> listGenericType = (Class<?>) stringListType.getActualTypeArguments()[0];
 
-            JButton button = new JButton();
-            String fieldTypeName = listGenericType.getSimpleName();
-
-            if("SequentialTestProfile".equals(fieldTypeName)) {
-                button.setAction(new AbstractAction("Select items") {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        new Thread(() -> {
-                            List<SequentialTestProfile> result = ModelSelector.requireSelection(new ModelIO<>(SequentialTestProfile.class),
-                                    true);
-                            Log(LOG_TAG, "Size of selection: " + result.size());
-                            try {
-                                field.set(thisObj, result);
-                            }
-                            catch (IllegalAccessException e1) {
-                                e1.printStackTrace();
-                            }
-                        }).start();
-                    }
-                });
+            if(String.class.isAssignableFrom(listGenericType)) {
+                result = createButtonWithActionForStringList(field);
             }
-            else if("SingleTestProfile".equals(fieldTypeName)) {
-                button.setAction(new AbstractAction("Select items") {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        new Thread(() -> {
-                            List<SingleTestProfile> result = ModelSelector.requireSelection(new ModelIO<>(SingleTestProfile.class),
-                                    true);
-                            Log(LOG_TAG, "Size of selection: " + result.size());
-                            try {
-                                field.set(thisObj, result);
-                            }
-                            catch (IllegalAccessException e1) {
-                                e1.printStackTrace();
-                            }
-                        }).start();
-                    }
-                });
+            else {
+                result = createButtonWithActionForList(field, listGenericType);
             }
-            else throw new NotImplementedException();
-
-            result = button;
         }
         else if(String.class.isAssignableFrom(field.getType()) || SharedUtils.isReflectedAsNumber(field.getType())) {
             JTextField textField = new JTextField((value != null ?
@@ -185,35 +149,78 @@ public abstract class SerializableModel {
             result = textField;
         }
         else {
-            JButton button = new JButton();
-            String fieldTypeName = field.getType().getSimpleName();
-            System.out.println("Type: " + fieldTypeName);
-            if("Device".equals(fieldTypeName)) {
-                button.setAction(new AbstractAction("Select item") {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        new Thread(() -> {
-                            List<Device> result = ModelSelector.requireSelection(new ModelIO<>(Device.class),
-                                    false);
-                            Log(LOG_TAG, "Size of selection: " + result.size());
-                            try {
-                                field.set(thisObj, result.get(0));
-                            }
-                            catch (IllegalAccessException e1) {
-                                e1.printStackTrace();
-                            }
-                        }).start();
-                    }
-                });
-            }
-            else throw new NotImplementedException();
-            result = button;
+            result = createButtonWithAction(field, field.getType());
         }
         String componentName = field.getName();
         //if(isFieldRequired(field)) componentName = "* " + componentName; //TODO
         result.setName(componentName);
         result.setEnabled(editable);
         return result;
+    }
+
+    private JButton createButtonWithActionForStringList(Field buttonCorrespondence) {
+        SerializableModel thisObj = this;
+        JButton button = new JButton();
+        button.setAction(new AbstractAction("Select strings") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Thread(() -> {
+                    List<String> result = StringPopulator.requireStrings();
+                    try {
+                        buttonCorrespondence.set(thisObj, result);
+                    }
+                    catch (IllegalAccessException e1) {
+                        e1.printStackTrace();
+                    }
+                }).start();
+            }
+        });
+        return button;
+    }
+
+    private JButton createButtonWithActionForList(Field buttonCorrespondence, Class<?> modelClass) {
+        SerializableModel thisObj = this;
+        JButton button = new JButton();
+        button.setAction(new AbstractAction("Select item") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Thread(() -> {
+                    List<SerializableModel> result = ModelSelector.requireSelection(
+                            new ModelIO<>((Class<SerializableModel>) modelClass), true);
+                    try {
+                        buttonCorrespondence.set(thisObj, result);
+                    }
+                    catch (IllegalAccessException e1) {
+                        e1.printStackTrace();
+                    }
+                }).start();
+            }
+        });
+        return button;
+    }
+
+    private JButton createButtonWithAction(Field buttonCorrespondence, Class<?> modelClass) {
+        SerializableModel thisObj = this;
+        JButton button = new JButton();
+        button.setAction(new AbstractAction("Select item") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new Thread(() -> {
+                    List<SerializableModel> result = ModelSelector.requireSelection(
+                            new ModelIO<>((Class<SerializableModel>) modelClass), false);
+                    Log(LOG_TAG, "Size of selection: " + result.size());
+                    try {
+                        if(result.size() > 0) {
+                            buttonCorrespondence.set(thisObj, result.get(0));
+                        }
+                    }
+                    catch (IllegalAccessException e1) {
+                        e1.printStackTrace();
+                    }
+                }).start();
+            }
+        });
+        return button;
     }
 
     private Field getFieldForName(String fieldName) {

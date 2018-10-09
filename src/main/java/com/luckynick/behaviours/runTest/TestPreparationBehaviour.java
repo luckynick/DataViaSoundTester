@@ -38,31 +38,19 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
     ModelIO<SequentialTestProfile> profileModelIO = new ModelIO<>(SequentialTestProfile.class);
 
     List<Device> connectedDevices = new ArrayList<>();
-    List<Device> allowedDevices = ModelSelector.requireSelection(deviceModelIO, true);
+    List<Device> allowedDevices = new ArrayList<>();
     private final int REQUIRED_DEVICES_AMT = 2;
+    SequentialTestProfile testProfile;
 
     @Override
     public void performProgramTasks() {
-        if(allowedDevices == null) {
-            System.out.println("Tests were terminated.");
-            return;
-        }
+        List<SequentialTestProfile> profile = ModelSelector.requireSelection(profileModelIO, false);
+        testProfile = profile.get(0);
+        allowedDevices.add(testProfile.peer1);
+        allowedDevices.add(testProfile.peer2);
 
-        {///TODO: rm
-            ModelIO<SequentialTestProfile> profileIO = new ModelIO<>(SequentialTestProfile.class);
-            List<SequentialTestProfile> selection = ModelSelector.requireSelection(profileIO, false);
-            if(selection == null) {
-                throw new NotImplementedException();
-            }
-            SequentialTestProfile testProfile = selection.get(0);
-            testProfile.peer1 = connectedDevices.get(0);
-            testProfile.peer2 = connectedDevices.get(1);
-            new PerformTests(testProfile).performProgramTasks();
-        }
-
-        System.out.println(allowedDevices.size() + " returned selection");
         for(Device v : allowedDevices) {
-            System.out.println("mac " +v.macAddress);
+            System.out.println("allowed mac " +v.macAddress);
         }
 
         WindowsNetworkService serviceOut = new WindowsNetworkService();
@@ -93,18 +81,13 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
         addDevice(obj);
     }
 
-    private void addDevice(Device obj) {
+    private void addDevice(Device newDevice) {
         for(Device stored : allowedDevices) {
-            if(obj.macAddress.equals(stored.macAddress)) {
-                connectedDevices.add(obj);
+            if(newDevice.macAddress.equals(stored.macAddress)) {
+                connectedDevices.add(newDevice);
+                replaceDeviceInProfile(newDevice);
                 if(connectedDevices.size() == REQUIRED_DEVICES_AMT) {
                     udpBroadcastThread.interrupt();
-                    ModelIO<SequentialTestProfile> profileIO = new ModelIO<>(SequentialTestProfile.class);
-                    List<SequentialTestProfile> selection = ModelSelector.requireSelection(profileIO, false);
-                    if(selection == null) {
-                        throw new NotImplementedException();
-                    }
-                    SequentialTestProfile testProfile = selection.get(0);
                     testProfile.peer1 = connectedDevices.get(0);
                     testProfile.peer2 = connectedDevices.get(1);
                     new PerformTests(testProfile).performProgramTasks();
@@ -112,6 +95,11 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
                 return;
             }
         }
+    }
+
+    private void replaceDeviceInProfile(Device replacement) {
+        if(testProfile.peer1.macAddress.equals(replacement.macAddress)) testProfile.peer1 = replacement;
+        if(testProfile.peer2.macAddress.equals(replacement.macAddress)) testProfile.peer2 = replacement;
     }
 
 

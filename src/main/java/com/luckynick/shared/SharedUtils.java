@@ -102,6 +102,7 @@ public class SharedUtils {
     }
 
     public static <T> T[] toArray(List<T> list) {
+        if(list.size() < 1) return (T[]) java.lang.reflect.Array.newInstance(Object.class, 0);
         T[] toR = (T[]) java.lang.reflect.Array.newInstance(list.get(0)
                 .getClass(), list.size());
         for (int i = 0; i < list.size(); i++) {

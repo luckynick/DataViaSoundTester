@@ -29,4 +29,5 @@ public class Device extends SerializableModel {
                 + SharedUtils.JSON_EXTENSION);
     }
 
+
 }

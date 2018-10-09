@@ -18,5 +18,5 @@ public class SingleTestProfile extends Profile {
     protected int loudnessLevel = 100;
 
     @ManageableField(required = true)
-    Dictionary dictionary;
+    public Dictionary dictionary;
 }
