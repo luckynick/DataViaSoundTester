@@ -8,13 +8,13 @@ import com.luckynick.shared.SharedUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-@IOClassHandling(dataStorage = SharedUtils.DataStorage.DICTIONARY)
-public class Dictionary extends SerializableModel {
+@IOClassHandling(dataStorage = SharedUtils.DataStorage.CONFIG)
+public class Config extends SerializableModel {
 
     @ManageableField(required = true)
-    public List<String> messages = new ArrayList<>();
+    public SequentialTestProfile defaultProfile;
 
-    public Dictionary() {
-        setFilename("dictionary_" + SharedUtils.getDateStringForFileName() + SharedUtils.JSON_EXTENSION);
+    public Config() {
+        setFilename("config" + SharedUtils.JSON_EXTENSION);
     }
 }

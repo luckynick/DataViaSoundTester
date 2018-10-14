@@ -1,9 +1,11 @@
 package com.luckynick.behaviours.runTest;
 
 import com.luckynick.behaviours.ProgramBehaviour;
+import com.luckynick.behaviours.createProfile.CreateConfig;
 import com.luckynick.custom.Device;
 import com.luckynick.models.ModelIO;
 import com.luckynick.models.ModelSelector;
+import com.luckynick.models.profiles.Config;
 import com.luckynick.models.profiles.SequentialTestProfile;
 import com.luckynick.net.ConnectionHandler;
 import com.luckynick.net.MultiThreadServer;
@@ -42,10 +44,29 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
     private final int REQUIRED_DEVICES_AMT = 2;
     SequentialTestProfile testProfile;
 
+    private boolean useConfig;
+
+    public TestPreparationBehaviour(boolean useConfig) {
+        this.useConfig = useConfig;
+    }
+
     @Override
     public void performProgramTasks() {
-        List<SequentialTestProfile> profile = ModelSelector.requireSelection(profileModelIO, false);
-        testProfile = profile.get(0);
+        if(useConfig) {
+            ModelIO<Config> profileModelIO = new ModelIO<>(Config.class);
+            List<Config> configs = profileModelIO.listObjects();
+            Log(LOG_TAG, "Done. " + configs.size());
+            if(configs.size() == 0) {
+                new CreateConfig().performProgramTasks(); //if config doesn't exist -> create config
+                configs = profileModelIO.listObjects();
+            }
+            Config confInstance = configs.get(0);
+            testProfile = confInstance.defaultProfile;
+        }
+        else {
+            List<SequentialTestProfile> profile = ModelSelector.requireSelection(profileModelIO, false);
+            testProfile = profile.get(0);
+        }
         allowedDevices.add(testProfile.peer1);
         allowedDevices.add(testProfile.peer2);
 

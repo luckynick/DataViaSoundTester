@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder;
 import com.luckynick.shared.GSONCustomSerializer;
 import com.luckynick.shared.IOClassHandling;
 import com.luckynick.shared.IOFieldHandling;
+import com.luckynick.shared.SharedUtils;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -100,6 +101,7 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
         try (Stream<Path> paths = Files.walk(Paths.get(dir))) {
             paths
                     .filter(Files::isRegularFile)
+                    .filter((p) -> p.toString().endsWith(SharedUtils.JSON_EXTENSION))
                     .forEach((p) -> {list.add(p.toFile());});
         }
         catch (IOException e) {
@@ -108,6 +110,10 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
         return list;
     }
 
+    /**
+     * Get list of objects which were previously stored in corresponding folder.
+     * @return
+     */
     public List<T> listObjects() {
         return filesToObjects(listFiles());
     }

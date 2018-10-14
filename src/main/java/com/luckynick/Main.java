@@ -16,7 +16,8 @@ public class Main {
         programParamsActions.put(null, IncorrectStartParameter::new);
         programParamsActions.put("", DefaultStartBehaviour::new);
         programParamsActions.put("--createProfile", CreateNewProfile::new);
-        programParamsActions.put("--runTest", RunTest::new);
+        programParamsActions.put("--runTest", () -> {return new RunTest(false);});
+        programParamsActions.put("--runTestDefault", () -> {return new RunTest(true);});
         programParamsActions.put("--addDevice", AddDevice::new);
         programParamsActions.put("--overviewTest", () -> {return new IncorrectStartParameter("OverviewTest");});
     }

@@ -1,10 +1,10 @@
 package com.luckynick.behaviours.createProfile;
 
+import com.luckynick.models.profiles.Config;
 import com.luckynick.models.profiles.Dictionary;
-import com.luckynick.models.profiles.SingleTestProfile;
 
-public class CreateDictionary extends ModelCreationBehaviour<Dictionary> {
-    public CreateDictionary() {
-        super(Dictionary.class);
+public class CreateConfig extends ModelCreationBehaviour<Config> {
+    public CreateConfig() {
+        super(Config.class);
     }
 }
