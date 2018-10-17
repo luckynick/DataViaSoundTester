@@ -8,6 +8,7 @@ import com.luckynick.shared.net.PacketListener;
 import nl.pvdberg.pnet.client.Client;
 import nl.pvdberg.pnet.event.PNetListener;
 import nl.pvdberg.pnet.packet.Packet;
+import nl.pvdberg.pnet.threading.ThreadManager;
 
 import java.io.*;
 import java.util.*;
@@ -49,6 +50,20 @@ public class ConnectionHandler {
      */
     ConnectionHandler(Client connection) throws IOException
     {
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                /*for(ConnectionHandler h : ConnectionHandler.handlers)
+                {
+                    h.stop();
+                }*/
+                //ThreadManager.shutdown();
+                stop();
+            }
+        }));
+
         this.connection = connection; //keep socket object in Handler
         ip = connection.getInetAddress().getHostAddress();
         synchronized(handlers) //only one thread can change list of handlers in the same time
@@ -132,11 +147,12 @@ public class ConnectionHandler {
     }
 
     public void stop() {
+        Log(LOG_TAG, "Stopping handler.");
         synchronized(handlers)
         {
             handlers.remove(this);
         }
-        connection.close();
+        if(connection != null) connection.close();
     }
 
     public void onReceive(Packet p, Client c) throws IOException {

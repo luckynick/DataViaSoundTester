@@ -1,5 +1,10 @@
 package com.luckynick.behaviours;
 
+import com.luckynick.shared.enums.PacketID;
+import nl.pvdberg.pnet.client.Client;
+import nl.pvdberg.pnet.packet.Packet;
+import nl.pvdberg.pnet.packet.PacketBuilder;
+
 import java.util.Scanner;
 
 public abstract class ProgramBehaviour extends MenuSelectable {
@@ -30,6 +35,21 @@ public abstract class ProgramBehaviour extends MenuSelectable {
     }
 
     public void exit() {
+
         System.exit(0);
+    }
+
+    public static void sendRequest(Client c, PacketID requiredResponse) {
+        c.send(createRequestPacket(requiredResponse).build());
+    }
+
+    public static PacketBuilder createRequestPacket(PacketID requiredResponse) {
+        return createRequestPacket().withInt(requiredResponse.ordinal());
+    }
+
+    public static PacketBuilder createRequestPacket() {
+        PacketBuilder pb = new PacketBuilder(Packet.PacketType.Request);
+        pb.withID((short) PacketID.REQUEST.ordinal());
+        return pb;
     }
 }

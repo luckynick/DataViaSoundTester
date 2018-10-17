@@ -18,14 +18,13 @@ import com.luckynick.shared.net.PacketListener;
 import com.luckynick.shared.net.UDPServer;
 import nl.pvdberg.pnet.client.Client;
 import nl.pvdberg.pnet.packet.Packet;
-import nl.pvdberg.pnet.packet.PacketBuilder;
 import nl.pvdberg.pnet.packet.PacketReader;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static com.luckynick.custom.Utils.Log;
 
@@ -43,6 +42,9 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
     List<Device> allowedDevices = new ArrayList<>();
     private final int REQUIRED_DEVICES_AMT = 2;
     SequentialTestProfile testProfile;
+    MultiThreadServer server;
+
+    private Map<String, Client> connections = new HashMap<>();
 
     private boolean useConfig;
 
@@ -84,34 +86,30 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
             }
             System.out.println("WIFI connected: " + service.isWifiConnected());
 
-            MultiThreadServer server = new MultiThreadServer(SharedUtils.TCP_COMMUNICATION_PORT);
+            server = new MultiThreadServer(SharedUtils.TCP_COMMUNICATION_PORT);
             ConnectionHandler.subscribePacketEvents(this);
             server.subscribeConnectionEvents(this);
-            trapConnection();
+            udpBroadcastThread = UDPServer.trapConnection();
         }
     }
 
-    private void trapConnection() {
-        udpBroadcastThread = UDPServer.broadcastThread(
-                TestRole.CONTROLLER + " " + tcpPort);
-        udpBroadcastThread.start();
-    }
-
-    private void addDevice(String json) {
+    private void addDevice(String json, Client cli) {
         Device obj = deviceModelIO.deserialize(json);
-        addDevice(obj);
+        addDevice(obj, cli);
     }
 
-    private void addDevice(Device newDevice) {
+    private void addDevice(Device newDevice, Client cli) {
         for(Device stored : allowedDevices) {
             if(newDevice.macAddress.equals(stored.macAddress)) {
+                connections.put(newDevice.macAddress, cli);
                 connectedDevices.add(newDevice);
                 replaceDeviceInProfile(newDevice);
                 if(connectedDevices.size() == REQUIRED_DEVICES_AMT) {
                     udpBroadcastThread.interrupt();
                     testProfile.peer1 = connectedDevices.get(0);
                     testProfile.peer2 = connectedDevices.get(1);
-                    new PerformTests(testProfile).performProgramTasks();
+                    ConnectionHandler.packetListeners.remove(this);
+                    new PerformTests(testProfile, connections, server).performProgramTasks();
                 }
                 return;
             }
@@ -136,7 +134,7 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
             int responseType = packetReader.readInt();
             if(responseType == PacketID.DEVICE.ordinal()) {
                 String json = packetReader.readString();
-                addDevice(json);
+                addDevice(json, c);
             }
             else {
                 Log(LOG_TAG, "Response doesn't contain device data.");
@@ -157,22 +155,12 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
     public void onConnect(Client c) {
         Log(LOG_TAG, "onConnect: " + c.getInetAddress().getHostAddress());
 
-        sendPullRequest(c, PacketID.DEVICE); //require device info from remote phone
+        sendRequest(c, PacketID.DEVICE); //require device info from remote phone
     }
 
     @Override
     public void onDisconnect(Client c) {
         Log(LOG_TAG, "onDisconnect: " + c.getInetAddress().getHostAddress());
         throw new IllegalStateException("Device was disconnected.");
-    }
-
-    public static void sendPullRequest(Client c, PacketID requiredResponse) {
-        c.send(createRequestPacket().withInt(requiredResponse.ordinal()).build());
-    }
-
-    public static PacketBuilder createRequestPacket() {
-        PacketBuilder pb = new PacketBuilder(Packet.PacketType.Request);
-        pb.withID((short)PacketID.REQUEST.ordinal());
-        return pb;
     }
 }

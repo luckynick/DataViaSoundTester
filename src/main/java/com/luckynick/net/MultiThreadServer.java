@@ -7,6 +7,7 @@ import nl.pvdberg.pnet.event.PacketDistributer;
 import nl.pvdberg.pnet.packet.Packet;
 import nl.pvdberg.pnet.server.Server;
 import nl.pvdberg.pnet.server.util.PlainServer;
+import nl.pvdberg.pnet.threading.ThreadManager;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,18 +32,17 @@ public class MultiThreadServer
     public MultiThreadServer(int port)
     {
         Log(LOG_TAG, "Starting MultiThreadServer.");
-        //if server was closed unexpectedly - stop all connection handlers
+
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable()
         {
             @Override
             public void run()
             {
-                for(ConnectionHandler h : ConnectionHandler.handlers)
-                {
-                    h.stop();
-                }
+                server.stop();
+                ThreadManager.shutdown();
             }
         }));
+        //if server was closed unexpectedly - stop all connection handlers
 
         try {
             server = new PlainServer();

@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fa77624-f36d-44ec-8bea-9d935f27d218" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/models/devices/device_LENOVO_Lenovo A1000_031018_225425.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/models/devices/device_Sony_E6633_051018_120058.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/ProgramBehaviour.java" afterPath="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/ProgramBehaviour.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/addDevice/DeviceAdditionBehaviour.java" afterPath="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/addDevice/DeviceAdditionBehaviour.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/PerformTests.java" afterPath="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/PerformTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/TestPreparationBehaviour.java" afterPath="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/TestPreparationBehaviour.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/luckynick/net/ConnectionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/luckynick/net/ConnectionHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/luckynick/net/MultiThreadServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/luckynick/net/MultiThreadServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/luckynick/shared/enums/PacketID.java" afterPath="$PROJECT_DIR$/src/main/java/com/luckynick/shared/enums/PacketID.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/NetworkService.java" afterPath="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/NetworkService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/UDPServer.java" afterPath="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/UDPServer.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -16,61 +26,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="RunTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/RunTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-              <folding>
-                <element signature="e#221#222#0" expanded="true" />
-                <element signature="e#263#264#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="19" column="88" lean-forward="true" selection-start-line="19" selection-start-column="88" selection-end-line="19" selection-end-column="88" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestPreparationBehaviour.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestPreparationBehaviour.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/TestPreparationBehaviour.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="56" column="52" lean-forward="true" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
-              <folding>
-                <element signature="e#1880#1881#0" expanded="true" />
-                <element signature="e#1922#1923#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateNewProfile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/CreateNewProfile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="34" />
+            <state relative-caret-position="310">
+              <caret line="106" column="28" lean-forward="true" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelIO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/ModelIO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="103" column="85" lean-forward="true" selection-start-line="103" selection-start-column="85" selection-end-line="103" selection-end-column="85" />
-              <folding>
-                <element signature="e#3668#3669#0" expanded="true" />
-                <element signature="e#3718#3719#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -78,13 +39,9 @@
       <file leaf-file-name="PerformTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/PerformTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1214#1215#0" expanded="true" />
-                <element signature="e#1252#1253#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="86">
+              <caret line="37" column="36" lean-forward="false" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,7 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>public void updateField\(String fieldName\, Object value\) \{\n        Arrays\.stream\(this\.getClass\(\)\.getDeclaredFields\(\)\)\n                    \.forEach\(field \-\&gt; \{\n                        if \(field\.getName\(\)\.equals\(fieldName\)\) try \{\n                            field\.set\(this\, value\)\;\n                        \}\n                        catch \(IllegalAccessException e\) \{\n                            e\.printStackTrace\(\)\;\n                        \}\n                    \}\)\;\n    \}</find>
       <find>instanceof</find>
       <find>enum can</find>
       <find>New modelIO</find>
@@ -128,10 +84,17 @@
       <find>*empty*</find>
       <find>System.out.println</find>
       <find>isReflectedAsNumber</find>
+      <find>isC</find>
+      <find>onDis</find>
+      <find>System.</find>
+      <find>Response doesn't contain device data</find>
+      <find>\n</find>
+      <find>Performing test tasks</find>
     </findStrings>
     <dirStrings>
-      <dir>C:\Programming\Java\DataViaSoundTester\src</dir>
       <dir>C:\Programming\Java\DataViaSoundTester\src\main\java\com</dir>
+      <dir>C:\Programming\Java\DataViaSoundTester\src\main\java</dir>
+      <dir>C:\Programming\Java\DataViaSoundTester\src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -154,27 +117,19 @@
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/NetworkCommander.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/ClientWrapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/NetworkExecutionSequence.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/UDPServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/NetworkService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/MultiThreadServer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/enums/PacketID.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/ClientManagerListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/PacketListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/ConnectionListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/NetworkMessageObserver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/UDPMessageObserver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/ClientManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/net/ConnectionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/net/MultiThreadServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/DeviceAdditionBehaviour.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/models/profiles/TestsScenario.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/models/configs/TestConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/models/configs/TestsConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/models/configs/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/TestingBehaviour.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/addDevice/DeviceAdditionBehaviour.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/ProgramBehaviour.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/PerformTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/models/profiles/SequentialTestProfile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/custom/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/CustomJFrame.java" />
@@ -194,8 +149,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/CreateNewProfile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/RunTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/TestPreparationBehaviour.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/luckynick/models/ModelIO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/PerformTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/ProgramBehaviour.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/net/ConnectionHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/net/MultiThreadServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/NetworkService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/UDPServer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/addDevice/DeviceAdditionBehaviour.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/shared/enums/PacketID.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/TestPreparationBehaviour.java" />
       </list>
     </option>
   </component>
@@ -254,8 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -267,7 +228,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,43 +245,114 @@
             </path>
             <path>
               <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataViaSoundTester" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
               <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataViaSoundTester" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
               <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataViaSoundTester" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
+              <item name="pnet-1.5.10.jar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataViaSoundTester" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="luckynick" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
+              <item name="pnet-1.5.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="nl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataViaSoundTester" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="luckynick" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
+              <item name="pnet-1.5.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="nl" type="462c0819:PsiDirectoryNode" />
+              <item name="pvdberg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
+              <item name="pnet-1.5.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="nl" type="462c0819:PsiDirectoryNode" />
+              <item name="pvdberg" type="462c0819:PsiDirectoryNode" />
+              <item name="pnet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
+              <item name="pnet-1.5.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="nl" type="462c0819:PsiDirectoryNode" />
+              <item name="pvdberg" type="462c0819:PsiDirectoryNode" />
+              <item name="pnet" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
+              <item name="pnet-1.5.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="nl" type="462c0819:PsiDirectoryNode" />
+              <item name="pvdberg" type="462c0819:PsiDirectoryNode" />
+              <item name="pnet" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
+              <item name="pnet-1.5.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="nl" type="462c0819:PsiDirectoryNode" />
+              <item name="pvdberg" type="462c0819:PsiDirectoryNode" />
+              <item name="pnet" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
+              <item name="pnet-1.5.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="nl" type="462c0819:PsiDirectoryNode" />
+              <item name="pvdberg" type="462c0819:PsiDirectoryNode" />
+              <item name="pnet" type="462c0819:PsiDirectoryNode" />
+              <item name="factory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
+              <item name="pnet-1.5.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="nl" type="462c0819:PsiDirectoryNode" />
+              <item name="pvdberg" type="462c0819:PsiDirectoryNode" />
+              <item name="pnet" type="462c0819:PsiDirectoryNode" />
+              <item name="packet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
+              <item name="pnet-1.5.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="nl" type="462c0819:PsiDirectoryNode" />
+              <item name="pvdberg" type="462c0819:PsiDirectoryNode" />
+              <item name="pnet" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DataViaSoundTester" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: com.github.pvdberg1998:pnet:1.5.10" type="70bed36:NamedLibraryElementNode" />
+              <item name="pnet-1.5.10.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="nl" type="462c0819:PsiDirectoryNode" />
+              <item name="pvdberg" type="462c0819:PsiDirectoryNode" />
+              <item name="pnet" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -334,12 +368,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Programming\Java\DataViaSoundTester\src\main\java\com\luckynick\shared" />
-      <recent name="C:\Programming\Java\DataViaSoundTester\src\main\java\com\luckynick" />
-      <recent name="C:\Programming\Java\DataViaSoundTester\src\main\java\com\luckynick\shared\net" />
-      <recent name="C:\Programming\Java\DataViaSoundTester\src\main\java\com\luckynick\net" />
-      <recent name="C:\Programming\Java\DataViaSoundTester\src\main\java\com\luckynick\shared\enums" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.luckynick.models" />
+      <recent name="com.luckynick.behaviours" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.luckynick.behaviours.createProfile" />
@@ -348,9 +379,12 @@
       <recent name="com.luckynick.behaviours.runTest" />
       <recent name="com.luckynick.shared" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.luckynick.models" />
-      <recent name="com.luckynick.behaviours" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Programming\Java\DataViaSoundTester\src\main\java\com\luckynick\shared\enums" />
+      <recent name="C:\Programming\Java\DataViaSoundTester\src\main\java\com\luckynick\shared\net" />
+      <recent name="C:\Programming\Java\DataViaSoundTester\src\main\java\com\luckynick\shared" />
+      <recent name="C:\Programming\Java\DataViaSoundTester\src\main\java\com\luckynick" />
+      <recent name="C:\Programming\Java\DataViaSoundTester\src\main\java\com\luckynick\net" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -494,6 +528,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -503,11 +538,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31849316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31849316" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18854167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -520,7 +556,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="89" y="89" width="1742" height="842" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -536,170 +571,15 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="34" />
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/PacketListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/ConnectionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/UDPMessageObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/NetworkService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3250">
-          <caret line="143" column="107" lean-forward="false" selection-start-line="143" selection-start-column="91" selection-end-line="143" selection-end-column="107" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/ClientManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-515">
-          <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/net/MultiThreadServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="97" column="31" lean-forward="true" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/AddDevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="44" lean-forward="true" selection-start-line="7" selection-start-column="44" selection-end-line="8" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/ManageableField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/results/SessionSummary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/profiles/TestsScenario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/results/SingleTestResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/configs/Test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/profiles/Profile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/configs/TestsConfiguration.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/addDevice/DeviceAdditionBehaviour.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="64" column="26" lean-forward="true" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-          <folding>
-            <element signature="e#10065#10066#0" expanded="false" />
-            <element signature="e#10148#10149#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/UDPServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="70" column="25" lean-forward="false" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5-sources.jar!/com/google/gson/Gson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="865" column="0" lean-forward="false" selection-start-line="865" selection-start-column="0" selection-end-line="865" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/client/util/ClientDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/client/ClientImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/net/ConnectionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1525">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="309" column="15" lean-forward="false" selection-start-line="309" selection-start-column="15" selection-end-line="309" selection-end-column="15" />
-          <folding>
-            <element signature="e#10907#10908#0" expanded="false" />
-            <element signature="e#10945#10946#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -722,6 +602,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +619,7 @@
         <state relative-caret-position="735">
           <caret line="150" column="35" lean-forward="false" selection-start-line="150" selection-start-column="35" selection-end-line="150" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -747,10 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
           <caret line="114" column="43" lean-forward="true" selection-start-line="114" selection-start-column="43" selection-end-line="114" selection-end-column="43" />
-          <folding>
-            <element signature="e#2065#2906#0" expanded="true" />
-            <element signature="e#2905#2906#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -779,7 +656,7 @@
         <state relative-caret-position="186">
           <caret line="169" column="0" lean-forward="false" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -818,14 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/profiles/SequentialTestProfile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/createProfile/ModelCreationBehaviour.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -842,24 +711,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/PerformTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1214#1215#0" expanded="true" />
-            <element signature="e#1252#1253#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/createProfile/CreateConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -869,8 +726,8 @@
         <state relative-caret-position="200">
           <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
           <folding>
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#491#492#0" expanded="false" />
+            <element signature="e#557#558#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -891,11 +748,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/ProgramBehaviour.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/shared/GSONCustomSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="4" column="50" lean-forward="true" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+        <state relative-caret-position="186">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/ModelIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="102" column="46" lean-forward="false" selection-start-line="102" selection-start-column="46" selection-end-line="102" selection-end-column="46" />
+          <folding>
+            <element signature="e#3668#3669#0" expanded="false" />
+            <element signature="e#3718#3719#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -903,14 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="12" column="34" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/shared/GSONCustomSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -928,31 +788,204 @@
         <state relative-caret-position="375">
           <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
           <folding>
-            <element signature="e#221#222#0" expanded="true" />
-            <element signature="e#263#264#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="false" />
+            <element signature="e#263#264#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/profiles/SequentialTestProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/event/PNetListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/event/DistributerListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-365">
+          <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/server/ServerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2475">
+          <caret line="43" column="13" lean-forward="false" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/concurrent/ExecutorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="180" column="19" lean-forward="false" selection-start-line="180" selection-start-column="19" selection-end-line="180" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/threading/ThreadManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="57" column="8" lean-forward="false" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/client/util/TLSClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300">
+          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/client/util/PlainClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/client/util/ClientDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/client/util/AutoClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="55" column="28" lean-forward="true" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/client/util/AsyncClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1350">
+          <caret line="39" column="13" lean-forward="false" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/client/ClientImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="192" column="21" lean-forward="true" selection-start-line="192" selection-start-column="21" selection-end-line="192" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="66" column="9" lean-forward="false" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/factory/ClientFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/server/util/PlainServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pvdberg1998/pnet/1.5.10/pnet-1.5.10-sources.jar!/nl/pvdberg/pnet/server/util/ServerDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/net/MultiThreadServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="88" column="9" lean-forward="false" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/net/ConnectionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="79" column="30" lean-forward="false" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/ProgramBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/UDPServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="113" column="78" lean-forward="false" selection-start-line="113" selection-start-column="78" selection-end-line="113" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/shared/net/NetworkService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1400">
+          <caret line="69" column="6" lean-forward="false" selection-start-line="69" selection-start-column="6" selection-end-line="69" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/addDevice/DeviceAdditionBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1075">
+          <caret line="59" column="39" lean-forward="true" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/shared/enums/PacketID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/PerformTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="37" column="36" lean-forward="false" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/behaviours/runTest/TestPreparationBehaviour.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="56" column="52" lean-forward="true" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
-          <folding>
-            <element signature="e#1880#1881#0" expanded="true" />
-            <element signature="e#1922#1923#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/luckynick/models/ModelIO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="103" column="85" lean-forward="true" selection-start-line="103" selection-start-column="85" selection-end-line="103" selection-end-column="85" />
-          <folding>
-            <element signature="e#3668#3669#0" expanded="true" />
-            <element signature="e#3718#3719#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="310">
+          <caret line="106" column="28" lean-forward="true" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

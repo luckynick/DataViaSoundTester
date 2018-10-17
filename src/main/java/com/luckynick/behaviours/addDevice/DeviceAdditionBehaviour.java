@@ -50,14 +50,8 @@ public class DeviceAdditionBehaviour extends ProgramBehaviour implements PacketL
             MultiThreadServer server = new MultiThreadServer(SharedUtils.TCP_COMMUNICATION_PORT);
             ConnectionHandler.subscribePacketEvents(this);
             server.subscribeConnectionEvents(this);
-            trapConnection();
+            udpBroadcastThread = UDPServer.trapConnection();
         }
-    }
-
-    private void trapConnection() {
-        udpBroadcastThread = UDPServer.broadcastThread(
-                TestRole.CONTROLLER + " " + tcpPort);
-        udpBroadcastThread.start();
     }
 
     private void addDevice(String json) {
