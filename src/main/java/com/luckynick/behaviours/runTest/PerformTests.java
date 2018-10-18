@@ -28,7 +28,9 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
     Map<String, Client> connections;
     MultiThreadServer server;
 
-    private boolean senderReady = false, receiverReady = false;
+    private Object lock = new Object();
+
+    private volatile boolean senderReady = false, receiverReady = false;
 
     public PerformTests(SequentialTestProfile profile, Map<String, Client> connections, MultiThreadServer server) {
         this.profile = profile;
@@ -44,29 +46,51 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
         Log(LOG_TAG, "Performing test tasks. Using profile:");
         Log(LOG_TAG, profileIO.serializeStr(profile));
 
-        for(SingleTestProfile singleTestProfileProfile : profile.testsToPerform) {
-            for(String message : singleTestProfileProfile.dictionary.messages) {
-                prepSendMessage(message, profile.peer1, profile.peer2);
-                prepSendMessage(message, profile.peer2, profile.peer1);
+        Thread testsThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(SingleTestProfile singleTestProfileProfile : profile.testsToPerform) {
+                    for(String message : singleTestProfileProfile.dictionary.messages) {
+                        prepSendMessage(message, profile.peer1, profile.peer2);
+                        Log(LOG_TAG, "peer1 -> peer2");
+                        Log(LOG_TAG, profile.peer1.vendor + " to " + profile.peer2.vendor);
+                        synchronized (lock) {
+                            try {
+                                lock.wait();
+                            }
+                            catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        prepSendMessage(message, profile.peer2, profile.peer1);
+                        Log(LOG_TAG, "peer2 -> peer1");
+                        Log(LOG_TAG, profile.peer2.vendor + " to " + profile.peer1.vendor);
+                        synchronized (lock) {
+                            try {
+                                lock.wait();
+                            }
+                            catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
             }
-        }
+        });
+        testsThread.start();
 
         //exit();
     }
 
+    private volatile Client currentReceiver = null, currentSender = null;
+
     private void prepSendMessage(String message, Device sender, Device receiver) {
-        Client senderConn = connections.get(sender.macAddress);
-        Client receiverConn = connections.get(receiver.macAddress);
+        currentSender = connections.get(sender.macAddress);
+        currentReceiver = connections.get(receiver.macAddress);
 
         Packet senderPrepPacket = createRequestPacket(PacketID.PREP_SEND_MESSAGE).withString(message).build();
-        senderConn.send(senderPrepPacket); //expect OK
-        sendRequest(receiverConn, PacketID.PREP_RECEIVE_MESSAGE); //expect OK
-    }
-
-    private void executePreparedAction() {
-        for(Client conn : connections.values()) {
-            sendRequest(conn, PacketID.EXECUTE);
-        }
+        currentSender.send(senderPrepPacket); //expect OK
+        sendRequest(currentReceiver, PacketID.PREP_RECEIVE_MESSAGE); //expect OK
     }
 
     @Override
@@ -89,24 +113,75 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
         PacketReader packetReader = new PacketReader(p);
         try {
             int responseType = packetReader.readInt();
+            Log(LOG_TAG, "onResponsePacket: " + PacketID.ordinalToEnum(responseType));
             if(responseType == PacketID.OK.ordinal()) {
                 int okForWhat = packetReader.readInt();
+                Log(LOG_TAG, "ok for : " + PacketID.ordinalToEnum(okForWhat));
                 switch (PacketID.ordinalToEnum(okForWhat)) {
                     case PREP_SEND_MESSAGE:
+                        currentSender = c;
                         senderReady = true;
+                        tryRunMessageReceiver();
                         break;
                     case PREP_RECEIVE_MESSAGE:
+                        currentReceiver = c;
                         receiverReady = true;
+                        tryRunMessageReceiver();
+                        break;
+                    case RECEIVE_MESSAGE:
+                        runMessageSender();
                         break;
                     default:
-                        Log(LOG_TAG, "Unknown OK response.");
+                        Log(LOG_TAG, "Unknown OK response: " + PacketID.ordinalToEnum(okForWhat));
                 }
-                if(senderReady && receiverReady) executePreparedAction();
+            }
+            else if(responseType == PacketID.JOIN.ordinal()) {
+                int joinForWhat = packetReader.readInt();
+                switch (PacketID.ordinalToEnum(joinForWhat)) {
+                    case SEND_MESSAGE:
+                        Log(LOG_TAG, "Sender joined.");
+                        pullMessage();
+                        break;
+                    default:
+                        Log(LOG_TAG, "Unknown JOIN response: " + PacketID.ordinalToEnum(joinForWhat));
+                }
+            }
+            else if(responseType == PacketID.TEXT.ordinal()) {
+                String receivedMessage = packetReader.readString();
+                Log(LOG_TAG, "##########################################");
+                Log(LOG_TAG, "From " + c.getInetAddress().getHostAddress());
+                Log(LOG_TAG, "RECEIVED MESSAGE: " + receivedMessage);
+                synchronized (lock) {
+                    lock.notifyAll(); //begin next communication session
+                }
             }
         }
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * If both sender and receiver are ready -> tell receiver to start recording.
+     */
+    void tryRunMessageReceiver() {
+        if(receiverReady && senderReady && currentReceiver != null){
+            Client receiver = currentReceiver;
+            receiverReady = false;
+            senderReady = false;
+
+            sendRequest(receiver, PacketID.RECEIVE_MESSAGE);
+        }
+    }
+
+    void runMessageSender() {
+        Client sender = currentSender;
+        sendRequest(sender, PacketID.SEND_MESSAGE);
+    }
+
+    void pullMessage() {
+        Client receiver = currentReceiver;
+        sendRequest(receiver, PacketID.TEXT);
     }
 
     @Override
