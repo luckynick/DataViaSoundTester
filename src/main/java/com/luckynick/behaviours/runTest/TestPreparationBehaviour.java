@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static com.luckynick.custom.Utils.Log;
 
@@ -44,7 +45,7 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
     SequentialTestProfile testProfile;
     MultiThreadServer server;
 
-    private Map<String, Client> connections = new HashMap<>();
+    private ConcurrentHashMap<String, Client> connections = new ConcurrentHashMap<>();
 
     private boolean useConfig;
 

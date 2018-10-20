@@ -130,6 +130,7 @@ public class ModelEditor<T extends SerializableModel> extends CustomJFrame imple
                 ModelIO<T> newModelIO = new ModelIO<>(modelIO.getClassOfModel(), latestFile);
                 try {
                     editableModel = newModelIO.deserialize();
+                    editableModel.setFilename();
                 }
                 catch (IOException e1) {
                     System.out.println("Error during reading of profile.");
@@ -138,8 +139,6 @@ public class ModelEditor<T extends SerializableModel> extends CustomJFrame imple
                 modelIO = newModelIO;
 
                 hardResetWindow();
-
-                dispose();
             }
             else if (e.getActionCommand().equals("Cancel")) {
                 dispose();

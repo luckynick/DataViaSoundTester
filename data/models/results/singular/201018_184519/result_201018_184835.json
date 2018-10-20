@@ -1,0 +1,48 @@
+{
+  "senderSessionSummary": {
+    "summarySource": {
+      "macAddress": "D4:38:9C:41:1C:9D",
+      "localIP": "192.168.43.162",
+      "vendor": "Sony",
+      "model": "E6633",
+      "os": "Android",
+      "osVersion": "7.1.1",
+      "roleOfParticipant": "PEER",
+      "isHotspot": false,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_201018_184834.json",
+      "wholePath": "data/models/devices/device_Sony_E6633_201018_184833.json"
+    },
+    "sendParameters": {
+      "soundProductionUnit": "LOUD_SPEAKERS",
+      "loudnessLevel": 40,
+      "message": "One"
+    },
+    "sessionStartDate": 1540054112017
+  },
+  "receiverSessionSummary": {
+    "summarySource": {
+      "macAddress": "48:88:CA:F2:03:5E",
+      "localIP": "192.168.43.1",
+      "vendor": "LENOVO",
+      "model": "Lenovo A1000",
+      "os": "Android",
+      "osVersion": "5.0",
+      "roleOfParticipant": "PEER",
+      "isHotspot": true,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_201018_184835.json",
+      "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_201018_193253.json"
+    },
+    "receiveParameters": {
+      "soundConsumptionUnit": "MICROPHONE"
+    },
+    "message": "java.lang.StringIndexOutOfBoundsException",
+    "sessionStartDate": 1540056770896
+  },
+  "isDecodingSuccessful": false,
+  "messageMatchPecrentage": 33.33333333333333,
+  "nameOfModelClass": "SingleTestResult",
+  "filename": "201018_184519\\result_201018_184835.json\\",
+  "wholePath": "data\\models\\results\\singular\\201018_184519\\result_201018_184835.json\\"
+}

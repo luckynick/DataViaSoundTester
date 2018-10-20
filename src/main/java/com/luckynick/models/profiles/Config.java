@@ -14,7 +14,8 @@ public class Config extends SerializableModel {
     @ManageableField(required = true)
     public SequentialTestProfile defaultProfile;
 
-    public Config() {
+    @Override
+    public void setFilename() {
         setFilename("config" + SharedUtils.JSON_EXTENSION);
     }
 }

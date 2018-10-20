@@ -11,11 +11,11 @@ import com.luckynick.models.ManageableField;
 public class SingleTestProfile extends Profile {
 
     @ManageableField
-    protected SoundProductionUnit soundProductionUnit = SoundProductionUnit.LOUD_SPEAKERS;
+    public SoundProductionUnit soundProductionUnit = SoundProductionUnit.LOUD_SPEAKERS;
     @ManageableField
-    protected SoundConsumptionUnit soundConsumptionUnit = SoundConsumptionUnit.MICROPHONE;
+    public SoundConsumptionUnit soundConsumptionUnit = SoundConsumptionUnit.MICROPHONE;
     @ManageableField
-    protected int loudnessLevel = 100;
+    public int loudnessLevel = 100;
 
     @ManageableField(required = true)
     public Dictionary dictionary;

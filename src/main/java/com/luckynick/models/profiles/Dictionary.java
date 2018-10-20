@@ -14,7 +14,8 @@ public class Dictionary extends SerializableModel {
     @ManageableField(required = true)
     public List<String> messages = new ArrayList<>();
 
-    public Dictionary() {
+    @Override
+    public void setFilename() {
         setFilename("dictionary_" + SharedUtils.getDateStringForFileName() + SharedUtils.JSON_EXTENSION);
     }
 }

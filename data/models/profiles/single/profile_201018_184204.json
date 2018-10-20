@@ -1,0 +1,19 @@
+{
+  "soundProductionUnit": "LOUD_SPEAKERS",
+  "soundConsumptionUnit": "MICROPHONE",
+  "loudnessLevel": 80,
+  "dictionary": {
+    "messages": [
+      "Message with long text",
+      "Short text",
+      "Signs #@(\u0026?$0",
+      "One"
+    ],
+    "nameOfModelClass": "Dictionary",
+    "filename": "dictionary_201018_184048.json",
+    "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+  },
+  "nameOfModelClass": "SingleTestProfile",
+  "filename": "profile_201018_184204.json",
+  "wholePath": "data\\models\\profiles\\single\\profile_201018_184204.json"
+}

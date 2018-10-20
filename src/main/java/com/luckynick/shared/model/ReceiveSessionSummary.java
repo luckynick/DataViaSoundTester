@@ -1,23 +1,21 @@
-package com.luckynick.models.results;
+package com.luckynick.shared.model;
 
 import com.luckynick.custom.Device;
-import com.luckynick.models.SerializableModel;
 import com.luckynick.shared.IOClassHandling;
 import com.luckynick.shared.SharedUtils;
-
-import java.util.Date;
 
 /**
  * Not serialized independently, but inside of test result
  */
 @IOClassHandling(sendViaNetwork = true, dataStorage = SharedUtils.DataStorage.NONE)
-class SessionSummary extends SerializableModel {
+public class ReceiveSessionSummary {
 
-     Device dataSource;
+    public Device summarySource;
     /**
      * Depending on role of device which sent this summary (sender/receiver),
      * it is either sent or decoded data
      */
-    String data;
-    Date sessionStartDate;
+    public ReceiveParameters receiveParameters;
+    public String message;
+    public long sessionStartDate;
 }

@@ -5,7 +5,8 @@ import com.luckynick.shared.SharedUtils;
 
 public abstract class Profile extends SerializableModel {
 
-    public Profile() {
+    @Override
+    public void setFilename() {
         setFilename("profile_" + SharedUtils.getDateStringForFileName() + SharedUtils.JSON_EXTENSION);
     }
 }

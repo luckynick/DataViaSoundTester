@@ -8,8 +8,11 @@ import com.luckynick.shared.GSONCustomSerializer;
 import com.luckynick.shared.IOClassHandling;
 import com.luckynick.shared.IOFieldHandling;
 import com.luckynick.shared.SharedUtils;
+import com.sun.istack.internal.Nullable;
 
 import java.io.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -25,12 +28,34 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
         super(classOfModel);
         SerializableModel getPathFromIt = null;
         try {
-            getPathFromIt = classOfModel.newInstance();
+            Constructor<T> constructor;
+            constructor = classOfModel.getDeclaredConstructor();
+            constructor.setAccessible(true);
+            getPathFromIt = constructor.newInstance();
+
+            //getPathFromIt = classOfModel.newInstance();
         }
         catch (InstantiationException e) {
             e.printStackTrace();
         }
         catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        catch (NoSuchMethodException e) {
+            e.printStackTrace();
+            /*
+            try {
+                getPathFromIt = classOfModel.newInstance();
+            }
+            catch (InstantiationException e1) {
+                e1.printStackTrace();
+            }
+            catch (IllegalAccessException e1) {
+                e1.printStackTrace();
+            }
+            */
+        }
+        catch (InvocationTargetException e) {
             e.printStackTrace();
         }
         File serializationFile = new File(getPathFromIt.wholePath);
@@ -55,6 +80,10 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
 
     public void serialize(T object) throws IOException {
         File file = new File(object.wholePath);
+        if(!file.exists()) {
+            File folder = file.getParentFile();
+            if(folder != null) folder.mkdirs();
+        }
         file.createNewFile();
         if(file == null) throw new IllegalStateException("Model file doesn't exist.");
         FileWriter fileWriter = new FileWriter(file, false);

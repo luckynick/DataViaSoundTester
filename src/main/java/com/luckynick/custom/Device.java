@@ -19,15 +19,9 @@ public class Device extends SerializableModel {
     public TestRole roleOfParticipant;
     public boolean isHotspot = false;
 
-
-    public Device() {
-        setFilename();
-    }
-
+    @Override
     public void setFilename() {
         setFilename("device_" + vendor + '_' + model + '_' + SharedUtils.getDateStringForFileName()
                 + SharedUtils.JSON_EXTENSION);
     }
-
-
 }

@@ -11,12 +11,12 @@
       "roleOfParticipant": "PEER",
       "isHotspot": true,
       "nameOfModelClass": "Device",
-      "filename": "device_LENOVO_Lenovo A1000_031018_225425.json",
-      "wholePath": "data\\models\\devices\\device_LENOVO_Lenovo A1000_031018_225425.json"
+      "filename": "device_LENOVO_Lenovo A1000_201018_184421.json",
+      "wholePath": "data\\models\\devices\\device_LENOVO_Lenovo A1000_201018_184421.json"
     },
     "peer2": {
       "macAddress": "D4:38:9C:41:1C:9D",
-      "localIP": "192.168.43.1",
+      "localIP": "192.168.43.162",
       "vendor": "Sony",
       "model": "E6633",
       "os": "Android",
@@ -24,88 +24,168 @@
       "roleOfParticipant": "PEER",
       "isHotspot": false,
       "nameOfModelClass": "Device",
-      "filename": "device_Sony_E6633_051018_120058.json",
-      "wholePath": "data\\models\\devices\\device_Sony_E6633_051018_120058.json"
+      "filename": "device_Sony_E6633_201018_184421.json",
+      "wholePath": "data\\models\\devices\\device_Sony_E6633_201018_184421.json"
     },
-    "distanceBetweenPeers": 30,
+    "distanceBetweenPeers": 3,
     "distanceUnitName": "Centimeter",
     "testsToPerform": [
       {
         "soundProductionUnit": "LOUD_SPEAKERS",
         "soundConsumptionUnit": "MICROPHONE",
-        "loudnessLevel": 100,
+        "loudnessLevel": 80,
         "dictionary": {
           "messages": [
-            "We make a history here!",
-            "Cool stuff!",
-            "Lol :D"
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
           ],
           "nameOfModelClass": "Dictionary",
-          "filename": "dictionary_091018_214939.json",
-          "wholePath": "data\\models\\dictionary\\dictionary_091018_214939.json"
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
         },
         "nameOfModelClass": "SingleTestProfile",
-        "filename": "profile_091018_215205.json",
-        "wholePath": "data\\models\\profiles\\single\\profile_091018_215205.json"
+        "filename": "profile_201018_184204.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184204.json"
       },
       {
         "soundProductionUnit": "LOUD_SPEAKERS",
         "soundConsumptionUnit": "MICROPHONE",
-        "loudnessLevel": 100,
+        "loudnessLevel": 70,
         "dictionary": {
           "messages": [
-            "We make a history here!",
-            "Cool stuff!",
-            "Lol :D"
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
           ],
           "nameOfModelClass": "Dictionary",
-          "filename": "dictionary_091018_214939.json",
-          "wholePath": "data\\models\\dictionary\\dictionary_091018_214939.json"
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
         },
         "nameOfModelClass": "SingleTestProfile",
-        "filename": "profile_091018_215205.json",
-        "wholePath": "data\\models\\profiles\\single\\profile_091018_215205.json"
+        "filename": "profile_201018_184238.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184238.json"
       },
       {
         "soundProductionUnit": "LOUD_SPEAKERS",
         "soundConsumptionUnit": "MICROPHONE",
-        "loudnessLevel": 100,
+        "loudnessLevel": 60,
         "dictionary": {
           "messages": [
-            "We make a history here!",
-            "Cool stuff!",
-            "Lol :D"
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
           ],
           "nameOfModelClass": "Dictionary",
-          "filename": "dictionary_091018_214939.json",
-          "wholePath": "data\\models\\dictionary\\dictionary_091018_214939.json"
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
         },
         "nameOfModelClass": "SingleTestProfile",
-        "filename": "profile_091018_215205.json",
-        "wholePath": "data\\models\\profiles\\single\\profile_091018_215205.json"
+        "filename": "profile_201018_184251.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184251.json"
       },
       {
         "soundProductionUnit": "LOUD_SPEAKERS",
         "soundConsumptionUnit": "MICROPHONE",
-        "loudnessLevel": 100,
+        "loudnessLevel": 50,
         "dictionary": {
           "messages": [
-            "We make a history here!",
-            "Cool stuff!",
-            "Lol :D"
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
           ],
           "nameOfModelClass": "Dictionary",
-          "filename": "dictionary_091018_214939.json",
-          "wholePath": "data\\models\\dictionary\\dictionary_091018_214939.json"
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
         },
         "nameOfModelClass": "SingleTestProfile",
-        "filename": "profile_091018_215205.json",
-        "wholePath": "data\\models\\profiles\\single\\profile_091018_215205.json"
+        "filename": "profile_201018_184305.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184305.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 40,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184318.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184318.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 30,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184328.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184328.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 20,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184340.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184340.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 10,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184352.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184352.json"
       }
     ],
     "nameOfModelClass": "SequentialTestProfile",
-    "filename": "profile_091018_215237.json",
-    "wholePath": "data\\models\\profiles\\sequential\\profile_091018_215237.json"
+    "filename": "profile_201018_184432.json",
+    "wholePath": "data\\models\\profiles\\sequential\\profile_201018_184432.json"
   },
   "nameOfModelClass": "Config",
   "filename": "config.json",

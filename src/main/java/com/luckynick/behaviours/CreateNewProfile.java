@@ -8,7 +8,6 @@ public class CreateNewProfile extends ProgramBehaviour {
         ModelCreationBehaviour[] menuActions = new ModelCreationBehaviour[]{
                 new CreateSingularProfile(),
                 new CreateSequentialProfile(),
-                new CreateTestScenario(),
                 new CreateDictionary(),
                 new CreateConfig(),
         };

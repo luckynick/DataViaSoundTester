@@ -32,10 +32,18 @@ public abstract class SerializableModel {
     @IOFieldHandling(serialize = false)
     protected String filenamePrefix = nameOfModelClass;
     @ManageableField(editable = false)
-    public String filename= filenamePrefix + SharedUtils.JSON_EXTENSION;
+    public String filename;
     @IOFieldHandling(serialize = false)
     public String fileRoot = this.getClass().getDeclaredAnnotation(IOClassHandling.class).dataStorage().toString();
     public String wholePath = fileRoot + filename;
+
+    public SerializableModel() {
+        setFilename();
+    }
+
+    public void setFilename() {
+        setFilename(filenamePrefix + SharedUtils.JSON_EXTENSION);
+    }
 
     public void setFilename(String filename) {
         this.filename = filename;

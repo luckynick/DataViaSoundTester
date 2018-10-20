@@ -5,9 +5,16 @@ import com.luckynick.custom.Device;
 import com.luckynick.models.ModelIO;
 import com.luckynick.models.profiles.SequentialTestProfile;
 import com.luckynick.models.profiles.SingleTestProfile;
+import com.luckynick.models.results.SingleTestResult;
 import com.luckynick.net.ConnectionHandler;
 import com.luckynick.net.MultiThreadServer;
+import com.luckynick.shared.GSONCustomSerializer;
+import com.luckynick.shared.SharedUtils;
 import com.luckynick.shared.enums.PacketID;
+import com.luckynick.shared.model.ReceiveParameters;
+import com.luckynick.shared.model.ReceiveSessionSummary;
+import com.luckynick.shared.model.SendParameters;
+import com.luckynick.shared.model.SendSessionSummary;
 import com.luckynick.shared.net.ConnectionListener;
 import com.luckynick.shared.net.PacketListener;
 import nl.pvdberg.pnet.client.Client;
@@ -16,6 +23,7 @@ import nl.pvdberg.pnet.packet.PacketReader;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static com.luckynick.custom.Utils.Log;
 
@@ -28,11 +36,14 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
     Map<String, Client> connections;
     MultiThreadServer server;
 
+    long testTimeMillis = System.currentTimeMillis();
+
     private Object lock = new Object();
 
+    private volatile SendSessionSummary sendSessionSummary = null;
     private volatile boolean senderReady = false, receiverReady = false;
 
-    public PerformTests(SequentialTestProfile profile, Map<String, Client> connections, MultiThreadServer server) {
+    public PerformTests(SequentialTestProfile profile, ConcurrentHashMap<String, Client> connections, MultiThreadServer server) {
         this.profile = profile;
         this.connections = connections;
         this.server = server;
@@ -51,7 +62,13 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
             public void run() {
                 for(SingleTestProfile singleTestProfileProfile : profile.testsToPerform) {
                     for(String message : singleTestProfileProfile.dictionary.messages) {
-                        prepSendMessage(message, profile.peer1, profile.peer2);
+                        SendParameters sParams = new SendParameters();
+                        sParams.loudnessLevel = singleTestProfileProfile.loudnessLevel;
+                        sParams.soundProductionUnit = singleTestProfileProfile.soundProductionUnit;
+                        sParams.message = message;
+                        ReceiveParameters rParams = new ReceiveParameters();
+                        rParams.soundConsumptionUnit = singleTestProfileProfile.soundConsumptionUnit;
+                        sendMessages(sParams, rParams, profile.peer1, profile.peer2);
                         Log(LOG_TAG, "peer1 -> peer2");
                         Log(LOG_TAG, profile.peer1.vendor + " to " + profile.peer2.vendor);
                         synchronized (lock) {
@@ -62,7 +79,7 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                                 e.printStackTrace();
                             }
                         }
-                        prepSendMessage(message, profile.peer2, profile.peer1);
+                        sendMessages(sParams, rParams, profile.peer2, profile.peer1);
                         Log(LOG_TAG, "peer2 -> peer1");
                         Log(LOG_TAG, profile.peer2.vendor + " to " + profile.peer1.vendor);
                         synchronized (lock) {
@@ -82,9 +99,25 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
         //exit();
     }
 
+    private void sendMessages(SendParameters sendParams, ReceiveParameters recvParams, Device sender, Device receiver) {
+        currentSender = connections.get(sender.macAddress);
+        currentReceiver = connections.get(receiver.macAddress);
+
+        Packet senderPrepPacket = createRequestPacket(PacketID.PREP_SEND_MESSAGE)
+                .withString(new GSONCustomSerializer<>(SendParameters.class)
+                        .serializeStr(sendParams))
+                .build();
+        currentSender.send(senderPrepPacket); //expect OK
+        Packet receiverPrepPacket = createRequestPacket(PacketID.PREP_RECEIVE_MESSAGE)
+                .withString(new GSONCustomSerializer<>(ReceiveParameters.class)
+                        .serializeStr(recvParams))
+                .build();
+        currentReceiver.send(receiverPrepPacket); //expect OK
+    }
+
     private volatile Client currentReceiver = null, currentSender = null;
 
-    private void prepSendMessage(String message, Device sender, Device receiver) {
+    private void sendMessages(String message, Device sender, Device receiver) {
         currentSender = connections.get(sender.macAddress);
         currentReceiver = connections.get(receiver.macAddress);
 
@@ -139,6 +172,8 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                 int joinForWhat = packetReader.readInt();
                 switch (PacketID.ordinalToEnum(joinForWhat)) {
                     case SEND_MESSAGE:
+                        GSONCustomSerializer<SendSessionSummary> serializer = new GSONCustomSerializer<>(SendSessionSummary.class);
+                        sendSessionSummary = serializer.deserialize(packetReader.readString());
                         Log(LOG_TAG, "Sender joined.");
                         pullMessage();
                         break;
@@ -147,10 +182,21 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                 }
             }
             else if(responseType == PacketID.TEXT.ordinal()) {
-                String receivedMessage = packetReader.readString();
+                ModelIO<SingleTestResult> resultIO = new ModelIO<>(SingleTestResult.class);
+                GSONCustomSerializer<ReceiveSessionSummary> serializer = new GSONCustomSerializer<>(ReceiveSessionSummary.class);
+                String serSummary = packetReader.readString();
+                ReceiveSessionSummary recvSummary = serializer.deserialize(serSummary);
                 Log(LOG_TAG, "##########################################");
-                Log(LOG_TAG, "From " + c.getInetAddress().getHostAddress());
-                Log(LOG_TAG, "RECEIVED MESSAGE: " + receivedMessage);
+                Log(LOG_TAG, "From " + recvSummary.summarySource.vendor);
+                Log(LOG_TAG, "RECEIVED MESSAGE: " + recvSummary.message);
+
+                SingleTestResult result = new SingleTestResult(sendSessionSummary, recvSummary);
+                String filenameWdateFolder = SharedUtils.formPathString(
+                        SharedUtils.getDateStringForFileName(testTimeMillis), result.filename);
+                result.setFilename(filenameWdateFolder);
+                Log(LOG_TAG, "New SingleTestResult path: " + result.wholePath);
+                resultIO.serialize(result);
+
                 synchronized (lock) {
                     lock.notifyAll(); //begin next communication session
                 }
