@@ -1,5 +1,6 @@
 package com.luckynick.models.results;
 
+import com.luckynick.models.profiles.SingleTestProfile;
 import com.luckynick.shared.IOClassHandling;
 import com.luckynick.shared.SharedUtils;
 import com.luckynick.shared.model.ReceiveSessionSummary;
@@ -13,8 +14,8 @@ import java.util.List;
 @IOClassHandling(dataStorage = SharedUtils.DataStorage.SINGULAR_RESULT)
 public class SingleTestResult extends TestResult {
 
-    private SendSessionSummary senderSessionSummary;
-    private ReceiveSessionSummary receiverSessionSummary;
+    public SendSessionSummary senderSessionSummary;
+    public ReceiveSessionSummary receiverSessionSummary;
 
     public boolean isDecodingSuccessful;
     public double messageMatchPecrentage;
@@ -53,14 +54,12 @@ public class SingleTestResult extends TestResult {
         isDecodingSuccessful = sent.equals(received);
 
         messageMatchPecrentage = countMatchPercentageLongest(sent, received);
+
+        if(receiverSessionSummary.exceptionDuringDecoding != null) messageMatchPecrentage = 0;
     }
 
+    /*
     public static void main(String args[]) {
-        /*
-        System.out.println("Match percentage: " + countMatchPercentageCutEnd("ala ma kota",
-                "do tego ala ma kota dużego") + "%"); //100%, toCheck string contains 100% of perfect string
-        */
-
         System.out.println("Match percentage: " + countMatchPercentageLongest("ala ma kota",
                 "do tego ala ma kota dużego") + "%"); //100%, toCheck string contains 100% of perfect string
 
@@ -68,6 +67,7 @@ public class SingleTestResult extends TestResult {
         System.out.println("Match percentage: " + countMatchPercentageLongest("ala ma kota",
                 "do tego bla mfgkota dużego") + "%"); //72.72727272727273%, toCheck string contains 100% of perfect string
     }
+    */
 
     @Deprecated
     public static double countMatchPercentageCutEnd(String perfect, String toCheck) {

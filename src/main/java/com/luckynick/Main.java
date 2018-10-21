@@ -19,6 +19,7 @@ public class Main {
         programParamsActions.put("--runTest", () -> {return new RunTest(false);});
         programParamsActions.put("--runTestDefault", () -> {return new RunTest(true);});
         programParamsActions.put("--addDevice", AddDevice::new);
+        programParamsActions.put("--showReport", ShowReport::new);
         programParamsActions.put("--overviewTest", () -> {return new IncorrectStartParameter("OverviewTest");});
     }
 

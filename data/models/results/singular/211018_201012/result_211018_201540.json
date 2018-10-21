@@ -1,0 +1,126 @@
+{
+  "senderSessionSummary": {
+    "summarySource": {
+      "macAddress": "D4:38:9C:41:1C:9D",
+      "localIP": "192.168.43.162",
+      "vendor": "Sony",
+      "model": "E6633",
+      "os": "Android",
+      "osVersion": "7.1.1",
+      "roleOfParticipant": "PEER",
+      "isHotspot": false,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_211018_201538.json",
+      "wholePath": "data/models/devices/device_Sony_E6633_211018_201536.json"
+    },
+    "sendParameters": {
+      "soundProductionUnit": "LOUD_SPEAKERS",
+      "loudnessLevel": 70,
+      "message": "One"
+    },
+    "sessionStartDate": 1540145734424
+  },
+  "receiverSessionSummary": {
+    "summarySource": {
+      "macAddress": "40:C6:2A:33:51:80",
+      "localIP": "192.168.43.1",
+      "vendor": "Meizu",
+      "model": "m2",
+      "os": "Android",
+      "osVersion": "5.1",
+      "roleOfParticipant": "PEER",
+      "isHotspot": true,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_211018_201540.json",
+      "wholePath": "data/models/devices/device_Meizu_m2_211018_201353.json"
+    },
+    "receiveParameters": {
+      "soundConsumptionUnit": "MICROPHONE"
+    },
+    "message": "null",
+    "sessionStartDate": 1540145630158,
+    "exceptionDuringDecoding": {
+      "detailMessage": "length\u003d25; regionStart\u003d6; regionLength\u003d-7",
+      "stackTrace": [
+        {
+          "declaringClass": "java.lang.String",
+          "methodName": "startEndAndLength",
+          "fileName": "String.java",
+          "lineNumber": 504
+        },
+        {
+          "declaringClass": "java.lang.String",
+          "methodName": "substring",
+          "fileName": "String.java",
+          "lineNumber": 1333
+        },
+        {
+          "declaringClass": "com.luckynick.android.test.SoundRecognizer",
+          "methodName": "iterateForFrequencies",
+          "fileName": "SoundRecognizer.java",
+          "lineNumber": 182
+        },
+        {
+          "declaringClass": "com.luckynick.android.test.SoundRecognizer",
+          "methodName": "iterateForFrequencies",
+          "fileName": "SoundRecognizer.java",
+          "lineNumber": 137
+        },
+        {
+          "declaringClass": "com.luckynick.android.test.BaseActivity$AsyncIterateForFrequencies",
+          "methodName": "doInBackground",
+          "fileName": "BaseActivity.java",
+          "lineNumber": 249
+        },
+        {
+          "declaringClass": "com.luckynick.android.test.BaseActivity$AsyncIterateForFrequencies",
+          "methodName": "doInBackground",
+          "fileName": "BaseActivity.java",
+          "lineNumber": 241
+        },
+        {
+          "declaringClass": "android.os.AsyncTask$2",
+          "methodName": "call",
+          "fileName": "AsyncTask.java",
+          "lineNumber": 292
+        },
+        {
+          "declaringClass": "java.util.concurrent.FutureTask",
+          "methodName": "run",
+          "fileName": "FutureTask.java",
+          "lineNumber": 237
+        },
+        {
+          "declaringClass": "android.os.AsyncTask$SerialExecutor$1",
+          "methodName": "run",
+          "fileName": "AsyncTask.java",
+          "lineNumber": 231
+        },
+        {
+          "declaringClass": "java.util.concurrent.ThreadPoolExecutor",
+          "methodName": "runWorker",
+          "fileName": "ThreadPoolExecutor.java",
+          "lineNumber": 1112
+        },
+        {
+          "declaringClass": "java.util.concurrent.ThreadPoolExecutor$Worker",
+          "methodName": "run",
+          "fileName": "ThreadPoolExecutor.java",
+          "lineNumber": 587
+        },
+        {
+          "declaringClass": "java.lang.Thread",
+          "methodName": "run",
+          "fileName": "Thread.java",
+          "lineNumber": 818
+        }
+      ],
+      "suppressedExceptions": []
+    }
+  },
+  "isDecodingSuccessful": false,
+  "messageMatchPecrentage": 0.0,
+  "nameOfModelClass": "SingleTestResult",
+  "filename": "211018_201012\\result_211018_201540.json\\",
+  "wholePath": "data\\models\\results\\singular\\211018_201012\\result_211018_201540.json\\"
+}

@@ -1,0 +1,3587 @@
+{
+  "resultsOfTests": [
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183310.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183123.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139478282
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183310.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183309.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139583349,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183310.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183310.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183316.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183314.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139589310
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183316.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183129.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139484197,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183316.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183316.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183319.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183133.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139490104
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183319.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183318.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139595202,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183319.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183319.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183323.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183321.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139598511
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183323.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183136.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139493401,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183323.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183323.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183327.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183140.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139496870
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183327.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183325.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139601966,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183327.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183327.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183331.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183329.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139605862
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183331.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183144.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139500752,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183331.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183331.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183333.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183146.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139505171
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183333.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183332.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139610268,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183333.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183333.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183335.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183333.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139612315
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183335.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183149.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139507205,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183335.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183335.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183341.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183154.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139509180
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183341.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183339.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139614279,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183341.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183341.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183346.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183345.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139620034
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183347.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183200.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139514923,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183347.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183347.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183350.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183203.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139520821
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183350.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183349.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139625920,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183350.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183350.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183353.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183352.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139629258
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183354.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183207.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139524146,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183354.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183354.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183358.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183211.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139527892
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183358.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183356.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139632990,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183358.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183358.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183402.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183400.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139636879
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183402.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183215.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139531766,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183402.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183402.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183404.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183217.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139535866
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183404.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183402.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139640964,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183404.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183404.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183406.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183404.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139643025
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183406.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183219.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139537914,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183406.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183406.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183412.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183225.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139540180
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183412.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183411.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139645279,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183412.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183412.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183418.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183416.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139651376
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183418.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183232.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139546265,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183418.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183418.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183421.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183235.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139552161
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183422.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183420.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139657259,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183422.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183422.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183425.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183423.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139660559
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183425.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183238.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139555448,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183425.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183425.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183429.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183242.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139558923
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183429.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183427.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139664021,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183429.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183429.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183433.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183431.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139668037
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183433.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183246.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139562925,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183433.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183433.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183435.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183248.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139567213
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183435.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183434.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139672310,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183435.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183435.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183437.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183435.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139674349
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183437.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183251.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139569237,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183437.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183437.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183443.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183256.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139571253
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183443.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183442.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139676351,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183443.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183443.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183449.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183447.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139682094
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183449.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183302.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139576984,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183449.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183449.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183452.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183306.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139583200
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183453.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183451.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139688298,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183453.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183453.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183456.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183454.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139691689
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183456.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183309.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139586575,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183456.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183456.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183500.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183313.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139590261
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183500.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183459.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139695353,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183500.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183500.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183504.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183502.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139699235
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183504.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183318.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139594120,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183504.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183504.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183506.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183319.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139598239
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183506.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183505.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139703338,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183506.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183506.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183508.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183507.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139705419
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183508.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183322.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139600309,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183508.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183508.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183514.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183328.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139602541
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183514.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183513.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139707639,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183514.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183514.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183520.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183518.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139713350
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183520.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183333.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139608233,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183520.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183520.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183523.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183337.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139614234
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183524.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183522.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139719328,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183524.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183524.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183527.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183525.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139722572
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183527.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183340.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139617459,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183527.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183527.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183531.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183344.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139620980
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183531.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183529.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139726073,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183531.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183531.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183535.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183533.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139730015
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183535.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183348.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139624903,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183535.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183535.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183537.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183350.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139629285
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183537.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183536.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139734383,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183537.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183537.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183539.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183538.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139736420
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183539.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183353.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139631311,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183539.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183539.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183545.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183358.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139633260
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183545.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183544.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139738359,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183545.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183545.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183551.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183549.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139744071
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183551.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183404.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139638958,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183551.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183551.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183554.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183407.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139644935
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183554.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183553.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139750032,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183554.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183554.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183557.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183556.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139753310
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183558.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183411.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139648201,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183558.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183558.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183601.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183415.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139651692
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183602.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183600.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139756790,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183602.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183602.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183605.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183604.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139760647
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183606.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183419.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139655536,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183606.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183606.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183607.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183421.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139659550
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183608.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183606.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139764649,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183608.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183608.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183609.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183608.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139766532
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183610.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183423.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139661415,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183610.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183610.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183615.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183429.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139663678
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183616.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183614.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139768771,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183616.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183616.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183621.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183620.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139774761
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183622.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183435.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139669650,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183622.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183622.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183625.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183438.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139675661
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183625.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183623.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139780758,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183625.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183625.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183628.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183626.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139784014
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183628.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183442.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139678904,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183628.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183628.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183632.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183446.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139682413
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183632.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183631.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139787511,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183632.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183632.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183636.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183634.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139791440
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183636.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183450.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139686324,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183636.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183636.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183638.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183451.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139690404
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183638.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183637.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139795500,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183638.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183638.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183640.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183638.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139797305
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183640.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183454.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139692196,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183640.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183640.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183646.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183459.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139694394
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183646.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183645.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139799492,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183646.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183646.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183652.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183650.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540139805212
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183652.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183505.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139700101,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183652.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183652.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183655.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183509.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139706061
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183655.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183654.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139811159,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183655.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183655.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183658.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183657.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540139814415
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183659.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183512.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139709306,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183659.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183659.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183703.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183516.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139712822
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183703.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183701.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139817919,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183703.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183703.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183706.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183705.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540139821805
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183707.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183520.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139716695,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183707.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183707.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183708.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183522.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139720812
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183709.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183707.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139825910,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.NumberFormatException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183709.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183709.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183710.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_183709.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "One"
+        },
+        "sessionStartDate": 1540139827686
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "40:C6:2A:33:51:80",
+          "localIP": "192.168.43.1",
+          "vendor": "Meizu",
+          "model": "m2",
+          "os": "Android",
+          "osVersion": "5.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_183711.json",
+          "wholePath": "data/models/devices/device_Meizu_m2_211018_183524.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540139722575,
+        "exceptionDuringDecoding": {
+          "detailMessage": "fromHex has thrown an exception: java.lang.StringIndexOutOfBoundsException",
+          "stackTrace": [],
+          "suppressedExceptions": []
+        }
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_183304\\result_211018_183711.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_183304\\result_211018_183711.json\\"
+    }
+  ],
+  "seqTestProfile": {
+    "controller": null,
+    "peer1": {
+      "macAddress": "40:C6:2A:33:51:80",
+      "localIP": "192.168.43.1",
+      "vendor": "Meizu",
+      "model": "m2",
+      "os": "Android",
+      "osVersion": "5.1",
+      "roleOfParticipant": "PEER",
+      "isHotspot": true,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_211018_183304.json",
+      "wholePath": "data/models/devices/device_Meizu_m2_211018_183118.json"
+    },
+    "peer2": {
+      "macAddress": "D4:38:9C:41:1C:9D",
+      "localIP": "192.168.43.162",
+      "vendor": "Sony",
+      "model": "E6633",
+      "os": "Android",
+      "osVersion": "7.1.1",
+      "roleOfParticipant": "PEER",
+      "isHotspot": false,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_211018_183304.json",
+      "wholePath": "data/models/devices/device_Sony_E6633_211018_183303.json"
+    },
+    "distanceBetweenPeers": 2,
+    "distanceUnitName": "Centimeter",
+    "testsToPerform": [
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 10,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184352.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184352.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 20,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184340.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184340.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 30,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184328.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184328.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 40,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184318.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184318.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 50,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184305.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184305.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 60,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184251.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184251.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 70,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184238.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184238.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 80,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184204.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184204.json"
+      }
+    ],
+    "nameOfModelClass": "SequentialTestProfile",
+    "filename": "profile_211018_183202.json",
+    "wholePath": "data\\models\\profiles\\sequential\\profile_211018_183202.json"
+  },
+  "nameOfModelClass": "TestsReport",
+  "filename": "report_211018_183304.json",
+  "wholePath": "data\\models\\results\\report_211018_183304.json"
+}

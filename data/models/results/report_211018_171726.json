@@ -1,0 +1,3331 @@
+{
+  "resultsOfTests": [
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171732.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180157.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540137711830
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171732.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171730.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135045019,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171732.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171732.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171738.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171736.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540135051068
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171738.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180203.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137717704,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171738.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171738.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171742.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180207.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540137724189
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171745.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171743.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135057399,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171745.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171745.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171748.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171746.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540135063436
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171748.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180213.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137730210,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171748.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171748.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171752.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180217.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540137734017
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171753.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171751.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135067229,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171753.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171753.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171756.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171755.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540135071385
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171757.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180222.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137738156,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171757.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171757.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171759.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180224.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "One"
+        },
+        "sessionStartDate": 1540137742616
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171759.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171757.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135075827,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171759.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171759.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171801.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171759.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 10,
+          "message": "One"
+        },
+        "sessionStartDate": 1540135078079
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171801.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180226.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137744854,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171801.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171801.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171807.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180232.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540137746785
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171807.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171806.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135079997,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171807.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171807.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171813.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171811.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540135086151
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171813.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180238.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137752929,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171813.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171813.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171816.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180241.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540137758914
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171817.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171815.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135092127,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171817.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171817.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171820.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171818.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540135095666
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171821.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180246.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137762440,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171821.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171821.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171824.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180249.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540137766268
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171825.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171823.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135099477,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171825.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171825.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171829.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171827.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540135103684
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171829.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180254.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137770460,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171829.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171829.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171830.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180255.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "One"
+        },
+        "sessionStartDate": 1540137774361
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171832.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171830.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135107567,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171832.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171832.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171833.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171832.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 20,
+          "message": "One"
+        },
+        "sessionStartDate": 1540135110558
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171834.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180259.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137777333,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171834.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171834.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171840.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180305.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540137779781
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171840.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171839.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135112992,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171840.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171840.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171846.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171844.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540135119092
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171846.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180311.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137785872,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171846.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171846.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171850.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180315.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540137792081
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171850.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171848.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135125286,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171850.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171850.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171853.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171851.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540135128671
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171853.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180318.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137795453,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171853.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171853.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171858.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180323.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540137799448
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171858.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171856.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135132655,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171858.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171858.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171902.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171900.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540135136772
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171902.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180327.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137803553,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171902.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171902.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171904.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180329.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "One"
+        },
+        "sessionStartDate": 1540137808086
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171905.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171903.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135141287,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171905.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171905.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171906.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171905.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 30,
+          "message": "One"
+        },
+        "sessionStartDate": 1540135143309
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171907.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180332.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137810091,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171907.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171907.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171913.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180338.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540137812759
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171913.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171911.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135145960,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171913.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171913.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171919.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171917.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540135151969
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171919.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180344.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137818752,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171919.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171919.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171922.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180347.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540137824686
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171922.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171921.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135157891,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171922.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171922.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171926.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171924.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540135161257
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171926.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180351.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137828042,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171926.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171926.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171930.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180355.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540137831711
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171931.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171929.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135164912,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171931.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171931.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171934.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171933.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540135169484
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171935.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180400.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137836267,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171935.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171935.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171937.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180402.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "One"
+        },
+        "sessionStartDate": 1540137840473
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171938.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171936.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135173677,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171938.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171938.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171939.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171938.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 40,
+          "message": "One"
+        },
+        "sessionStartDate": 1540135176412
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171939.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180404.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137843197,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171939.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171939.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171945.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180410.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540137845040
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171945.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171944.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135178234,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171945.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171945.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171951.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171949.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540135184149
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171951.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180416.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137850935,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171951.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171951.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171956.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180421.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540137858821
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_171957.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171955.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135192015,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_171957.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_171957.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172000.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_171958.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540135195574
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172000.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180425.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137862362,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172000.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172000.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172006.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180431.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540137867621
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172008.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172006.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135200818,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172008.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172008.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172011.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172010.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540135206351
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172012.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180437.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137873139,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172012.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172012.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172013.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180438.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "One"
+        },
+        "sessionStartDate": 1540137877230
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172014.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172012.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135210429,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172014.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172014.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172015.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172014.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 50,
+          "message": "One"
+        },
+        "sessionStartDate": 1540135212467
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172016.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180441.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137879169,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172016.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172016.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172022.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180447.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540137881803
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172022.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172020.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135214993,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172022.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172022.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172028.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172026.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540135221026
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172028.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180453.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137887778,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172028.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172028.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172032.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180457.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540137894084
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172032.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172030.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135227275,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172032.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172032.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172035.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172033.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540135230849
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172036.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180501.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137897636,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172036.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172036.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172040.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180505.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540137901467
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172040.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172038.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135234650,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172040.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172040.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172044.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172042.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540135238781
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172044.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180509.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137905573,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172044.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172044.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172046.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180511.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "One"
+        },
+        "sessionStartDate": 1540137909693
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172046.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172044.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135242889,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172046.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172046.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172048.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172046.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 60,
+          "message": "One"
+        },
+        "sessionStartDate": 1540135244951
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172048.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180513.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137911744,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172048.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172048.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172054.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180519.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540137914052
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172055.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172053.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135247241,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172055.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172055.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172100.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172058.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540135253288
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172101.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180526.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137920078,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172101.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172101.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172104.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180529.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540137926681
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172104.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172103.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135259847,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172104.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172104.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172108.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172106.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540135263184
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172108.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180533.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137929975,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172108.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172108.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172112.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180537.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540137933715
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172112.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172111.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135266907,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172112.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172112.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172116.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172114.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540135271199
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172116.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180541.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137937995,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172116.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172116.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172118.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180543.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "One"
+        },
+        "sessionStartDate": 1540137942009
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172118.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172117.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135275200,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172118.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172118.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172120.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172118.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 70,
+          "message": "One"
+        },
+        "sessionStartDate": 1540135277188
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172121.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180546.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137943982,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172121.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172121.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172127.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180552.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540137946643
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172127.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172126.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135279806,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172127.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172127.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172133.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172131.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Message with long text"
+        },
+        "sessionStartDate": 1540135286134
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172133.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180558.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137952884,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172133.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172133.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172137.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180602.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540137959214
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172137.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172135.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135292404,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172137.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172137.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172140.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172138.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Short text"
+        },
+        "sessionStartDate": 1540135295787
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172141.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180606.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137962548,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172141.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172141.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172145.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180610.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540137966277
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172145.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172143.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135299466,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172145.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172145.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172149.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172147.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "Signs #@(\u0026?$0"
+        },
+        "sessionStartDate": 1540135303697
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172149.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180614.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137970494,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172149.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172149.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172151.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180616.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "One"
+        },
+        "sessionStartDate": 1540137975220
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172152.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172150.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540135308409,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172152.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172152.json\\"
+    },
+    {
+      "senderSessionSummary": {
+        "summarySource": {
+          "macAddress": "D4:38:9C:41:1C:9D",
+          "localIP": "192.168.43.162",
+          "vendor": "Sony",
+          "model": "E6633",
+          "os": "Android",
+          "osVersion": "7.1.1",
+          "roleOfParticipant": "PEER",
+          "isHotspot": false,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172154.json",
+          "wholePath": "data/models/devices/device_Sony_E6633_211018_172152.json"
+        },
+        "sendParameters": {
+          "soundProductionUnit": "LOUD_SPEAKERS",
+          "loudnessLevel": 80,
+          "message": "One"
+        },
+        "sessionStartDate": 1540135310649
+      },
+      "receiverSessionSummary": {
+        "summarySource": {
+          "macAddress": "48:88:CA:F2:03:5E",
+          "localIP": "192.168.43.1",
+          "vendor": "LENOVO",
+          "model": "Lenovo A1000",
+          "os": "Android",
+          "osVersion": "5.0",
+          "roleOfParticipant": "PEER",
+          "isHotspot": true,
+          "nameOfModelClass": "Device",
+          "filename": "device_null_null_211018_172154.json",
+          "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180619.json"
+        },
+        "receiveParameters": {
+          "soundConsumptionUnit": "MICROPHONE"
+        },
+        "message": "null",
+        "sessionStartDate": 1540137977445,
+        "exceptionDuringDecoding": null
+      },
+      "isDecodingSuccessful": false,
+      "messageMatchPecrentage": 0.0,
+      "nameOfModelClass": "SingleTestResult",
+      "filename": "211018_171726\\result_211018_172154.json\\",
+      "wholePath": "data\\models\\results\\singular\\211018_171726\\result_211018_172154.json\\"
+    }
+  ],
+  "seqTestProfile": {
+    "controller": null,
+    "peer1": {
+      "macAddress": "48:88:CA:F2:03:5E",
+      "localIP": "192.168.43.1",
+      "vendor": "LENOVO",
+      "model": "Lenovo A1000",
+      "os": "Android",
+      "osVersion": "5.0",
+      "roleOfParticipant": "PEER",
+      "isHotspot": true,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_211018_171726.json",
+      "wholePath": "data/models/devices/device_LENOVO_Lenovo A1000_211018_180151.json"
+    },
+    "peer2": {
+      "macAddress": "D4:38:9C:41:1C:9D",
+      "localIP": "192.168.43.162",
+      "vendor": "Sony",
+      "model": "E6633",
+      "os": "Android",
+      "osVersion": "7.1.1",
+      "roleOfParticipant": "PEER",
+      "isHotspot": false,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_211018_171726.json",
+      "wholePath": "data/models/devices/device_Sony_E6633_211018_171724.json"
+    },
+    "distanceBetweenPeers": 0,
+    "distanceUnitName": "Centimeter",
+    "testsToPerform": [
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 10,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184352.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184352.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 20,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184340.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184340.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 30,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184328.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184328.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 40,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184318.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184318.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 50,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184305.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184305.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 60,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184251.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184251.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 70,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184238.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184238.json"
+      },
+      {
+        "soundProductionUnit": "LOUD_SPEAKERS",
+        "soundConsumptionUnit": "MICROPHONE",
+        "loudnessLevel": 80,
+        "dictionary": {
+          "messages": [
+            "Message with long text",
+            "Short text",
+            "Signs #@(\u0026?$0",
+            "One"
+          ],
+          "nameOfModelClass": "Dictionary",
+          "filename": "dictionary_201018_184048.json",
+          "wholePath": "data\\models\\dictionary\\dictionary_201018_184048.json"
+        },
+        "nameOfModelClass": "SingleTestProfile",
+        "filename": "profile_201018_184204.json",
+        "wholePath": "data\\models\\profiles\\single\\profile_201018_184204.json"
+      }
+    ],
+    "nameOfModelClass": "SequentialTestProfile",
+    "filename": "profile_211018_164846.json",
+    "wholePath": "data\\models\\profiles\\sequential\\profile_211018_164846.json"
+  },
+  "nameOfModelClass": "TestsReport",
+  "filename": "report_211018_171726.json",
+  "wholePath": "data\\models\\results\\report_211018_171726.json"
+}

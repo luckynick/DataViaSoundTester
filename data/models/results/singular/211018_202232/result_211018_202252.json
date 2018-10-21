@@ -1,0 +1,120 @@
+{
+  "senderSessionSummary": {
+    "summarySource": {
+      "macAddress": "40:C6:2A:33:51:80",
+      "localIP": "192.168.43.1",
+      "vendor": "Meizu",
+      "model": "m2",
+      "os": "Android",
+      "osVersion": "5.1",
+      "roleOfParticipant": "PEER",
+      "isHotspot": true,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_211018_202251.json",
+      "wholePath": "data/models/devices/device_Meizu_m2_211018_202104.json"
+    },
+    "sendParameters": {
+      "soundProductionUnit": "LOUD_SPEAKERS",
+      "loudnessLevel": 10,
+      "message": "Short text"
+    },
+    "sessionStartDate": 1540146061787
+  },
+  "receiverSessionSummary": {
+    "summarySource": {
+      "macAddress": "D4:38:9C:41:1C:9D",
+      "localIP": "192.168.43.162",
+      "vendor": "Sony",
+      "model": "E6633",
+      "os": "Android",
+      "osVersion": "7.1.1",
+      "roleOfParticipant": "PEER",
+      "isHotspot": false,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_211018_202252.json",
+      "wholePath": "data/models/devices/device_Sony_E6633_211018_202250.json"
+    },
+    "receiveParameters": {
+      "soundConsumptionUnit": "MICROPHONE"
+    },
+    "message": "null",
+    "sessionStartDate": 1540146166017,
+    "exceptionDuringDecoding": {
+      "detailMessage": "length\u003d33; regionStart\u003d2; regionLength\u003d-3",
+      "stackTrace": [
+        {
+          "declaringClass": "java.lang.String",
+          "methodName": "substring",
+          "fileName": "String.java",
+          "lineNumber": 1931
+        },
+        {
+          "declaringClass": "com.luckynick.android.test.SoundRecognizer",
+          "methodName": "iterateForFrequencies",
+          "fileName": "SoundRecognizer.java",
+          "lineNumber": 182
+        },
+        {
+          "declaringClass": "com.luckynick.android.test.SoundRecognizer",
+          "methodName": "iterateForFrequencies",
+          "fileName": "SoundRecognizer.java",
+          "lineNumber": 137
+        },
+        {
+          "declaringClass": "com.luckynick.android.test.BaseActivity$AsyncIterateForFrequencies",
+          "methodName": "doInBackground",
+          "fileName": "BaseActivity.java",
+          "lineNumber": 249
+        },
+        {
+          "declaringClass": "com.luckynick.android.test.BaseActivity$AsyncIterateForFrequencies",
+          "methodName": "doInBackground",
+          "fileName": "BaseActivity.java",
+          "lineNumber": 241
+        },
+        {
+          "declaringClass": "android.os.AsyncTask$2",
+          "methodName": "call",
+          "fileName": "AsyncTask.java",
+          "lineNumber": 305
+        },
+        {
+          "declaringClass": "java.util.concurrent.FutureTask",
+          "methodName": "run",
+          "fileName": "FutureTask.java",
+          "lineNumber": 237
+        },
+        {
+          "declaringClass": "android.os.AsyncTask$SerialExecutor$1",
+          "methodName": "run",
+          "fileName": "AsyncTask.java",
+          "lineNumber": 243
+        },
+        {
+          "declaringClass": "java.util.concurrent.ThreadPoolExecutor",
+          "methodName": "runWorker",
+          "fileName": "ThreadPoolExecutor.java",
+          "lineNumber": 1133
+        },
+        {
+          "declaringClass": "java.util.concurrent.ThreadPoolExecutor$Worker",
+          "methodName": "run",
+          "fileName": "ThreadPoolExecutor.java",
+          "lineNumber": 607
+        },
+        {
+          "declaringClass": "java.lang.Thread",
+          "methodName": "run",
+          "fileName": "Thread.java",
+          "lineNumber": 761
+        }
+      ],
+      "suppressedExceptions": []
+    }
+  },
+  "isDecodingSuccessful": false,
+  "messageMatchPecrentage": 0.0,
+  "nameOfModelClass": "SingleTestResult",
+  "filename": "211018_202232\\result_211018_202252.json\\",
+  "wholePath": "data\\models\\results\\singular\\211018_202232\\result_211018_202252.json\\"
+}

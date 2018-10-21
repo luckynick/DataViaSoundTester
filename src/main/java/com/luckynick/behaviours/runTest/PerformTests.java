@@ -6,6 +6,8 @@ import com.luckynick.models.ModelIO;
 import com.luckynick.models.profiles.SequentialTestProfile;
 import com.luckynick.models.profiles.SingleTestProfile;
 import com.luckynick.models.results.SingleTestResult;
+import com.luckynick.models.results.TestsReport;
+import com.luckynick.models.results.TestsReportBuilder;
 import com.luckynick.net.ConnectionHandler;
 import com.luckynick.net.MultiThreadServer;
 import com.luckynick.shared.GSONCustomSerializer;
@@ -36,6 +38,8 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
     Map<String, Client> connections;
     MultiThreadServer server;
 
+    TestsReportBuilder reportBuilder;
+
     long testTimeMillis = System.currentTimeMillis();
 
     private Object lock = new Object();
@@ -45,6 +49,7 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
 
     public PerformTests(SequentialTestProfile profile, ConcurrentHashMap<String, Client> connections, MultiThreadServer server) {
         this.profile = profile;
+        reportBuilder = new TestsReportBuilder(profile);
         this.connections = connections;
         this.server = server;
         this.server.subscribeConnectionEvents(this);
@@ -60,6 +65,7 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
         Thread testsThread = new Thread(new Runnable() {
             @Override
             public void run() {
+
                 for(SingleTestProfile singleTestProfileProfile : profile.testsToPerform) {
                     for(String message : singleTestProfileProfile.dictionary.messages) {
                         SendParameters sParams = new SendParameters();
@@ -91,6 +97,15 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                             }
                         }
                     }
+                }
+
+                TestsReport finalReport = reportBuilder.build();
+                ModelIO<TestsReport> reportIO = new ModelIO<>(TestsReport.class);
+                try {
+                    reportIO.serialize(finalReport);
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         });
@@ -133,7 +148,14 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
 
     @Override
     public void onDisconnect(Client c) {
-
+        TestsReport finalReport = reportBuilder.build();
+        ModelIO<TestsReport> reportIO = new ModelIO<>(TestsReport.class);
+        try {
+            reportIO.serialize(finalReport);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -175,6 +197,12 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                         GSONCustomSerializer<SendSessionSummary> serializer = new GSONCustomSerializer<>(SendSessionSummary.class);
                         sendSessionSummary = serializer.deserialize(packetReader.readString());
                         Log(LOG_TAG, "Sender joined.");
+                        try {
+                            Thread.sleep(1000); // let the recorder settle down
+                        }
+                        catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         pullMessage();
                         break;
                     default:
@@ -186,9 +214,11 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                 GSONCustomSerializer<ReceiveSessionSummary> serializer = new GSONCustomSerializer<>(ReceiveSessionSummary.class);
                 String serSummary = packetReader.readString();
                 ReceiveSessionSummary recvSummary = serializer.deserialize(serSummary);
+                Log(LOG_TAG, serSummary);
                 Log(LOG_TAG, "##########################################");
-                Log(LOG_TAG, "From " + recvSummary.summarySource.vendor);
+                Log(LOG_TAG, "Receive summary from " + recvSummary.summarySource.vendor);
                 Log(LOG_TAG, "RECEIVED MESSAGE: " + recvSummary.message);
+                Log(LOG_TAG, "EXCEPTION: " + recvSummary.exceptionDuringDecoding);
 
                 SingleTestResult result = new SingleTestResult(sendSessionSummary, recvSummary);
                 String filenameWdateFolder = SharedUtils.formPathString(
@@ -196,6 +226,7 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                 result.setFilename(filenameWdateFolder);
                 Log(LOG_TAG, "New SingleTestResult path: " + result.wholePath);
                 resultIO.serialize(result);
+                reportBuilder.addTestResult(result);
 
                 synchronized (lock) {
                     lock.notifyAll(); //begin next communication session

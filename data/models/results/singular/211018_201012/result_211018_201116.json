@@ -1,0 +1,49 @@
+{
+  "senderSessionSummary": {
+    "summarySource": {
+      "macAddress": "40:C6:2A:33:51:80",
+      "localIP": "192.168.43.1",
+      "vendor": "Meizu",
+      "model": "m2",
+      "os": "Android",
+      "osVersion": "5.1",
+      "roleOfParticipant": "PEER",
+      "isHotspot": true,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_211018_201113.json",
+      "wholePath": "data/models/devices/device_Meizu_m2_211018_200927.json"
+    },
+    "sendParameters": {
+      "soundProductionUnit": "LOUD_SPEAKERS",
+      "loudnessLevel": 20,
+      "message": "Message with long text"
+    },
+    "sessionStartDate": 1540145361792
+  },
+  "receiverSessionSummary": {
+    "summarySource": {
+      "macAddress": "D4:38:9C:41:1C:9D",
+      "localIP": "192.168.43.162",
+      "vendor": "Sony",
+      "model": "E6633",
+      "os": "Android",
+      "osVersion": "7.1.1",
+      "roleOfParticipant": "PEER",
+      "isHotspot": false,
+      "nameOfModelClass": "Device",
+      "filename": "device_null_null_211018_201116.json",
+      "wholePath": "data/models/devices/device_Sony_E6633_211018_201114.json"
+    },
+    "receiveParameters": {
+      "soundConsumptionUnit": "MICROPHONE"
+    },
+    "message": "Mesrafe wiuh long\u0010text",
+    "sessionStartDate": 1540145466029,
+    "exceptionDuringDecoding": null
+  },
+  "isDecodingSuccessful": false,
+  "messageMatchPecrentage": 81.81818181818183,
+  "nameOfModelClass": "SingleTestResult",
+  "filename": "211018_201012\\result_211018_201116.json\\",
+  "wholePath": "data\\models\\results\\singular\\211018_201012\\result_211018_201116.json\\"
+}
