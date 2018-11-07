@@ -28,7 +28,7 @@ public abstract class CustomJFrame extends JFrame implements Runnable {
         });
     }
 
-    protected abstract void addElements();
+    public abstract void addElements();
 
 
     public void displayWindow() {

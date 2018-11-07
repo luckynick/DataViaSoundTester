@@ -28,8 +28,8 @@ public abstract class ModelCreationBehaviour<T extends SerializableModel> extend
     @Override
     public void performProgramTasks() {
         try {
-
             T editedProfile = ModelEditor.requireEditedModel(profileToManipulate, modelIO);
+            editedProfile.setFilename();
             if(editedProfile != null) modelIO.serialize(editedProfile);
         }
         catch (IOException e) {

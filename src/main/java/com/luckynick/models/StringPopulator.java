@@ -29,7 +29,7 @@ public class StringPopulator extends CustomJFrame implements ActionListener {
     }
 
     @Override
-    protected void addElements() {
+    public void addElements() {
         leftList = new JList(leftListModel);
 
         JScrollPane leftSPane = new JScrollPane();

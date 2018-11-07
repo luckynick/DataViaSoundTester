@@ -1,28 +1,22 @@
 package com.luckynick.models.results;
 
-import com.luckynick.CustomJFrame;
 import com.luckynick.custom.Device;
 import com.luckynick.models.profiles.SequentialTestProfile;
-import com.luckynick.models.profiles.SingleTestProfile;
 import com.luckynick.shared.IOClassHandling;
-import com.luckynick.models.ManageableField;
 import com.luckynick.shared.SharedUtils;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.FastScatterPlot;
 import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.luckynick.custom.Utils.Log;
 
-@IOClassHandling(dataStorage = SharedUtils.DataStorage.RESULTS)
+@IOClassHandling(dataStorage = SharedUtils.DataStorage.SEQUENTIAL_REPORT)
 public class TestsReport extends TestResult {
 
     public static final String LOG_TAG = "TestsReport";
@@ -81,7 +75,7 @@ public class TestsReport extends TestResult {
         return result;
     }
 
-    private DefaultCategoryDataset getChartDataSet(Device filter) {
+    protected DefaultCategoryDataset getChartDataSet(Device filter) {
         DefaultCategoryDataset result = new DefaultCategoryDataset();
         Comparable c = new Comparable() {
             @Override

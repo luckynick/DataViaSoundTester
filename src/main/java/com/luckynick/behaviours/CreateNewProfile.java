@@ -10,6 +10,7 @@ public class CreateNewProfile extends ProgramBehaviour {
                 new CreateSequentialProfile(),
                 new CreateDictionary(),
                 new CreateConfig(),
+                new CreateCumulatedReport(),
         };
 
         doMenuSelection(menuActions).performProgramTasks();

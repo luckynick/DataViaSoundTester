@@ -9,7 +9,10 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import static com.luckynick.custom.Utils.Log;
@@ -35,8 +38,11 @@ public class ModelEditor<T extends SerializableModel> extends CustomJFrame imple
     }
 
     @Override
-    protected void addElements() {
+    public void addElements() {
+        List<String> addedFields = new ArrayList<>();
         for (String fieldName: this.editableModel.getConfigurableFieldNames()) {
+            if(addedFields.contains(fieldName)) continue;
+            addedFields.add(fieldName);
             JPanel fieldPanel = new JPanel();
             JLabel label = new JLabel(fieldName);
             fieldPanel.add(label);
@@ -121,7 +127,7 @@ public class ModelEditor<T extends SerializableModel> extends CustomJFrame imple
             }
             else if (e.getActionCommand().equals("Load")) {
                 File latestFile = Arrays.stream(new File(editableModel.fileRoot).listFiles())
-                        .max((file, file2) -> {return file.compareTo(file2);}).orElse(null);
+                        .max(Comparator.naturalOrder()).orElse(null); //(file, file2) -> {return file.compareTo(file2);}
                 if(latestFile == null) {
                     nothingToLoadLabel.setVisible(true);
                     refreshView();

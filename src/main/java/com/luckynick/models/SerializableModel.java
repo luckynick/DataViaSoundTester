@@ -31,7 +31,7 @@ public abstract class SerializableModel {
     public String nameOfModelClass = this.getClass().getSimpleName();
     @IOFieldHandling(serialize = false)
     protected String filenamePrefix = nameOfModelClass;
-    @ManageableField(editable = false)
+    @ManageableField(editable = false) //fals
     public String filename;
     @IOFieldHandling(serialize = false)
     public String fileRoot = this.getClass().getDeclaredAnnotation(IOClassHandling.class).dataStorage().toString();
@@ -115,6 +115,7 @@ public abstract class SerializableModel {
         Object value = getValueFromField(field);
         if(value == null) return false;
         if(SharedUtils.isReflectedAsNumber(field.getType()) && (int) value == -1) return false;
+        if(Collection.class.isAssignableFrom(field.getType()) && ((Collection) value).size() < 1) return false;
         return true;
     }
 

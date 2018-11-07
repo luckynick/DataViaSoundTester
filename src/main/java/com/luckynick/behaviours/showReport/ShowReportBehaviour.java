@@ -17,10 +17,12 @@ public class ShowReportBehaviour extends ProgramBehaviour {
 
     @Override
     public void performProgramTasks() {
-        List<TestsReport> profile = ModelSelector.requireSelection(reportModelIO, false);
-        TestsReport report = profile.get(0);
-        Log(LOG_TAG, "Size of test results: " + report.resultsOfTests.size());
-        report.showPlot(report.seqTestProfile.peer1);
-        report.showPlot(report.seqTestProfile.peer2);
+        List<TestsReport> profiles = ModelSelector.requireSelection(reportModelIO, false);
+        Log(LOG_TAG, "Profiles size: " + profiles.size());
+        if(profiles.size() == 1) {
+            TestsReport report = profiles.get(0);
+            report.showPlot(report.seqTestProfile.peer1);
+            report.showPlot(report.seqTestProfile.peer2);
+        }
     }
 }

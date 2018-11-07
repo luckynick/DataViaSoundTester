@@ -22,7 +22,6 @@ public class SequentialTestProfile extends Profile {
     @ManageableField
     public DistanceUnit distanceUnitName = DistanceUnit.Centimeter;
 
-    //TODO
     @ManageableField(required = true)
     public List<SingleTestProfile> testsToPerform = new ArrayList<>();
 }

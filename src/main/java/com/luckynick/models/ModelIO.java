@@ -13,6 +13,7 @@ import com.sun.istack.internal.Nullable;
 import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.nio.file.FileVisitOption;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -124,13 +125,15 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
 
 
     public List<File> listFiles() {
-        String dir = this.classOfModel.getDeclaredAnnotation(IOClassHandling.class).dataStorage().getDirPath();
+        String dirStr = this.classOfModel.getDeclaredAnnotation(IOClassHandling.class).dataStorage().getDirPath();
         ArrayList<File> list = new ArrayList<>();
-        if(dir == null) return list;
-        try (Stream<Path> paths = Files.walk(Paths.get(dir))) {
+        if(dirStr == null) return list;
+        Path dir = Paths.get(dirStr);
+        try (Stream<Path> paths = Files.walk(dir)) {
             paths
                     .filter(Files::isRegularFile)
                     .filter((p) -> p.toString().endsWith(SharedUtils.JSON_EXTENSION))
+                    .filter((p) -> p.getParent().equals(dir))
                     .forEach((p) -> {list.add(p.toFile());});
         }
         catch (IOException e) {

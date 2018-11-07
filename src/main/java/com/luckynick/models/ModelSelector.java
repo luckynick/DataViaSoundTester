@@ -19,7 +19,7 @@ public class ModelSelector<T extends SerializableModel> extends CustomJFrame imp
     public static final String LOG_TAG = "ModelSelector";
 
     //private List<T> selection = new ArrayList<>();
-    private boolean multipleSelection; //TODO: use
+    private boolean multipleSelection;
     JLabel nothingToLoadLabel = new JLabel("<html><font color='red'>Nothing to load!</font></html>");
 
     private JList rightList;
@@ -42,7 +42,7 @@ public class ModelSelector<T extends SerializableModel> extends CustomJFrame imp
     }
 
     @Override
-    protected void addElements() {
+    public void addElements() {
         List<T> modelObjects = modelIO.listObjects();
 
         leftList = new JList(leftListModel);

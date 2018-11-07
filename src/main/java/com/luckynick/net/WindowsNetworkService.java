@@ -36,9 +36,10 @@ public class WindowsNetworkService extends NetworkService implements Closeable {
         }
     }
 
+
     public void connectWifi() {
         System.out.println("Connecting to SSID " + SSID);
-        String[] commands = new String[] { //TODO: refresh list of WIFIs
+        String[] commands = new String[] { //TODO: netsh doesn't refresh list of ssids after first
                 "netsh interface ip delete arpcache",
                 "netsh wlan connect name=" + SSID,
                 //"cmd /c start \"\" bat\\connect_wifi.bat " + SSID
