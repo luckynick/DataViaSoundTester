@@ -8,6 +8,8 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -72,8 +74,11 @@ public class ModelSelector<T extends SerializableModel> extends CustomJFrame imp
         saveButton.addActionListener(this);
         JButton cancelButton = new JButton("Cancel");
         cancelButton.addActionListener(this);
+        JButton renameButton = new JButton("Rename");
+        renameButton.addActionListener(this);
         buttonPanel.add(saveButton);
         buttonPanel.add(cancelButton);
+        buttonPanel.add(renameButton);
         getContentPane().add(buttonPanel);
 
         JPanel errorPanel = new JPanel();
@@ -137,6 +142,30 @@ public class ModelSelector<T extends SerializableModel> extends CustomJFrame imp
                 //selection = null;
                 leftListModel.removeAllElements();
                 dispose();
+            }
+            else if(e.getActionCommand().equals("Rename")) {
+                SwingWorker sw = new SwingWorker() {
+
+                    @Override
+                    protected Void doInBackground() throws Exception {
+                        T checked = (T)rightList.getSelectedValuesList().get(0);
+                        Log(LOG_TAG, "Filename to edit: " + checked.filename);
+                        List<String> strs = StringPopulator.requireStrings();
+                        if(strs.size() != 1) return null;
+                        new File(checked.wholePath).delete();
+                        String newFilename = strs.get(0);
+                        checked.setFilename(newFilename);
+                        try {
+                            modelIO.serialize(checked);
+                        }
+                        catch (IOException e1) {
+                            e1.printStackTrace();
+                        }
+                        dispose();
+                        return null;
+                    }
+                };
+                sw.execute();
             }
             else if(e.getActionCommand().equals("<")) {
                 List<T> checked = rightList.getSelectedValuesList();

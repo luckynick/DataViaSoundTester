@@ -9,7 +9,7 @@ import com.luckynick.models.results.TestsReport;
 import java.util.List;
 
 import static com.luckynick.custom.Utils.Log;
-
+//TODO: window is too wide if description is long
 public class ShowCumulatedReportBehaviour extends ProgramBehaviour {
 
     public static final String LOG_TAG = "ShowCumulatedReportBehaviour";

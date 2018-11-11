@@ -10,6 +10,7 @@ import com.luckynick.models.profiles.SequentialTestProfile;
 import com.luckynick.net.ConnectionHandler;
 import com.luckynick.net.MultiThreadServer;
 import com.luckynick.net.WindowsNetworkService;
+import com.luckynick.shared.PureFunctionalInterfaceWithReturn;
 import com.luckynick.shared.SharedUtils;
 import com.luckynick.shared.enums.PacketID;
 import com.luckynick.shared.enums.TestRole;
@@ -37,7 +38,6 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
     int tcpPort = SharedUtils.TCP_COMMUNICATION_PORT;
 
     ModelIO<Device> deviceModelIO = new ModelIO<>(Device.class);
-    ModelIO<SequentialTestProfile> profileModelIO = new ModelIO<>(SequentialTestProfile.class);
 
     List<Device> connectedDevices = new ArrayList<>();
     List<Device> allowedDevices = new ArrayList<>();
@@ -45,31 +45,17 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
     SequentialTestProfile testProfile;
     MultiThreadServer server;
 
+    final SharedUtils.Counter testCounter;
+
     private ConcurrentHashMap<String, Client> connections = new ConcurrentHashMap<>();
 
-    private boolean useConfig;
-
-    public TestPreparationBehaviour(boolean useConfig) {
-        this.useConfig = useConfig;
+    public TestPreparationBehaviour(SequentialTestProfile seqTestPro, int repeatNtimes) {
+        testCounter = new SharedUtils.Counter(repeatNtimes);
+        this.testProfile = seqTestPro;
     }
 
     @Override
     public void performProgramTasks() {
-        if(useConfig) {
-            ModelIO<Config> profileModelIO = new ModelIO<>(Config.class);
-            List<Config> configs = profileModelIO.listObjects();
-            Log(LOG_TAG, "Done. " + configs.size());
-            if(configs.size() == 0) {
-                new CreateConfig().performProgramTasks(); //if config doesn't exist -> create config
-                configs = profileModelIO.listObjects();
-            }
-            Config confInstance = configs.get(0);
-            testProfile = confInstance.defaultProfile;
-        }
-        else {
-            List<SequentialTestProfile> profile = ModelSelector.requireSelection(profileModelIO, false);
-            testProfile = profile.get(0);
-        }
         allowedDevices.add(testProfile.peer1);
         allowedDevices.add(testProfile.peer2);
 
@@ -110,11 +96,38 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
                     testProfile.peer1 = connectedDevices.get(0);
                     testProfile.peer2 = connectedDevices.get(1);
                     ConnectionHandler.packetListeners.remove(this);
+
+                    //PerformTests per = new PerformTests(testProfile, connections, server);
+
                     new PerformTests(testProfile, connections, server).performProgramTasks();
+                    PerformTests.testEndSubs.add(() -> {
+                        if(!testCounter.reachedMaximum()) {
+                            new PerformTests(testProfile, connections, server).performProgramTasks();
+                            testCounter.increment();
+                        }
+                        else {
+                            finalizeTests();
+                            exit();
+                        }
+                    });
+
+                    /*
+                    for(int i = 0; i < 4; i++) {
+                        per.performProgramTasks();
+                    }
+                    finalizeTests();
+                    exit();
+                    */
                 }
                 return;
             }
         }
+    }
+
+    public void finalizeTests() {
+        if(this.server != null) server.close();
+        this.connections.values().forEach(conn -> {if(conn != null) conn.close();});
+        if(this.udpBroadcastThread != null) this.udpBroadcastThread.interrupt();
     }
 
     private void replaceDeviceInProfile(Device replacement) {

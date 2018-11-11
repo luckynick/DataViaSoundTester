@@ -102,4 +102,15 @@ public class MultiThreadServer
     public void subscribeConnectionEvents(ConnectionListener listener) {
         connectionListeners.add(listener);
     }
+
+    public void close() {
+        if(this.server != null) {
+            unsubscribe();
+            server.stop();
+        }
+    }
+
+    public void unsubscribe(){
+        connectionListeners = new ArrayList<>();
+    }
 }

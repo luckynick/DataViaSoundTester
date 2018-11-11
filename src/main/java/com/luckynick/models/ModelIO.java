@@ -59,6 +59,7 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
         catch (InvocationTargetException e) {
             e.printStackTrace();
         }
+        if(getPathFromIt == null) return;
         File serializationFile = new File(getPathFromIt.wholePath);
         if(!serializationFile.exists()) {
             File folder = serializationFile.getParentFile();
@@ -133,7 +134,7 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
             paths
                     .filter(Files::isRegularFile)
                     .filter((p) -> p.toString().endsWith(SharedUtils.JSON_EXTENSION))
-                    .filter((p) -> p.getParent().equals(dir))
+                    //.filter((p) -> p.getParent().equals(dir))
                     .forEach((p) -> {list.add(p.toFile());});
         }
         catch (IOException e) {

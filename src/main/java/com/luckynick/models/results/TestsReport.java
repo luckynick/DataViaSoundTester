@@ -1,5 +1,6 @@
 package com.luckynick.models.results;
 
+import com.luckynick.CustomJFrame;
 import com.luckynick.custom.Device;
 import com.luckynick.models.profiles.SequentialTestProfile;
 import com.luckynick.shared.IOClassHandling;
@@ -11,6 +12,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,19 +41,24 @@ public class TestsReport extends TestResult {
     }
 
     public void showPlot(Device forDevice) {
-        JFrame frame = new JFrame("Test chart");
         DefaultCategoryDataset datasetPeer1 = getChartDataSet(forDevice);
         // Create chart
         JFreeChart chart = ChartFactory.createLineChart(
-                "Device " + forDevice.vendor + " (sender)", // Chart title
+                "Device " + forDevice.vendor + " (message sender)", // Chart title
                 "Nth", // X-Axis Label
                 "Success", // Y-Axis Label
                 datasetPeer1,
                 PlotOrientation.VERTICAL, true, false, false
         );
 
-        ChartPanel panel = new ChartPanel(chart);
-        frame.setContentPane(panel);
+        /*JFrame frame = new JFrame("Test chart");
+        ChartPanel chartPanel = new ChartPanel(chart);
+        JPanel chartWrapper = new JPanel();
+        chartWrapper.add(chartPanel);
+        JPanel globalPanel = new JPanel();
+        globalPanel.add(chartWrapper);
+        globalPanel.add(new JLabel("Report file: " + filename));
+        frame.setContentPane(globalPanel);
 
         SwingUtilities.invokeLater(() -> {
             frame.setAlwaysOnTop(true);
@@ -59,7 +66,24 @@ public class TestsReport extends TestResult {
             frame.setSize(600, 400);
             frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             frame.setVisible(true);
-        });
+        });*/
+
+        CustomJFrame cFrame = new CustomJFrame("Test chart: " + filename) {
+            @Override
+            public void addElements() {
+                JPanel chartsPanel = new JPanel();
+                chartsPanel.setLayout(new BoxLayout(chartsPanel, BoxLayout.X_AXIS));
+                chartsPanel.add(new ChartPanel(chart));
+                getContentPane().add(chartsPanel);
+                JPanel infoPanel = new JPanel();
+                infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.Y_AXIS));
+                infoPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+                infoPanel.add(new JLabel("Report file: " + TestsReport.super.filename));
+                getContentPane().add(infoPanel);
+            }
+        };
+        cFrame.addElements();
+        cFrame.displayWindow();
     }
 
     private float[][] getChartData() {

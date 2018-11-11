@@ -11,6 +11,8 @@ import static com.luckynick.custom.Utils.Log;
 
 public class ShowReportBehaviour extends ProgramBehaviour {
 
+    //TODO: show charts in one window
+
     public static final String LOG_TAG = "ShowReportBehaviour";
 
     ModelIO<TestsReport> reportModelIO = new ModelIO<>(TestsReport.class);

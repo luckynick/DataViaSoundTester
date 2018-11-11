@@ -3,14 +3,17 @@ package com.luckynick.behaviours.runTest;
 import com.luckynick.behaviours.ProgramBehaviour;
 import com.luckynick.custom.Device;
 import com.luckynick.models.ModelIO;
+import com.luckynick.models.ModelSelector;
 import com.luckynick.models.profiles.SequentialTestProfile;
 import com.luckynick.models.profiles.SingleTestProfile;
+import com.luckynick.models.results.CumulatedReport;
 import com.luckynick.models.results.SingleTestResult;
 import com.luckynick.models.results.TestsReport;
 import com.luckynick.models.results.TestsReportBuilder;
 import com.luckynick.net.ConnectionHandler;
 import com.luckynick.net.MultiThreadServer;
 import com.luckynick.shared.GSONCustomSerializer;
+import com.luckynick.shared.PureFunctionalInterface;
 import com.luckynick.shared.SharedUtils;
 import com.luckynick.shared.enums.PacketID;
 import com.luckynick.shared.model.ReceiveParameters;
@@ -24,18 +27,27 @@ import nl.pvdberg.pnet.packet.Packet;
 import nl.pvdberg.pnet.packet.PacketReader;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static com.luckynick.custom.Utils.Log;
 
+/*
+TODO: make sure that sound production starts after start of recording
+there might be async tasks which finish with delay
+ */
 public class PerformTests extends ProgramBehaviour implements ConnectionListener, PacketListener {
 
     public static final String LOG_TAG = "PerformTests";
 
+    public static List<PureFunctionalInterface> testEndSubs = new ArrayList<>();
+
     SequentialTestProfile profile;
     ModelIO<SequentialTestProfile> profileIO = new ModelIO<>(SequentialTestProfile.class);
     Map<String, Client> connections;
+    private volatile Client currentReceiver = null, currentSender = null;
     MultiThreadServer server;
 
     TestsReportBuilder reportBuilder;
@@ -107,11 +119,42 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                 catch (IOException e) {
                     e.printStackTrace();
                 }
+                finalizeTests();
+                Log(LOG_TAG, "TEST WAS FINISHED SUCCESSFULLY");
+                testEndSubs.forEach(func -> func.performProgramTasks());
+                //exit();
             }
         });
         testsThread.start();
+        /*try {
+            testsThread.join();
+            testEndSubs.forEach(func -> func.performProgramTasks());
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
 
         //exit();
+    }
+
+
+    public void finalizeTests() {
+        this.server.unsubscribe();
+        ConnectionHandler.packetListeners = new ArrayList<>();
+
+        /*
+        this.connections.values().forEach(conn -> conn.close());
+        this.currentSender.close();
+        this.currentReceiver.close();
+        */
+    }
+
+    public static void main(String args[]) {
+        ModelIO<CumulatedReport> reportIO = new ModelIO<>(CumulatedReport.class);
+        CumulatedReport rep = ModelSelector.requireSelection(reportIO, false).get(0);
+        for (TestsReport r : rep.testsReports) {
+            System.out.println(r.filename);
+        }
     }
 
     private void sendMessages(SendParameters sendParams, ReceiveParameters recvParams, Device sender, Device receiver) {
@@ -129,8 +172,6 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                 .build();
         currentReceiver.send(receiverPrepPacket); //expect OK
     }
-
-    private volatile Client currentReceiver = null, currentSender = null;
 
     private void sendMessages(String message, Device sender, Device receiver) {
         currentSender = connections.get(sender.macAddress);
@@ -197,12 +238,15 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                         GSONCustomSerializer<SendSessionSummary> serializer = new GSONCustomSerializer<>(SendSessionSummary.class);
                         sendSessionSummary = serializer.deserialize(packetReader.readString());
                         Log(LOG_TAG, "Sender joined.");
+
+
                         try {
-                            Thread.sleep(1000); // let the recorder settle down
+                            Thread.sleep(1000); // let the recorder settle down //1000 500
                         }
                         catch (InterruptedException e) {
                             e.printStackTrace();
                         }
+
                         pullMessage();
                         break;
                     default:

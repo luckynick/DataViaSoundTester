@@ -64,7 +64,6 @@ public class CumulatedReport extends TestResult {
 
     public void showSummary() {
         validate();
-        JFrame frame = new JFrame("Cumulated report");
         CustomJFrame cFrame = new CustomJFrame("Cumulated report") {
             @Override
             public void addElements() {
