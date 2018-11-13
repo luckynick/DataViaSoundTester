@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 
 public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<T> {
 
-    private File file;
+    //private File file;
 
     public ModelIO(Class<T> classOfModel) {
         super(classOfModel);
@@ -64,11 +64,12 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
         if(!serializationFile.exists()) {
             File folder = serializationFile.getParentFile();
             if(folder != null) folder.mkdirs();
-            serializationFile.delete();
+            //serializationFile.delete();
         }
-        file = serializationFile;
+        //file = serializationFile;
     }
 
+    /*
     public ModelIO(Class<T> classOfModel, File existingFile) {
         super(classOfModel);
         file = existingFile;
@@ -78,7 +79,7 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
             existingFile.delete();
         }
     }
-
+    */
 
     public void serialize(T object) throws IOException {
         File file = new File(object.wholePath);
@@ -93,6 +94,7 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
         close(fileWriter);
     }
 
+    /*
     public T deserialize() throws IOException {
         if(file == null || !file.exists()) throw new IllegalStateException("Model file doesn't exist.");
         FileReader fileReader = new FileReader(file);
@@ -100,6 +102,7 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
         close(fileReader);
         return result;
     }
+    */
 
     public T deserialize(File f) throws IOException {
         if(f == null || !f.exists()) throw new IllegalStateException("Model file doesn't exist.");
@@ -117,10 +120,6 @@ public class ModelIO <T extends SerializableModel> extends GSONCustomSerializer<
             e.printStackTrace();
         }
         c = null;
-    }
-
-    public boolean exists() {
-        return this.file.exists();
     }
 
 

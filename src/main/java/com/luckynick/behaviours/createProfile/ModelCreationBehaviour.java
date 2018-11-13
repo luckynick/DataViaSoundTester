@@ -13,23 +13,24 @@ public abstract class ModelCreationBehaviour<T extends SerializableModel> extend
     private String profile_path;
 
     T profileToManipulate;
-    ModelIO<T> modelIO;
+    Class<T> classOfModel;
+
 
     public ModelCreationBehaviour(Class<T> classOfModel) {
         try {
+            this.classOfModel = classOfModel;
             profileToManipulate = classOfModel.newInstance();
         }
         catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
-        modelIO = new ModelIO<T>(classOfModel);
     }
 
     @Override
     public void performProgramTasks() {
         try {
+            ModelIO<T> modelIO = new ModelIO<T>(classOfModel);
             T editedProfile = ModelEditor.requireEditedModel(profileToManipulate, modelIO);
-            editedProfile.setFilename();
             if(editedProfile != null) modelIO.serialize(editedProfile);
         }
         catch (IOException e) {

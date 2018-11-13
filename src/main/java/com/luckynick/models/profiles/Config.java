@@ -13,6 +13,8 @@ public class Config extends SerializableModel {
 
     @ManageableField(required = true)
     public SequentialTestProfile defaultProfile;
+    @ManageableField
+    public int repeatTimes = 0;
 
     @Override
     public void setFilename() {

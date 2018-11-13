@@ -152,11 +152,24 @@ public class ModelSelector<T extends SerializableModel> extends CustomJFrame imp
                         Log(LOG_TAG, "Filename to edit: " + checked.filename);
                         List<String> strs = StringPopulator.requireStrings();
                         if(strs.size() != 1) return null;
-                        new File(checked.wholePath).delete();
+                        File previousFile = new File(checked.wholePath);
                         String newFilename = strs.get(0);
+                        checked.customPrefix = "";
                         checked.setFilename(newFilename);
+                        boolean serializationConfirmed = false;
+                        if(new File(checked.wholePath).exists()) {
+                            int dialogResult = JOptionPane.showConfirmDialog(null, checked.wholePath + " exists. Override?");
+                            if(dialogResult == JOptionPane.YES_OPTION){
+                                System.out.println("Dialog: yes");
+                                serializationConfirmed = true;
+                            }
+                        }
+                        else serializationConfirmed = true;
                         try {
-                            modelIO.serialize(checked);
+                            if(serializationConfirmed) {
+                                previousFile.delete();
+                                modelIO.serialize(checked);
+                            }
                         }
                         catch (IOException e1) {
                             e1.printStackTrace();

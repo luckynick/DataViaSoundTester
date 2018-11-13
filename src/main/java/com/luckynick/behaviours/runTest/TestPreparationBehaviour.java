@@ -1,19 +1,16 @@
 package com.luckynick.behaviours.runTest;
 
 import com.luckynick.behaviours.ProgramBehaviour;
-import com.luckynick.behaviours.createProfile.CreateConfig;
 import com.luckynick.custom.Device;
 import com.luckynick.models.ModelIO;
-import com.luckynick.models.ModelSelector;
-import com.luckynick.models.profiles.Config;
 import com.luckynick.models.profiles.SequentialTestProfile;
+import com.luckynick.models.profiles.SingleTestProfile;
 import com.luckynick.net.ConnectionHandler;
 import com.luckynick.net.MultiThreadServer;
 import com.luckynick.net.WindowsNetworkService;
-import com.luckynick.shared.PureFunctionalInterfaceWithReturn;
 import com.luckynick.shared.SharedUtils;
+import com.luckynick.shared.ValidationException;
 import com.luckynick.shared.enums.PacketID;
-import com.luckynick.shared.enums.TestRole;
 import com.luckynick.shared.net.ConnectionListener;
 import com.luckynick.shared.net.PacketListener;
 import com.luckynick.shared.net.UDPServer;
@@ -23,9 +20,7 @@ import nl.pvdberg.pnet.packet.PacketReader;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import static com.luckynick.custom.Utils.Log;
@@ -42,7 +37,7 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
     List<Device> connectedDevices = new ArrayList<>();
     List<Device> allowedDevices = new ArrayList<>();
     private final int REQUIRED_DEVICES_AMT = 2;
-    SequentialTestProfile testProfile;
+    SequentialTestProfile sequentialTestProfile;
     MultiThreadServer server;
 
     final SharedUtils.Counter testCounter;
@@ -51,13 +46,14 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
 
     public TestPreparationBehaviour(SequentialTestProfile seqTestPro, int repeatNtimes) {
         testCounter = new SharedUtils.Counter(repeatNtimes);
-        this.testProfile = seqTestPro;
+        this.sequentialTestProfile = seqTestPro;
     }
 
     @Override
     public void performProgramTasks() {
-        allowedDevices.add(testProfile.peer1);
-        allowedDevices.add(testProfile.peer2);
+        validate(sequentialTestProfile);
+        allowedDevices.add(sequentialTestProfile.peer1);
+        allowedDevices.add(sequentialTestProfile.peer2);
 
         for(Device v : allowedDevices) {
             System.out.println("allowed mac " +v.macAddress);
@@ -93,16 +89,16 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
                 replaceDeviceInProfile(newDevice);
                 if(connectedDevices.size() == REQUIRED_DEVICES_AMT) {
                     udpBroadcastThread.interrupt();
-                    testProfile.peer1 = connectedDevices.get(0);
-                    testProfile.peer2 = connectedDevices.get(1);
+                    sequentialTestProfile.peer1 = connectedDevices.get(0);
+                    sequentialTestProfile.peer2 = connectedDevices.get(1);
                     ConnectionHandler.packetListeners.remove(this);
 
-                    //PerformTests per = new PerformTests(testProfile, connections, server);
+                    //PerformTests per = new PerformTests(sequentialTestProfile, connections, server);
 
-                    new PerformTests(testProfile, connections, server).performProgramTasks();
+                    new PerformTests(sequentialTestProfile, connections, server).performProgramTasks();
                     PerformTests.testEndSubs.add(() -> {
                         if(!testCounter.reachedMaximum()) {
-                            new PerformTests(testProfile, connections, server).performProgramTasks();
+                            new PerformTests(sequentialTestProfile, connections, server).performProgramTasks();
                             testCounter.increment();
                         }
                         else {
@@ -131,8 +127,8 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
     }
 
     private void replaceDeviceInProfile(Device replacement) {
-        if(testProfile.peer1.macAddress.equals(replacement.macAddress)) testProfile.peer1 = replacement;
-        if(testProfile.peer2.macAddress.equals(replacement.macAddress)) testProfile.peer2 = replacement;
+        if(sequentialTestProfile.peer1.macAddress.equals(replacement.macAddress)) sequentialTestProfile.peer1 = replacement;
+        if(sequentialTestProfile.peer2.macAddress.equals(replacement.macAddress)) sequentialTestProfile.peer2 = replacement;
     }
 
 
@@ -176,5 +172,32 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
     public void onDisconnect(Client c) {
         Log(LOG_TAG, "onDisconnect: " + c.getInetAddress().getHostAddress());
         throw new IllegalStateException("Device was disconnected.");
+    }
+
+    public static void validate(SequentialTestProfile toValidate) {
+        String spectralAnalysisString = null;
+        if(toValidate.spectralAnalysis) {
+            for(SingleTestProfile sProf: toValidate.testsToPerform) {
+                if(spectralAnalysisString == null) {
+                    spectralAnalysisString = sProf.dictionary.messages.get(0);
+                    if(spectralAnalysisString == null || spectralAnalysisString.trim().equals("")){
+                        throw new ValidationException("Spectral analysis string '"+spectralAnalysisString+
+                                "' is empty.");
+                    }
+                }
+                if(sProf.dictionary.messages.size() != 1 || !spectralAnalysisString.equals(sProf.dictionary.messages.get(0))){
+                    throw new ValidationException("Dictionaries must be equal for spectral analysis test.");
+                }
+                for(String freqBaseShift: sProf.frequenciesBindingShifts) {
+                    try{
+                        Integer.parseInt(freqBaseShift);
+                    }
+                    catch (NumberFormatException e) {
+                        throw new ValidationException("Frequency shift '"+freqBaseShift+"' can't be used in spectral\n " +
+                                "analysis test because it can't be parsed to int.");
+                    }
+                }
+            }
+        }
     }
 }

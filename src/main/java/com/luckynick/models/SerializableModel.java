@@ -36,6 +36,8 @@ public abstract class SerializableModel {
     @IOFieldHandling(serialize = false)
     public String fileRoot = this.getClass().getDeclaredAnnotation(IOClassHandling.class).dataStorage().toString();
     public String wholePath = fileRoot + filename;
+    @ManageableField
+    public String customPrefix = "";
 
     public SerializableModel() {
         setFilename();
@@ -46,8 +48,9 @@ public abstract class SerializableModel {
     }
 
     public void setFilename(String filename) {
-        this.filename = filename;
-        wholePath = fileRoot + filename;
+        String actialCustomPrefix = (customPrefix == null ? "" : customPrefix);
+        this.filename = actialCustomPrefix + filename;
+        wholePath = fileRoot + this.filename;
     }
 
     public void appendSubfolderToFileRoot(String ... subfolders) {
@@ -157,6 +160,11 @@ public abstract class SerializableModel {
                     getValueFromField(field).toString() : EMPTY_LABEL), 30);
             result = textField;
         }
+        else if(field.getType().equals(boolean.class)) {
+            JCheckBox checkBox = new JCheckBox("Selected: ", (value != null ?
+                    (boolean) value : false));
+            result = checkBox;
+        }
         else {
             result = createButtonWithAction(field, field.getType());
         }
@@ -261,6 +269,10 @@ public abstract class SerializableModel {
             String selectedItem = (String) ((JComboBox) value).getSelectedItem();
             setValueInField(field, selectedItem != null ?
                     Enum.valueOf((Class<Enum>) field.getType(), selectedItem) : null);
+        }
+        else if(value instanceof JCheckBox) {
+            boolean isSelected = ((JCheckBox) value).isSelected();
+            setValueInField(field, isSelected);
         }
     }
 

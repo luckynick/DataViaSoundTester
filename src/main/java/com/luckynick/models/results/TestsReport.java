@@ -86,36 +86,31 @@ public class TestsReport extends TestResult {
         cFrame.displayWindow();
     }
 
-    private float[][] getChartData() {
-        if(resultsOfTests == null)
-            throw new IllegalStateException("Chart data is missing.");
-        float[][] result = new float[resultsOfTests.size()][];
-        for(int i = 0; i < resultsOfTests.size(); i++){
-            float[] x = new float[2];
-            x[0] = i;
-            x[1] = resultsOfTests.get(i).valueForPlot();
-            result[i] = x;
-        }
-        return result;
-    }
-
     protected DefaultCategoryDataset getChartDataSet(Device filter) {
         DefaultCategoryDataset result = new DefaultCategoryDataset();
-        Comparable c = new Comparable() {
-            @Override
-            public int compareTo(Object o) {
-                return 1;
-            }
-        };
         for(int i = 0; i < resultsOfTests.size(); i++){
             if(filter.macAddress.equals(resultsOfTests.get(i).senderSessionSummary.summarySource.macAddress)) {
-                result.addValue(resultsOfTests.get(i).messageMatchPecrentage,
-                        resultsOfTests.get(i).senderSessionSummary.sendParameters.message,
-                        ""+resultsOfTests.get(i).senderSessionSummary.sendParameters.loudnessLevel);
-                Log(LOG_TAG, i + ". Match: " + resultsOfTests.get(i).messageMatchPecrentage + "; send message: "
-                        + resultsOfTests.get(i).senderSessionSummary.sendParameters.message + "; loudness: "
-                        + resultsOfTests.get(i).senderSessionSummary.sendParameters.loudnessLevel+ "; recived message: "
-                        + resultsOfTests.get(i).receiverSessionSummary.message);
+                /* For spectral analysis rowKey is frequenciesBindingShift,
+                   For usual test rowKey is message's text,
+                 */
+                if(seqTestProfile.spectralAnalysis) {
+                    result.addValue(resultsOfTests.get(i).messageMatchPecrentage,
+                            resultsOfTests.get(i).senderSessionSummary.sendParameters.frequenciesBindingShift + "",
+                            ""+resultsOfTests.get(i).senderSessionSummary.sendParameters.loudnessLevel);
+                    Log(LOG_TAG, i + ". Match: " + resultsOfTests.get(i).messageMatchPecrentage + "; send message: "
+                            + resultsOfTests.get(i).senderSessionSummary.sendParameters.message + "; loudness: "
+                            + resultsOfTests.get(i).senderSessionSummary.sendParameters.loudnessLevel+ "; recived message: "
+                            + resultsOfTests.get(i).receiverSessionSummary.message);
+                }
+                else {
+                    result.addValue(resultsOfTests.get(i).messageMatchPecrentage,
+                            resultsOfTests.get(i).senderSessionSummary.sendParameters.message,
+                            ""+resultsOfTests.get(i).senderSessionSummary.sendParameters.loudnessLevel);
+                    Log(LOG_TAG, i + ". Match: " + resultsOfTests.get(i).messageMatchPecrentage + "; send message: "
+                            + resultsOfTests.get(i).senderSessionSummary.sendParameters.message + "; loudness: "
+                            + resultsOfTests.get(i).senderSessionSummary.sendParameters.loudnessLevel+ "; recived message: "
+                            + resultsOfTests.get(i).receiverSessionSummary.message);
+                }
             }
         }
         return result;

@@ -25,7 +25,25 @@ public class RunTest extends ProgramBehaviour {
     @Override
     public void performProgramTasks() {
         SequentialTestProfile testProfile;
+
+        ModelIO<Config> configModelIO = new ModelIO<>(Config.class);
+        List<Config> configs = configModelIO.listObjects();
+        if(configs.size() == 0) {
+            new CreateConfig().performProgramTasks(); //if config doesn't exist -> create config
+            configs = configModelIO.listObjects();
+        }
+        Config confInstance = configs.get(0);
+
         if(useConfigProfile) {
+            testProfile = confInstance.defaultProfile;
+        }
+        else {
+            ModelIO<SequentialTestProfile> profileModelIO = new ModelIO<>(SequentialTestProfile.class);
+            List<SequentialTestProfile> profile = ModelSelector.requireSelection(profileModelIO, false);
+            testProfile = profile.get(0);
+        }
+
+        /*if(useConfigProfile) {
             ModelIO<Config> profileModelIO = new ModelIO<>(Config.class);
             List<Config> configs = profileModelIO.listObjects();
             Log(LOG_TAG, "Done. " + configs.size());
@@ -40,9 +58,9 @@ public class RunTest extends ProgramBehaviour {
             ModelIO<SequentialTestProfile> profileModelIO = new ModelIO<>(SequentialTestProfile.class);
             List<SequentialTestProfile> profile = ModelSelector.requireSelection(profileModelIO, false);
             testProfile = profile.get(0);
-        }
+        }*/
 
-        int repeat = 1;
+        int repeat = confInstance.repeatTimes;
         System.out.println("Running tests: repeat " + repeat + " times.");
         new TestPreparationBehaviour(testProfile, repeat).performProgramTasks();
 

@@ -13,6 +13,7 @@ import com.luckynick.models.results.TestsReportBuilder;
 import com.luckynick.net.ConnectionHandler;
 import com.luckynick.net.MultiThreadServer;
 import com.luckynick.shared.GSONCustomSerializer;
+import com.luckynick.shared.IOClassHandling;
 import com.luckynick.shared.PureFunctionalInterface;
 import com.luckynick.shared.SharedUtils;
 import com.luckynick.shared.enums.PacketID;
@@ -26,11 +27,16 @@ import nl.pvdberg.pnet.client.Client;
 import nl.pvdberg.pnet.packet.Packet;
 import nl.pvdberg.pnet.packet.PacketReader;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Stream;
 
 import static com.luckynick.custom.Utils.Log;
 
@@ -38,6 +44,11 @@ import static com.luckynick.custom.Utils.Log;
 TODO: make sure that sound production starts after start of recording
 there might be async tasks which finish with delay
  */
+/*
+Observation:
+There is some kind of warm up (of unknown nature).
+First tests demonstrate worse results than last ones.
+*/
 public class PerformTests extends ProgramBehaviour implements ConnectionListener, PacketListener {
 
     public static final String LOG_TAG = "PerformTests";
@@ -79,39 +90,38 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
             public void run() {
 
                 for(SingleTestProfile singleTestProfileProfile : profile.testsToPerform) {
-                    for(String message : singleTestProfileProfile.dictionary.messages) {
-                        SendParameters sParams = new SendParameters();
-                        sParams.loudnessLevel = singleTestProfileProfile.loudnessLevel;
-                        sParams.soundProductionUnit = singleTestProfileProfile.soundProductionUnit;
-                        sParams.message = message;
-                        ReceiveParameters rParams = new ReceiveParameters();
-                        rParams.soundConsumptionUnit = singleTestProfileProfile.soundConsumptionUnit;
-                        sendMessages(sParams, rParams, profile.peer1, profile.peer2);
-                        Log(LOG_TAG, "peer1 -> peer2");
-                        Log(LOG_TAG, profile.peer1.vendor + " to " + profile.peer2.vendor);
-                        synchronized (lock) {
-                            try {
-                                lock.wait();
+                    List<String> messages = singleTestProfileProfile.dictionary.messages;
+                    /*List<String> messages;
+                    if(!profile.spectralAnalysis) {
+                        messages = singleTestProfileProfile.dictionary.messages;
+                    }
+                    else {
+                        messages = new ArrayList<>();
+                        for(int spectreChar : SharedUtils.SPECTRAL_ANALYSIS_CHARS) {
+                            String c = ((char)spectreChar + "" + (char)spectreChar).toUpperCase();
+                            String spectralString = "";
+                            for(int i = 0; i < SharedUtils.SPECTRAL_ANALYSIS_STRING_LEN; i++) {
+                                spectralString += SharedUtils.fromHex(c);
                             }
-                            catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
+                            Log(LOG_TAG, "Spectral string: " + spectralString);
+                            messages.add(spectralString);
                         }
-                        sendMessages(sParams, rParams, profile.peer2, profile.peer1);
-                        Log(LOG_TAG, "peer2 -> peer1");
-                        Log(LOG_TAG, profile.peer2.vendor + " to " + profile.peer1.vendor);
-                        synchronized (lock) {
-                            try {
-                                lock.wait();
-                            }
-                            catch (InterruptedException e) {
-                                e.printStackTrace();
+                    }*/
+                    for(String message : messages) {
+                        if(singleTestProfileProfile.frequenciesBindingShifts.size() == 0) {
+                            performSingleTest(singleTestProfileProfile, message, 0);
+                        }
+                        else {
+                            for(String freqBaseShift: singleTestProfileProfile.frequenciesBindingShifts) {
+                                performSingleTest(singleTestProfileProfile, message, Integer.parseInt(freqBaseShift));
                             }
                         }
                     }
                 }
 
                 TestsReport finalReport = reportBuilder.build();
+                finalReport.customPrefix = profile.customPrefix;
+                finalReport.setFilename();
                 ModelIO<TestsReport> reportIO = new ModelIO<>(TestsReport.class);
                 try {
                     reportIO.serialize(finalReport);
@@ -137,6 +147,50 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
         //exit();
     }
 
+    private void performSingleTest(SingleTestProfile singleTestProfileProfile, String message, int frequenciesBindingShift) {
+        SendParameters sParams = new SendParameters();
+        ReceiveParameters rParams = new ReceiveParameters();
+        sParams.loudnessLevel = singleTestProfileProfile.loudnessLevel;
+        sParams.soundProductionUnit = singleTestProfileProfile.soundProductionUnit;
+                        /*if(profile.spectralAnalysis) {
+                            sParams.message = profile.spectralAnalysisString;
+                            sParams.spectralAnalysisShift = Integer.parseInt(message);
+                            rParams.spectralAnalysisShift = Integer.parseInt(message);
+                        }
+                        else {
+                            sParams.message = message;
+                        }*/
+
+        sParams.message = message;
+        sParams.frequenciesBindingShift = frequenciesBindingShift;
+
+        rParams.frequenciesBindingShift = frequenciesBindingShift;
+        rParams.soundConsumptionUnit = singleTestProfileProfile.soundConsumptionUnit;
+
+        sendMessages(sParams, rParams, profile.peer1, profile.peer2);
+        Log(LOG_TAG, "peer1 -> peer2");
+        Log(LOG_TAG, profile.peer1.vendor + " to " + profile.peer2.vendor);
+        synchronized (lock) {
+            try {
+                lock.wait();
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        sendMessages(sParams, rParams, profile.peer2, profile.peer1);
+        Log(LOG_TAG, "peer2 -> peer1");
+        Log(LOG_TAG, profile.peer2.vendor + " to " + profile.peer1.vendor);
+        synchronized (lock) {
+            try {
+                lock.wait();
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     public void finalizeTests() {
         this.server.unsubscribe();
@@ -150,10 +204,48 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
     }
 
     public static void main(String args[]) {
+        /*
         ModelIO<CumulatedReport> reportIO = new ModelIO<>(CumulatedReport.class);
         CumulatedReport rep = ModelSelector.requireSelection(reportIO, false).get(0);
         for (TestsReport r : rep.testsReports) {
             System.out.println(r.filename);
+        }
+        */
+        ModelIO<SingleTestResult> resultIO = new ModelIO<>(SingleTestResult.class);
+        String dirStr = SharedUtils.formPathString(SharedUtils.DataStorage.SINGULAR_RESULT.getDirPath(), "v1.0-naive_10-100_111118_234659\\");
+        ArrayList<File> files = new ArrayList<>();
+        Path dir = Paths.get(dirStr);
+        try (Stream<Path> paths = Files.walk(dir)) {
+            paths
+                    .filter(Files::isRegularFile)
+                    .filter((p) -> p.toString().endsWith(SharedUtils.JSON_EXTENSION))
+                    //.filter((p) -> p.getParent().equals(dir))
+                    .forEach((p) -> {files.add(p.toFile());});
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        List<SingleTestResult> modelObjects = new ArrayList<>();
+        for(File f : files) {
+            try {
+                modelObjects.add(resultIO.deserialize(f));
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        TestsReportBuilder reportBuilder = new TestsReportBuilder(null);
+        for (SingleTestResult res : modelObjects) {
+            reportBuilder.addTestResult(res);
+        }
+
+        TestsReport finalReport = reportBuilder.build();
+        ModelIO<TestsReport> reportIO = new ModelIO<>(TestsReport.class);
+        try {
+            reportIO.serialize(finalReport);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -225,6 +317,13 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                         tryRunMessageReceiver();
                         break;
                     case RECEIVE_MESSAGE:
+                        try {
+                            //0.5 second pause after start of recording
+                            Thread.sleep(500);
+                        }
+                        catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         runMessageSender();
                         break;
                     default:
@@ -239,9 +338,17 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                         sendSessionSummary = serializer.deserialize(packetReader.readString());
                         Log(LOG_TAG, "Sender joined.");
 
-
+                        /*
                         try {
                             Thread.sleep(1000); // let the recorder settle down //1000 500
+                        }
+                        catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        */
+                        try {
+                            //0.5 second pause after end of sending
+                            Thread.sleep(500);
                         }
                         catch (InterruptedException e) {
                             e.printStackTrace();
@@ -266,7 +373,7 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
 
                 SingleTestResult result = new SingleTestResult(sendSessionSummary, recvSummary);
                 String filenameWdateFolder = SharedUtils.formPathString(
-                        SharedUtils.getDateStringForFileName(testTimeMillis), result.filename);
+                        profile.customPrefix + SharedUtils.getDateStringForFileName(testTimeMillis), result.filename);
                 result.setFilename(filenameWdateFolder);
                 Log(LOG_TAG, "New SingleTestResult path: " + result.wholePath);
                 resultIO.serialize(result);

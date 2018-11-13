@@ -21,6 +21,8 @@ public class SequentialTestProfile extends Profile {
     public int distanceBetweenPeers;
     @ManageableField
     public DistanceUnit distanceUnitName = DistanceUnit.Centimeter;
+    @ManageableField
+    public boolean spectralAnalysis = false;
 
     @ManageableField(required = true)
     public List<SingleTestProfile> testsToPerform = new ArrayList<>();

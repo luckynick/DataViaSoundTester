@@ -101,7 +101,9 @@ public class ModelEditor<T extends SerializableModel> extends CustomJFrame imple
         };
         sw.execute();
         try {
-            return sw.get();
+            T editedModel = sw.get();
+            editedModel.setFilename();
+            return editedModel;
         }
         catch (InterruptedException e) {
             e.printStackTrace();
@@ -127,15 +129,15 @@ public class ModelEditor<T extends SerializableModel> extends CustomJFrame imple
             }
             else if (e.getActionCommand().equals("Load")) {
                 File latestFile = Arrays.stream(new File(editableModel.fileRoot).listFiles())
-                        .max(Comparator.naturalOrder()).orElse(null); //(file, file2) -> {return file.compareTo(file2);}
+                        .max((file, file2) -> {return (int)(file.lastModified()- file2.lastModified());}).orElse(null); //Comparator.naturalOrder()
                 if(latestFile == null) {
                     nothingToLoadLabel.setVisible(true);
                     refreshView();
                     return;
                 }
-                ModelIO<T> newModelIO = new ModelIO<>(modelIO.getClassOfModel(), latestFile);
+                ModelIO<T> newModelIO = new ModelIO<>(modelIO.getClassOfModel());
                 try {
-                    editableModel = newModelIO.deserialize();
+                    editableModel = newModelIO.deserialize(latestFile);
                     editableModel.setFilename();
                 }
                 catch (IOException e1) {

@@ -7,6 +7,9 @@ import com.luckynick.custom.Device;
 import com.luckynick.shared.IOClassHandling;
 import com.luckynick.models.ManageableField;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @IOClassHandling(dataStorage = SharedUtils.DataStorage.SINGLE)
 public class SingleTestProfile extends Profile {
 
@@ -16,6 +19,8 @@ public class SingleTestProfile extends Profile {
     public SoundConsumptionUnit soundConsumptionUnit = SoundConsumptionUnit.MICROPHONE;
     @ManageableField
     public int loudnessLevel = 100;
+    @ManageableField
+    public List<String> frequenciesBindingShifts = new ArrayList<>();//for spectral analysis;
 
     @ManageableField(required = true)
     public Dictionary dictionary;
