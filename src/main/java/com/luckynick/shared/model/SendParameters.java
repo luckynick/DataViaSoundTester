@@ -11,5 +11,6 @@ public class SendParameters {
     public int loudnessLevel;
     public String message;
     public int frequenciesBindingShift = 0;
+    public double frequenciesBindingScale = 1;
 
 }

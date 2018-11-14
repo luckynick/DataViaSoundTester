@@ -109,11 +109,12 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                     }*/
                     for(String message : messages) {
                         if(singleTestProfileProfile.frequenciesBindingShifts.size() == 0) {
-                            performSingleTest(singleTestProfileProfile, message, 0);
+                            performSingleTest(singleTestProfileProfile, message, 0, 1);
                         }
                         else {
                             for(String freqBaseShift: singleTestProfileProfile.frequenciesBindingShifts) {
-                                performSingleTest(singleTestProfileProfile, message, Integer.parseInt(freqBaseShift));
+                                performSingleTest(singleTestProfileProfile, message, Integer.parseInt(freqBaseShift),
+                                        singleTestProfileProfile.frequenciesBindingScale);
                             }
                         }
                     }
@@ -147,7 +148,8 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
         //exit();
     }
 
-    private void performSingleTest(SingleTestProfile singleTestProfileProfile, String message, int frequenciesBindingShift) {
+    private void performSingleTest(SingleTestProfile singleTestProfileProfile, String message, int frequenciesBindingShift,
+                                   double frequenciesBindingScale) {
         SendParameters sParams = new SendParameters();
         ReceiveParameters rParams = new ReceiveParameters();
         sParams.loudnessLevel = singleTestProfileProfile.loudnessLevel;
@@ -163,9 +165,11 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
 
         sParams.message = message;
         sParams.frequenciesBindingShift = frequenciesBindingShift;
+        sParams.frequenciesBindingScale = frequenciesBindingScale;
 
-        rParams.frequenciesBindingShift = frequenciesBindingShift;
         rParams.soundConsumptionUnit = singleTestProfileProfile.soundConsumptionUnit;
+        rParams.frequenciesBindingShift = frequenciesBindingShift;
+        rParams.frequenciesBindingScale = frequenciesBindingScale;
 
         sendMessages(sParams, rParams, profile.peer1, profile.peer2);
         Log(LOG_TAG, "peer1 -> peer2");

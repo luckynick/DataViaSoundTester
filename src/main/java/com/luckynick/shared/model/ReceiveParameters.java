@@ -13,5 +13,6 @@ public class ReceiveParameters {
 
     public SoundConsumptionUnit soundConsumptionUnit;
     public int frequenciesBindingShift = 0;
+    public double frequenciesBindingScale = 1;
 
 }

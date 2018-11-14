@@ -21,6 +21,8 @@ public class SingleTestProfile extends Profile {
     public int loudnessLevel = 100;
     @ManageableField
     public List<String> frequenciesBindingShifts = new ArrayList<>();//for spectral analysis;
+    @ManageableField
+    public double frequenciesBindingScale = 1;//for spectral analysis;
 
     @ManageableField(required = true)
     public Dictionary dictionary;
