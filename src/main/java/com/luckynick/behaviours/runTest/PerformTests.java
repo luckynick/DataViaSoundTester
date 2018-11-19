@@ -2,6 +2,7 @@ package com.luckynick.behaviours.runTest;
 
 import com.luckynick.behaviours.ProgramBehaviour;
 import com.luckynick.custom.Device;
+import com.luckynick.custom.Utils;
 import com.luckynick.models.ModelIO;
 import com.luckynick.models.ModelSelector;
 import com.luckynick.models.profiles.SequentialTestProfile;
@@ -109,7 +110,7 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                     }*/
                     for(String message : messages) {
                         if(singleTestProfileProfile.frequenciesBindingShifts.size() == 0) {
-                            performSingleTest(singleTestProfileProfile, message, 0, 1);
+                            performSingleTest(singleTestProfileProfile, message);
                         }
                         else {
                             for(String freqBaseShift: singleTestProfileProfile.frequenciesBindingShifts) {
@@ -146,6 +147,11 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
         }*/
 
         //exit();
+    }
+
+    private void performSingleTest(SingleTestProfile singleTestProfileProfile, String message) {
+        performSingleTest(singleTestProfileProfile, message, Utils.TEST_FREQ_BINDING_BASE,
+                Utils.TEST_FREQ_BINDING_SCALE);
     }
 
     private void performSingleTest(SingleTestProfile singleTestProfileProfile, String message, int frequenciesBindingShift,

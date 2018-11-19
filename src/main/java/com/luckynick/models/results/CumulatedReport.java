@@ -17,6 +17,7 @@ import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicBorders;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -25,6 +26,10 @@ import static com.luckynick.custom.Utils.Log;
 
 @IOClassHandling(dataStorage = SharedUtils.DataStorage.CUMULATED_REPORT)
 public class CumulatedReport extends TestResult {
+
+    /*
+    Assumption: test results could be worse because of battery level.
+     */
 
     public static final String LOG_TAG = "CumulatedReport";
 
@@ -67,54 +72,107 @@ public class CumulatedReport extends TestResult {
         CustomJFrame cFrame = new CustomJFrame("Cumulated report") {
             @Override
             public void addElements() {
-                JPanel chartsPanel = new JPanel();
-                chartsPanel.setLayout(new BoxLayout(chartsPanel, BoxLayout.X_AXIS));
-                chartsPanel.add(createPlot(testsReports.get(0).seqTestProfile.peer1));
-                chartsPanel.add(createPlot(testsReports.get(0).seqTestProfile.peer2));
-                getContentPane().add(chartsPanel);
+                JPanel chartsPanelUp = new JPanel();
+                chartsPanelUp.setLayout(new BoxLayout(chartsPanelUp, BoxLayout.X_AXIS));
+                chartsPanelUp.add(createPlot(testsReports.get(0).seqTestProfile.peer1, false));
+                chartsPanelUp.add(createPlot(testsReports.get(0).seqTestProfile.peer2, false));
+                getContentPane().add(chartsPanelUp);
+                if(!CumulatedReport.this.testsReports.get(0).seqTestProfile.spectralAnalysis) {
+                    JPanel chartsPanelDown = new JPanel();
+                    chartsPanelDown.setLayout(new BoxLayout(chartsPanelDown, BoxLayout.X_AXIS));
+                    chartsPanelDown.add(createPlot(testsReports.get(0).seqTestProfile.peer1, true));
+                    chartsPanelDown.add(createPlot(testsReports.get(0).seqTestProfile.peer2, true));
+                    getContentPane().add(chartsPanelDown);
+                }
                 JPanel infoPanel = new JPanel();
                 infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.Y_AXIS));
                 infoPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-                infoPanel.add(new JLabel("Description: " + description));
-                infoPanel.add(new JLabel("File name: " + CumulatedReport.super.filename));
+                String descriptionTest = "Description: " + description + "\n"
+                        + "File name: " + CumulatedReport.super.filename;
+                JTextArea descriptionArea = new JTextArea(descriptionTest, 2, 30);
+                descriptionArea.setLineWrap(true);
+                descriptionArea.setWrapStyleWord(true);
+                descriptionArea.setOpaque(false);
+                descriptionArea.setEditable(false);
+                infoPanel.add(descriptionArea);
                 getContentPane().add(infoPanel);
             }
         };
         cFrame.addElements();
         cFrame.displayWindow();
+        //cFrame.setSize(new Dimension());
     }
 
-    private ChartPanel createPlot(Device forDevice) {
+    private ChartPanel createPlot(Device forDevice, boolean oneLinePlot) {
 
-        DefaultCategoryDataset datasetPeer = null;
-        for(TestsReport one : testsReports) {
-            DefaultCategoryDataset tempDataset = one.getChartDataSet(forDevice);
-            if(datasetPeer == null) {
-                datasetPeer = tempDataset;
-            }
-            else { // make an increment
-                for(Object rowK : tempDataset.getRowKeys()) {
-                    for(Object colK : tempDataset.getColumnKeys()) {
-                        Number incValue = tempDataset.getValue((Comparable) rowK, (Comparable) colK);
-                        datasetPeer.incrementValue(incValue.doubleValue(), (Comparable) rowK, (Comparable) colK);
+        DefaultCategoryDataset resultDataset = null;
+        //scatter values to dataset for future averaging
+        if(!oneLinePlot) {
+            for(TestsReport one : testsReports) {
+                DefaultCategoryDataset tempDataset = one.getChartDataSet(forDevice);
+                if(resultDataset == null) {
+                    resultDataset = tempDataset;
+                }
+                else { // make an increment
+                    for(Object rowK : tempDataset.getRowKeys()) {
+                        for(Object colK : tempDataset.getColumnKeys()) {
+                            Number incValue = tempDataset.getValue((Comparable) rowK, (Comparable) colK);
+                            resultDataset.incrementValue(incValue.doubleValue(), (Comparable) rowK, (Comparable) colK);
+                        }
                     }
                 }
             }
-        }
-        for(Object rowK : datasetPeer.getRowKeys()) {
-            for(Object colK : datasetPeer.getColumnKeys()) {
-                Number value = datasetPeer.getValue((Comparable) rowK, (Comparable) colK);
-                datasetPeer.setValue(value.doubleValue() / testsReports.size(), (Comparable) rowK, (Comparable) colK);
+            for(Object rowK : resultDataset.getRowKeys()) {
+                for(Object colK : resultDataset.getColumnKeys()) {
+                    Number value = resultDataset.getValue((Comparable) rowK, (Comparable) colK);
+                    resultDataset.setValue(value.doubleValue() / testsReports.size(), (Comparable) rowK, (Comparable) colK);
+                }
             }
         }
+        else {
+            final String oneLineName = "Σ (success * string weight)";
+            int lengthsOfDictionaryStrings = 0;
+            for(TestsReport one : testsReports) {
+                DefaultCategoryDataset tempDataset = one.getChartDataSet(forDevice);
+                if(resultDataset == null) {
+                    resultDataset = new DefaultCategoryDataset();
+                    for(Object rowKey: tempDataset.getRowKeys()){
+                        lengthsOfDictionaryStrings += rowKey.toString().length();
+                    }
+                    for(Object rowK : tempDataset.getRowKeys()) {
+                        for(Object colK : tempDataset.getColumnKeys()) {
+                            resultDataset.setValue(0,
+                                    (Comparable) oneLineName, (Comparable) colK);
+                        }
+                    }
+                }
+                for(Object rowK : tempDataset.getRowKeys()) {
+                    for(Object colK : tempDataset.getColumnKeys()) {
+                        Number incValue = tempDataset.getValue((Comparable) rowK, (Comparable) colK);
+                        resultDataset.incrementValue(incValue.doubleValue() * rowK.toString().length(),
+                                (Comparable) oneLineName, (Comparable) colK);
+                    }
+                }
+            }
+            for(Object rowK : resultDataset.getRowKeys()) {
+                for(Object colK : resultDataset.getColumnKeys()) {
+                    Number value = resultDataset.getValue((Comparable) rowK, (Comparable) colK);
+                    resultDataset.setValue(value.doubleValue() / testsReports.size() / lengthsOfDictionaryStrings, (Comparable) oneLineName, (Comparable) colK);
+                }
+            }
+            Log(LOG_TAG, "lengthsOfDictionaryStrings: " + lengthsOfDictionaryStrings);
+        }
+
+
         // Create chart
         JFreeChart chart = ChartFactory.createLineChart(
                 "Device " + forDevice.vendor + " (sender)", // Chart title
                 "Loudness", // X-Axis Label
                 "Success", // Y-Axis Label
-                datasetPeer,
+                resultDataset,
                 PlotOrientation.VERTICAL, true, false, false
         );
+        chart.getCategoryPlot().getRangeAxis().setRange(0, 100);
 
         return new ChartPanel(chart);
     }

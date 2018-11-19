@@ -9,6 +9,7 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 import javax.swing.*;
@@ -50,6 +51,10 @@ public class TestsReport extends TestResult {
                 datasetPeer1,
                 PlotOrientation.VERTICAL, true, false, false
         );
+        //chart.getCategoryPlot().getRangeAxis().setRange(0, 100);
+        //chart.getXYPlot().getRangeAxis().setRange(0, 100);
+        chart.getCategoryPlot().getRangeAxis().setRange(0, 100);
+        //System.out.println("Plot class: " + chart.getPlot().getClass());
 
         /*JFrame frame = new JFrame("Test chart");
         ChartPanel chartPanel = new ChartPanel(chart);
