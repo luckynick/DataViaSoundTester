@@ -24,6 +24,7 @@ import com.luckynick.shared.model.SendParameters;
 import com.luckynick.shared.model.SendSessionSummary;
 import com.luckynick.shared.net.ConnectionListener;
 import com.luckynick.shared.net.PacketListener;
+import com.sun.istack.internal.Nullable;
 import nl.pvdberg.pnet.client.Client;
 import nl.pvdberg.pnet.packet.Packet;
 import nl.pvdberg.pnet.packet.PacketReader;
@@ -71,13 +72,42 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
     private volatile SendSessionSummary sendSessionSummary = null;
     private volatile boolean senderReady = false, receiverReady = false;
 
-    public PerformTests(SequentialTestProfile profile, ConcurrentHashMap<String, Client> connections, MultiThreadServer server) {
+    public PerformTests(SequentialTestProfile profile, ConcurrentHashMap<String, Client> connections,
+                        MultiThreadServer server, @Nullable String continuePreviousTest) {
         this.profile = profile;
         reportBuilder = new TestsReportBuilder(profile);
         this.connections = connections;
         this.server = server;
         this.server.subscribeConnectionEvents(this);
         ConnectionHandler.subscribePacketEvents(this);
+
+        if(continuePreviousTest != null) {
+            ModelIO<SingleTestResult> resultIO = new ModelIO<>(SingleTestResult.class);
+            //String dirStr = SharedUtils.formPathString(SharedUtils.DataStorage.SINGULAR_RESULT.getDirPath(), "v1.0-naive_10-100_111118_234659\\");
+            String dirStr = continuePreviousTest;
+            ArrayList<File> files = new ArrayList<>();
+            Path dir = Paths.get(dirStr);
+            try (Stream<Path> paths = Files.walk(dir)) {
+                paths
+                        .filter(Files::isRegularFile)
+                        .filter((p) -> p.toString().endsWith(SharedUtils.JSON_EXTENSION))
+                        //.filter((p) -> p.getParent().equals(dir))
+                        .forEach((p) -> {files.add(p.toFile());});
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            for(File f : files) {
+                try {
+                    reportBuilder.addTestResult(resultIO.deserialize(f));
+                    //modelObjects.add(resultIO.deserialize(f));
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            Log(LOG_TAG, "Builder was prepopulated, now contains " + reportBuilder.getNumOfTestResults() + " entries.");
+        }
     }
 
     @Override
@@ -89,26 +119,14 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
         Thread testsThread = new Thread(new Runnable() {
             @Override
             public void run() {
-
                 for(SingleTestProfile singleTestProfileProfile : profile.testsToPerform) {
                     List<String> messages = singleTestProfileProfile.dictionary.messages;
-                    /*List<String> messages;
-                    if(!profile.spectralAnalysis) {
-                        messages = singleTestProfileProfile.dictionary.messages;
-                    }
-                    else {
-                        messages = new ArrayList<>();
-                        for(int spectreChar : SharedUtils.SPECTRAL_ANALYSIS_CHARS) {
-                            String c = ((char)spectreChar + "" + (char)spectreChar).toUpperCase();
-                            String spectralString = "";
-                            for(int i = 0; i < SharedUtils.SPECTRAL_ANALYSIS_STRING_LEN; i++) {
-                                spectralString += SharedUtils.fromHex(c);
-                            }
-                            Log(LOG_TAG, "Spectral string: " + spectralString);
-                            messages.add(spectralString);
-                        }
-                    }*/
                     for(String message : messages) {
+                        if(reportBuilder.getNumOfTestResults() > c) {
+                            Log(LOG_TAG, "Skipping: " + c);
+                            continue;
+                        }
+                        c+=2;
                         if(singleTestProfileProfile.frequenciesBindingShifts.size() == 0) {
                             performSingleTest(singleTestProfileProfile, message);
                         }
@@ -138,15 +156,6 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
             }
         });
         testsThread.start();
-        /*try {
-            testsThread.join();
-            testEndSubs.forEach(func -> func.performProgramTasks());
-        }
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
-
-        //exit();
     }
 
     private void performSingleTest(SingleTestProfile singleTestProfileProfile, String message) {
@@ -154,6 +163,8 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                 Utils.TEST_FREQ_BINDING_SCALE);
     }
 
+
+    int c = 0; //pass tests eventually, if previous test sequence was interrupted
     private void performSingleTest(SingleTestProfile singleTestProfileProfile, String message, int frequenciesBindingShift,
                                    double frequenciesBindingScale) {
         SendParameters sParams = new SendParameters();

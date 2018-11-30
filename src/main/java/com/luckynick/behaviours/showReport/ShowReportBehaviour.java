@@ -11,8 +11,6 @@ import static com.luckynick.custom.Utils.Log;
 
 public class ShowReportBehaviour extends ProgramBehaviour {
 
-    //TODO: show charts in one window
-
     public static final String LOG_TAG = "ShowReportBehaviour";
 
     ModelIO<TestsReport> reportModelIO = new ModelIO<>(TestsReport.class);
@@ -23,8 +21,7 @@ public class ShowReportBehaviour extends ProgramBehaviour {
         Log(LOG_TAG, "Profiles size: " + profiles.size());
         if(profiles.size() == 1) {
             TestsReport report = profiles.get(0);
-            report.showPlot(report.seqTestProfile.peer1);
-            report.showPlot(report.seqTestProfile.peer2);
+            report.showPlot();
         }
     }
 }

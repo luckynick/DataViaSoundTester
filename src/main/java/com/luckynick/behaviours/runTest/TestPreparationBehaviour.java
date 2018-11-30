@@ -29,6 +29,10 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
 
     public static final String LOG_TAG = "TestPreparationBehaviour";
 
+    //private final String INTERRUPTED_DIR = SharedUtils.formPathString(SharedUtils.DataStorage.SINGULAR_RESULT.getDirPath(),
+    //       "v1.0-naive_10-100_291118_225308\\");
+    final String INTERRUPTED_DIR = null;
+
     Thread udpBroadcastThread;
     int tcpPort = SharedUtils.TCP_COMMUNICATION_PORT;
 
@@ -95,10 +99,10 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
 
                     //PerformTests per = new PerformTests(sequentialTestProfile, connections, server);
 
-                    new PerformTests(sequentialTestProfile, connections, server).performProgramTasks();
+                    new PerformTests(sequentialTestProfile, connections, server, INTERRUPTED_DIR).performProgramTasks();
                     PerformTests.testEndSubs.add(() -> {
                         if(!testCounter.reachedMaximum()) {
-                            new PerformTests(sequentialTestProfile, connections, server).performProgramTasks();
+                            new PerformTests(sequentialTestProfile, connections, server, null).performProgramTasks();
                             testCounter.increment();
                         }
                         else {

@@ -23,4 +23,8 @@ public class TestsReportBuilder {
     public TestsReport build() {
         return testResults;
     }
+
+    public int getNumOfTestResults() {
+        return testResults.resultsOfTests.size();
+    }
 }
