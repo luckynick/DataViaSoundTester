@@ -64,6 +64,7 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
     MultiThreadServer server;
 
     TestsReportBuilder reportBuilder;
+    int sessionsToSkip = 0;
 
     long testTimeMillis = System.currentTimeMillis();
 
@@ -106,6 +107,7 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                     e.printStackTrace();
                 }
             }
+            sessionsToSkip = reportBuilder.getNumOfTestResults();
             Log(LOG_TAG, "Builder was prepopulated, now contains " + reportBuilder.getNumOfTestResults() + " entries.");
         }
     }
@@ -119,14 +121,16 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
         Thread testsThread = new Thread(new Runnable() {
             @Override
             public void run() {
+                int c = 0; //pass tests eventually, if previous test sequence was interrupted
                 for(SingleTestProfile singleTestProfileProfile : profile.testsToPerform) {
                     List<String> messages = singleTestProfileProfile.dictionary.messages;
                     for(String message : messages) {
-                        if(reportBuilder.getNumOfTestResults() > c) {
+                        Log(LOG_TAG, "Builder size: " + reportBuilder.getNumOfTestResults());
+                        if(sessionsToSkip > c) {
+                            c+=2;
                             Log(LOG_TAG, "Skipping: " + c);
                             continue;
                         }
-                        c+=2;
                         if(singleTestProfileProfile.frequenciesBindingShifts.size() == 0) {
                             performSingleTest(singleTestProfileProfile, message);
                         }
@@ -163,8 +167,6 @@ public class PerformTests extends ProgramBehaviour implements ConnectionListener
                 Utils.TEST_FREQ_BINDING_SCALE);
     }
 
-
-    int c = 0; //pass tests eventually, if previous test sequence was interrupted
     private void performSingleTest(SingleTestProfile singleTestProfileProfile, String message, int frequenciesBindingShift,
                                    double frequenciesBindingScale) {
         SendParameters sParams = new SendParameters();

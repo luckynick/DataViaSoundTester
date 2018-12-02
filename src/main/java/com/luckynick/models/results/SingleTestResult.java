@@ -119,6 +119,7 @@ public class SingleTestResult extends TestResult {
             }
         }
         distances.sort((x1, x2) -> x1 - x2);
+        if(distances.size() < 1) return 0;
         int longestDistance = distances.get(distances.size() - 1);
 
         return ((double)(longestDistance)/perfect.length())*100.0;

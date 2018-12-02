@@ -30,7 +30,7 @@ public class TestPreparationBehaviour extends ProgramBehaviour implements Packet
     public static final String LOG_TAG = "TestPreparationBehaviour";
 
     //private final String INTERRUPTED_DIR = SharedUtils.formPathString(SharedUtils.DataStorage.SINGULAR_RESULT.getDirPath(),
-    //       "v1.0-naive_10-100_291118_225308\\");
+    //      "v1.0-naive_10-100_301118_152536\\");
     final String INTERRUPTED_DIR = null;
 
     Thread udpBroadcastThread;
